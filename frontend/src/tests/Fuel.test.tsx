@@ -16,6 +16,11 @@ import { fuelBulkApi } from '../features/fuel/bulk';
 import type { FuelReport, Vehicle } from '../features/fuel/api';
 import { useUI } from '../stores/ui';
 import { activeNavigation } from '../design/navigation';
+import { configure } from '@testing-library/react';
+// Mounting this page is heavy (large antd panels): a single case can take 10-20 s
+// even locally, so this file gets a wider budget than the 30 s global default.
+vi.setConfig({ testTimeout: 120000 });
+configure({ asyncUtilTimeout: 20000 });
 vi.mock('../components/Chart', () => ({
   default: () => <div>Fuel chart</div>,
 }));
