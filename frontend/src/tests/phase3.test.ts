@@ -4,7 +4,7 @@ import { handlers } from '../mocks/handlers';
 import { apiClient } from '../api/client';
 import { businessApi, directoryApi } from '../api/business';
 import { accountApi, reportApi, transactionApi } from '../api/finance';
-import { minor } from '../utils/finance';
+import { formatDate, minor } from '../utils/finance';
 import type {
   ApiResponse,
   BusinessRecord,
@@ -27,7 +27,8 @@ const base: CreateBusinessRequest = {
 };
 const range = {
   start: '2026-10-01',
-  end: '2026-10-31',
+  // 资产损失与对账调整按当前时间记账，结束日必须覆盖今天
+  end: formatDate(new Date().toISOString()),
   currency: 'CNY' as const,
   granularity: 'month' as const,
 };

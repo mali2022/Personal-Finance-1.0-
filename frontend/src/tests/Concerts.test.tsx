@@ -56,7 +56,7 @@ function show(element: React.ReactNode) {
   );
 }
 it('does not query financial data before the module is enabled', async () => {
-  expect(activeNavigation('/concerts')?.group).toBe('special');
+  expect(activeNavigation('/concerts')?.group).toBe('bookkeeping');
   show(<ConcertsPage />);
   expect(
     await screen.findByText('该模块尚未启用，请在设置的可选模块中开启。'),

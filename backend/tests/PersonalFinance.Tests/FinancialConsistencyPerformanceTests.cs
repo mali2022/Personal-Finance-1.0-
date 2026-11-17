@@ -15,11 +15,14 @@ public sealed class FinancialConsistencyPerformanceTests(ITestOutputHelper outpu
     [DeletionSqlFact]
     public async Task HundredThousandRowsAcrossHundredAccountsHaveExactReportTotals()
     {
-        await using var f = new DeletionSqlTests.Fixture(); await f.Initialize();
+        // Opts out of the fixture transaction: undoing the seeded rows exceeds the timeout
+        // SqlTransaction captured at BeginTransaction, so the fixture deletes them instead.
+        await using var f = new DeletionSqlTests.Fixture(transactional: false);
+        f.Db.Database.SetCommandTimeout(600);
+        await f.Initialize();
         for (var i = 0; i < 100; i++) { var a = f.Account(); a.Name = "Synthetic " + i; }
         await f.Db.SaveChangesAsync();
         // Fixture generation includes index maintenance and is outside measured query time.
-        f.Db.Database.SetCommandTimeout(180);
         await f.Db.Database.ExecuteSqlInterpolatedAsync($"""
             DECLARE @accounts TABLE(Id nvarchar(36),Num int);
             INSERT @accounts SELECT Id,ROW_NUMBER() OVER(ORDER BY Id)-1 FROM finance.Accounts WHERE UserId={f.User};

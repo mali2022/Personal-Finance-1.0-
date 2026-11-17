@@ -13,7 +13,7 @@ import {
 import { parseCsv, makeCsv, makeXlsx, parseXlsx } from '../mocks/files';
 import { importDate } from '../mocks/imports';
 import { attachmentMime } from '../mocks/operations';
-import { decimal, minor } from '../utils/finance';
+import { decimal, formatDate, minor } from '../utils/finance';
 import type {
   ApiResponse,
   ImportJob,
@@ -33,7 +33,8 @@ afterAll(() => {
 });
 const range = {
   start: '2026-10-01',
-  end: '2026-10-31',
+  // 对账调整按当前时间记账，结束日必须覆盖今天
+  end: formatDate(new Date().toISOString()),
   currency: 'CNY' as const,
   granularity: 'month' as const,
 };

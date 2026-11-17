@@ -74,8 +74,8 @@ function show() {
     </App>,
   );
 }
-it('belongs to special finances and preserves zero overrides when saving an existing plan', async () => {
-  expect(activeNavigation('/loan-schedules')?.group).toBe('special');
+it('belongs to the accounts and assets navigation and preserves zero overrides when saving an existing plan', async () => {
+  expect(activeNavigation('/loan-schedules')?.group).toBe('assets');
   show();
   fireEvent.click(await screen.findByText('查看 / 修改'));
   fireEvent.click(await screen.findByText('修改金额'));

@@ -13,6 +13,8 @@ internal static class IsolatedSqlTestDatabase
             ?? $"Server=.;Database={database};Trusted_Connection=True;TrustServerCertificate=True");
         if (!string.Equals(connection.InitialCatalog, database, StringComparison.Ordinal))
             throw new InvalidOperationException("SQL connection must target the explicitly selected isolated database");
+        // Heavy fixtures seed hundreds of thousands of rows and roll them back in teardown; the 30s default aborts that on slower machines and CI runners.
+        connection.CommandTimeout = 600;
         return connection.ConnectionString;
     }
 }

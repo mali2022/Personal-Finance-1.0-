@@ -29,20 +29,25 @@ public sealed class DeletionSqlTests
         public readonly FinanceService Service;
         private readonly ServiceProvider provider = new ServiceCollection().BuildServiceProvider();
         private Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction? transaction;
-        public Fixture()
+        private readonly bool transactional;
+        public Fixture(bool transactional = true)
         {
+            this.transactional = transactional;
             Db = new FinanceDb(new DbContextOptionsBuilder<FinanceDb>().UseSqlServer(IsolatedSqlTestDatabase.ConnectionString()).Options);
             Service = new FinanceService(Db, provider.GetRequiredService<IServiceScopeFactory>(), NullLogger<FinanceService>.Instance);
         }
         public async Task Initialize()
         {
-            transaction = await Db.Database.BeginTransactionAsync();
-            // Bring an older verification copy up to date only inside the rollback transaction.
-            // No schema change, test user, or financial write survives DisposeAsync.
-            var applied = (await Db.Database.GetAppliedMigrationsAsync()).LastOrDefault();
-            var script = Db.GetService<IMigrator>().GenerateScript(applied, options: MigrationsSqlGenerationOptions.NoTransactions);
-            foreach (var batch in System.Text.RegularExpressions.Regex.Split(script, @"^GO\s*$", System.Text.RegularExpressions.RegexOptions.Multiline | System.Text.RegularExpressions.RegexOptions.IgnoreCase))
-                if (!string.IsNullOrWhiteSpace(batch)) await Db.Database.ExecuteSqlRawAsync(batch);
+            if (transactional)
+            {
+                transaction = await Db.Database.BeginTransactionAsync();
+                // Bring an older verification copy up to date only inside the rollback transaction.
+                // No schema change, test user, or financial write survives DisposeAsync.
+                var applied = (await Db.Database.GetAppliedMigrationsAsync()).LastOrDefault();
+                var script = Db.GetService<IMigrator>().GenerateScript(applied, options: MigrationsSqlGenerationOptions.NoTransactions);
+                foreach (var batch in System.Text.RegularExpressions.Regex.Split(script, @"^GO\s*$", System.Text.RegularExpressions.RegexOptions.Multiline | System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+                    if (!string.IsNullOrWhiteSpace(batch)) await Db.Database.ExecuteSqlRawAsync(batch);
+            }
             Db.Users.Add(new AppUser { Id = User, Email = User + "@deletion.test", PasswordHash = "no-login" });
             await Db.SaveChangesAsync();
         }
@@ -56,7 +61,23 @@ public sealed class DeletionSqlTests
             Db.Transactions.Add(t); return t;
         }
         public Account Account() { var a = new Account { UserId = User, Name = "测试现金", OpeningBalance = 1000 }; Db.Accounts.Add(a); return a; }
-        public async ValueTask DisposeAsync() { if (transaction != null) { await transaction.RollbackAsync(); await transaction.DisposeAsync(); } await Db.DisposeAsync(); await provider.DisposeAsync(); }
+        public async ValueTask DisposeAsync()
+        {
+            if (transaction != null) { await transaction.RollbackAsync(); await transaction.DisposeAsync(); }
+            else if (!transactional)
+            {
+                // Rolling back hundreds of thousands of rows would exceed the timeout SqlTransaction
+                // captured when it started; an ordinary set-based delete honours the command timeout.
+                Db.Database.SetCommandTimeout(600);
+                await Db.Database.ExecuteSqlInterpolatedAsync($"""
+                    DELETE finance.Entries WHERE UserId = {User};
+                    DELETE finance.Transactions WHERE UserId = {User};
+                    DELETE finance.Accounts WHERE UserId = {User};
+                    DELETE finance.Users WHERE Id = {User};
+                    """);
+            }
+            await Db.DisposeAsync(); await provider.DisposeAsync();
+        }
     }
     private static JsonElement Result(object result) => JsonSerializer.SerializeToElement(result, FinanceService.Json);
     private static DirectoryDeletion Selection(params DirectoryItem[] records) => new(records.Select(x => new DeleteItem(x.Id, x.Version.ToString())).ToArray());

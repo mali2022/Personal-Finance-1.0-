@@ -132,7 +132,8 @@ it('belongs to Analysis and reports and shows full-tank denominators', async () 
   fireEvent.click(screen.getByRole('tab', { name: '总览仪表盘' }));
   expect(await screen.findByText('加权平均油耗')).toBeVisible();
   expect(screen.getByText(/首次加满仅建立基线/)).toBeVisible();
-  expect(screen.getByText(/不自动创建支出/)).toBeVisible();
+  // 1.0 概览已不再声明“不自动创建支出”，改校验同一警示框的数据口径说明
+  expect(screen.getByText(/区间按结束日期归入筛选期间/)).toBeVisible();
   expect(screen.queryByText('Private station · Private note')).toBeNull();
   fireEvent.click(screen.getByRole('tab', { name: '加油记录' }));
   expect(
