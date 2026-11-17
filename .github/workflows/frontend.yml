@@ -27,8 +27,13 @@ jobs:
       - run: pnpm test
       - run: pnpm build
       - run: pnpm verify:build
+      # The e2e suite drives the real app against the local backend (SQL Server plus the API),
+      # which this job does not start, so it stays opt-in: set the repository variable PF_E2E=true
+      # in a runner that has a backend, or run pnpm e2e locally after 打开PersonalFinance.bat.
       - run: pnpm exec playwright install --with-deps chromium
+        if: vars.PF_E2E == 'true'
       - run: pnpm e2e
+        if: vars.PF_E2E == 'true'
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
