@@ -48,7 +48,15 @@ jobs:
           import xml.etree.ElementTree as ET
           root = ET.parse('backend/TestResults/backend-ci.trx').getroot()
           results = root.findall('.//{*}UnitTestResult')
-          assert results and all(r.attrib['outcome'] == 'Passed' for r in results), 'A test failed or was skipped'
+          assert results
+          # ConcertMillionTests skips unless PF_CONCERT_MILLION=true; nothing else may skip or fail.
+          gated = {'PersonalFinance.Tests.ConcertTests.MillionRealLedgerRowsSupportExplicitTopicLinksAggregatesAndPagedArtistSceneQueries'}
+          for r in results:
+              outcome = r.attrib['outcome']
+              if outcome == 'NotExecuted':
+                  assert r.attrib['testName'] in gated, f'Unexpected skip: {r.attrib["testName"]}'
+              else:
+                  assert outcome == 'Passed', f'Not passed ({outcome}): {r.attrib["testName"]}'
           for name in ('DeletionSqlTests', 'AiSqlTests', 'AiPhase1HttpTests', 'ProfileSessionSqlTests', 'StabilityHttpTests', 'FuelTests', 'KeywordSearchSqlTests'):
               assert any(name in r.attrib['testName'] for r in results), f'Missing SQL coverage: {name}'
       - uses: actions/upload-artifact@v4
