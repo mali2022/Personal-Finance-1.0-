@@ -272,4 +272,5 @@ Build.sql含余额、月报、现金流、净资产、全账平衡、超额退�
 - 文档中的旧服务器地址与域名已替换为保留示例值（`192.0.2.1`、`personalfinance.invalid`）；云端服务已于 2026-11-14 停用，仓库内不含任何可用连接信息。
 - 不含真实账务数据：没有数据库文件、备份或导出表，`*.csv` 仅为导入模板与代码清单。
 - `frontend/public/ocr/`（约 33 MB）为离线 OCR 所需的第三方产物，各自 LICENSE 随目录附带。
+- GitHub Actions：`.github/workflows/frontend.yml` 强制 lint、单元测试、生产构建与构建校验；`.github/workflows/backend.yml` 在一次性 SQL Server 容器里跑全部后端测试。浏览器端到端套件（`pnpm e2e`）需要连本机后端与带数据的数据库，默认不在 CI 运行，设置仓库变量 `PF_E2E=true` 才会执行；本地按维护手册启动后在 frontend 目录运行 `pnpm e2e` 即可。
 
