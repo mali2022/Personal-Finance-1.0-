@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "selection": {
+    "mode": "annual",
+    "period": "2025",
+    "currency": "CNY"
+  },
+  "generatedAt": "2026-10-18T13:00:00Z",
+  "start": "2025-01-01T00:00:00+08:00",
+  "endExclusive": "2026-01-01T00:00:00+08:00",
+  "plannedEndExclusive": "2026-01-01T00:00:00+08:00",
+  "isPeriodClosed": true,
+  "metrics": {
+    "income": "120000.00",
+    "expense": "60000.00",
+    "surplus": "60000.00",
+    "savingsRate": "50.00",
+    "transactionCount": 150,
+    "expenseCount": 130,
+    "elapsedDays": 365,
+    "dailyExpense": "164.38",
+    "dailyFrequency": 0.36,
+    "medianExpense": "120.00"
+  },
+  "comparisons": {
+    "previous": {
+      "income": "100000.00",
+      "expense": "55000.00",
+      "incomeRate": "20.00",
+      "expenseRate": "9.09"
+    },
+    "yearOverYear": {
+      "income": "100000.00",
+      "expense": "55000.00",
+      "incomeRate": "20.00",
+      "expenseRate": "9.09"
+    }
+  },
+  "points": [
+    {
+      "period": "2025-01",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "10000.00",
+      "cumulativeExpense": "5000.00",
+      "assets": "100000.00",
+      "liabilities": "20000.00",
+      "netWorth": "80000.00"
+    },
+    {
+      "period": "2025-02",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "20000.00",
+      "cumulativeExpense": "10000.00",
+      "assets": "105000.00",
+      "liabilities": "20000.00",
+      "netWorth": "85000.00"
+    },
+    {
+      "period": "2025-03",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "30000.00",
+      "cumulativeExpense": "15000.00",
+      "assets": "110000.00",
+      "liabilities": "20000.00",
+      "netWorth": "90000.00"
+    },
+    {
+      "period": "2025-04",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "40000.00",
+      "cumulativeExpense": "20000.00",
+      "assets": "115000.00",
+      "liabilities": "20000.00",
+      "netWorth": "95000.00"
+    },
+    {
+      "period": "2025-05",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "50000.00",
+      "cumulativeExpense": "25000.00",
+      "assets": "120000.00",
+      "liabilities": "20000.00",
+      "netWorth": "100000.00"
+    },
+    {
+      "period": "2025-06",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "60000.00",
+      "cumulativeExpense": "30000.00",
+      "assets": "125000.00",
+      "liabilities": "20000.00",
+      "netWorth": "105000.00"
+    },
+    {
+      "period": "2025-07",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "70000.00",
+      "cumulativeExpense": "35000.00",
+      "assets": "130000.00",
+      "liabilities": "20000.00",
+      "netWorth": "110000.00"
+    },
+    {
+      "period": "2025-08",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "80000.00",
+      "cumulativeExpense": "40000.00",
+      "assets": "135000.00",
+      "liabilities": "20000.00",
+      "netWorth": "115000.00"
+    },
+    {
+      "period": "2025-09",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "90000.00",
+      "cumulativeExpense": "45000.00",
+      "assets": "140000.00",
+      "liabilities": "20000.00",
+      "netWorth": "120000.00"
+    },
+    {
+      "period": "2025-10",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "100000.00",
+      "cumulativeExpense": "50000.00",
+      "assets": "145000.00",
+      "liabilities": "20000.00",
+      "netWorth": "125000.00"
+    },
+    {
+      "period": "2025-11",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "110000.00",
+      "cumulativeExpense": "55000.00",
+      "assets": "150000.00",
+      "liabilities": "20000.00",
+      "netWorth": "130000.00"
+    },
+    {
+      "period": "2025-12",
+      "income": "10000.00",
+      "expense": "5000.00",
+      "cumulativeIncome": "120000.00",
+      "cumulativeExpense": "60000.00",
+      "assets": "155000.00",
+      "liabilities": "20000.00",
+      "netWorth": "135000.00"
+    }
+  ],
+  "categories": [
+    {
+      "id": "c1",
+      "name": "食品餐饮",
+      "parentId": null,
+      "amount": "20000.00"
+    },
+    {
+      "id": "c2",
+      "name": "正餐",
+      "parentId": "c1",
+      "amount": "18000.00"
+    },
+    {
+      "id": "c3",
+      "name": "工作午餐",
+      "parentId": "c2",
+      "amount": "15000.00"
+    },
+    {
+      "id": "c4",
+      "name": "居家生活",
+      "parentId": null,
+      "amount": "40000.00"
+    }
+  ],
+  "merchants": [
+    {
+      "name": "示例超市",
+      "amount": "12000.00"
+    },
+    {
+      "name": "示例餐厅",
+      "amount": "8000.00"
+    }
+  ],
+  "tags": [
+    {
+      "id": "tag1",
+      "name": "家庭",
+      "amount": "20000.00"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "a1",
+      "name": "日常银行卡",
+      "type": "Bank",
+      "income": "120000.00",
+      "expense": "60000.00",
+      "opening": "100000.00",
+      "closing": "160000.00",
+      "change": "60000.00"
+    }
+  ],
+  "budget": {
+    "total": "72000.00",
+    "used": "60000.00",
+    "items": [
+      {
+        "id": "b1",
+        "categoryId": "c1",
+        "limit": "24000.00",
+        "used": "20000.00"
+      }
+    ]
+  },
+  "netWorth": {
+    "opening": "80000.00",
+    "closing": "140000.00",
+    "change": "60000.00"
+  },
+  "goals": [
+    {
+      "id": "g1",
+      "name": "应急储备",
+      "target": "50000.00",
+      "allocated": "35000.00",
+      "targetDate": "2026-12-31",
+      "state": "Active",
+      "monthlySaving": "2000.00"
+    }
+  ],
+  "largeTransactions": [
+    {
+      "id": "t1",
+      "amount": "2000.00",
+      "occurredAt": "2025-10-12T12:00:00+08:00",
+      "merchant": "示例超市",
+      "categoryId": "c1",
+      "unusual": true
+    }
+  ],
+  "anomalyThreshold": "1000.00",
+  "milestones": {
+    "first": {
+      "id": "t0",
+      "occurredAt": "2025-01-01T12:00:00+08:00",
+      "type": "Expense"
+    },
+    "last": {
+      "id": "t1",
+      "occurredAt": "2025-12-31T12:00:00+08:00",
+      "type": "Expense"
+    }
+  },
+  "coverage": "合成数据用于验证。退款按到账日冲减费用；历史资产为推算；多标签不可相加。",
+  "planning": {
+    "nextYear": 2026,
+    "observedMonths": 12,
+    "monthlyIncomeBaseline": "10000.00",
+    "monthlyExpenseBaseline": "5000.00",
+    "monthlySurplusBaseline": "5000.00",
+    "monthlyGoalCommitment": "2000.00",
+    "explanation": "合成规划基线，不代表未来事实。"
+  }
+}

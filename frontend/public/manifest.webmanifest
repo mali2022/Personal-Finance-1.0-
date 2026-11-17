@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "Personal Finance · 个人财务管理",
+  "short_name": "个人财务",
+  "description": "快速记账、预算与个人财务管理",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "zh-CN",
+  "theme_color": "#4564ed",
+  "background_color": "#f5f6fa",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

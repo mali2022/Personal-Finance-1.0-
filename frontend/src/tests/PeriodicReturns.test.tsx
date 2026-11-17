@@ -1,0 +1,20 @@
+import { afterEach, expect, it, vi } from 'vitest';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { PeriodicReturnPanel } from '../features/investmentReturns/PeriodicReturnPanel';
+import { apiClient } from '../api/client';
+import { useUI } from '../stores/ui';
+vi.mock('../api/client', () => ({ apiClient: { post: vi.fn() } }));
+afterEach(() => { cleanup(); vi.clearAllMocks(); });
+it('sends explicit periods to the server and separates periodic and annualized rates', async () => {
+  useUI.setState({ language: 'zh-CN', hidden: false });
+  vi.mocked(apiClient.post).mockResolvedValue({ data: { data: { periodReturn: { status: 'Success', rate: .1 }, annualizedRate: 2.138428376721, annualizationStatus: 'Success' } } });
+  render(<QueryClientProvider client={new QueryClient()}><PeriodicReturnPanel /></QueryClientProvider>);
+  fireEvent.change(screen.getByLabelText('等间隔现金流'), { target: { value: '-100\n110' } });
+  fireEvent.click(screen.getByText('计算 IRR'));
+  expect(await screen.findByText('10.00%')).toBeInTheDocument();
+  expect(screen.getByText('213.84%')).toBeInTheDocument();
+  expect(apiClient.post).toHaveBeenCalledWith('/investments/returns/periodic', { amounts: ['-100','110'], periodsPerYear: 12 });
+  fireEvent.change(screen.getByLabelText('等间隔现金流'), { target: { value: '-100\n90' } });
+  expect(screen.queryByText('10.00%')).not.toBeInTheDocument();
+});

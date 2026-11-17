@@ -1,0 +1,37 @@
+import { chromium } from '@playwright/test';
+import { mkdirSync, writeFileSync } from 'node:fs';
+const browser = await chromium.launch({headless:true});
+mkdirSync('test-results/support-admin',{recursive:true});
+const context = await browser.newContext({serviceWorkers:'block',viewport:{width:1440,height:1000}});
+let admin=true; let tickets=[];
+const page=await context.newPage();const errors=[];
+page.on('pageerror', e=>errors.push(e.message));
+await page.route('**/api/**',async route=>{
+ const req=route.request();const u=new URL(req.url());let data={};
+ if(u.pathname==='/api/auth/me') data={id:'owner',email:'test@example.test',displayName:'测试用户',permissions:admin?['finance:read','finance:write','admin:manage']:['finance:read','finance:write']};
+ else if(u.pathname==='/api/admin/overview') data={users:3,activeSessions:2,openTickets:1,resolvedTickets:0};
+ else if(u.pathname==='/api/support/tickets' && req.method()==='POST') {const v=req.postDataJSON();tickets=[{...v,id:'ticket',userId:'owner',status:'Open',reply:'',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),version:'1'}];data=tickets[0];}
+ else if(u.pathname.endsWith('/tickets')) data={items:tickets,total:tickets.length,page:1,pageSize:10};
+ else if(u.pathname.endsWith('/users') || u.pathname.endsWith('/audit')) data={items:[],total:0,page:1,pageSize:10};
+ else if(/accounts|categories|conversations|operations/.test(u.pathname)) data=[];
+ await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data,traceId:'ui-test'})});
+});
+await page.goto('http://127.0.0.1:4173/help');
+await page.getByRole('tab',{name:'使用帮助'}).waitFor();
+await page.waitForTimeout(400);await page.screenshot({path:'test-results/support-admin/help-desktop.png',fullPage:true});
+await page.getByRole('tab',{name:'反馈与进度'}).click();
+await page.getByLabel('标题',{exact:true}).fill('桌面反馈测试');await page.getByLabel('详细描述').fill('记录操作步骤');
+await page.getByRole('button',{name:'提交反馈'}).click();
+await page.getByText('桌面反馈测试',{exact:true}).waitFor();
+await page.goto('http://127.0.0.1:4173/admin');await page.getByText('用户总数',{exact:true}).waitFor();
+await page.getByRole('button',{name:'查看并处理'}).click();await page.getByRole('button',{name:'保存处理结果'}).waitFor();
+await page.waitForTimeout(400);await page.screenshot({path:'test-results/support-admin/admin-desktop.png',fullPage:true});
+await page.setViewportSize({width:390,height:844});await page.waitForTimeout(400);await page.screenshot({path:'test-results/support-admin/admin-mobile.png',fullPage:true});
+await page.goto('http://127.0.0.1:4173/help');await page.getByRole('tab',{name:'反馈与进度'}).click();await page.getByLabel('详细描述').waitFor();
+await page.waitForTimeout(400);await page.screenshot({path:'test-results/support-admin/help-mobile.png',fullPage:true});
+const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth);
+if(overflow) throw Error('Mobile horizontal overflow');
+admin=false;await page.reload();await page.goto('http://127.0.0.1:4173/admin');await page.getByText('仅管理员可访问后台',{exact:true}).waitFor();
+if(errors.length) throw Error(errors.join('\n'));
+writeFileSync('test-results/support-admin/ui-proof.json',JSON.stringify({desktop:true,mobile:true,submission:true,adminDrawer:true,ordinaryUserDenied:true,horizontalOverflow:false,pageErrors:errors},null,2));
+await browser.close();console.log('Support/admin desktop and mobile checks passed');

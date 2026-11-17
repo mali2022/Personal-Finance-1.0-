@@ -1,0 +1,137 @@
+{
+  "name": "中国大陆居民工资薪金参考规则（已核验来源）",
+  "policyVersion": "CN-Salary-2026-reviewed-20261017",
+  "effectiveFrom": "2026-01-01",
+  "effectiveTo": "2026-12-31",
+  "source": "https://12366.chinatax.gov.cn/bzds/068/068-4-4.html\nhttps://fgk.chinatax.gov.cn/zcfgk/c102440/c5213594/content.html\nhttps://www.chinatax.gov.cn/chinatax/n810219/n810744/n3752930/n3752974/c3963375/content.html\nhttps://jiangsu.chinatax.gov.cn/art/2023/8/28/art_8349_432405.html",
+  "verified": true,
+  "rules": {
+    "scope": "CNResidentSalary",
+    "monthlyExpense": "5000",
+    "annualBrackets": [
+      {
+        "upper": "36000",
+        "rate": ".03",
+        "quick": "0"
+      },
+      {
+        "upper": "144000",
+        "rate": ".10",
+        "quick": "2520"
+      },
+      {
+        "upper": "300000",
+        "rate": ".20",
+        "quick": "16920"
+      },
+      {
+        "upper": "420000",
+        "rate": ".25",
+        "quick": "31920"
+      },
+      {
+        "upper": "660000",
+        "rate": ".30",
+        "quick": "52920"
+      },
+      {
+        "upper": "960000",
+        "rate": ".35",
+        "quick": "85920"
+      },
+      {
+        "upper": "999999999999999999",
+        "rate": ".45",
+        "quick": "181920"
+      }
+    ],
+    "bonusBrackets": [
+      {
+        "upper": "3000",
+        "rate": ".03",
+        "quick": "0"
+      },
+      {
+        "upper": "12000",
+        "rate": ".10",
+        "quick": "210"
+      },
+      {
+        "upper": "25000",
+        "rate": ".20",
+        "quick": "1410"
+      },
+      {
+        "upper": "35000",
+        "rate": ".25",
+        "quick": "2660"
+      },
+      {
+        "upper": "55000",
+        "rate": ".30",
+        "quick": "4410"
+      },
+      {
+        "upper": "80000",
+        "rate": ".35",
+        "quick": "7160"
+      },
+      {
+        "upper": "999999999999999999",
+        "rate": ".45",
+        "quick": "15160"
+      }
+    ],
+    "bonusUntil": "2027-12-31",
+    "deductions": [
+      {
+        "kind": "ChildEducation",
+        "monthlyLimit": "2000",
+        "annualOnly": false,
+        "conditions": "全日制教育或年满3岁至小学前；按子女人数及夫妻分摊比例核对，不重复申报。"
+      },
+      {
+        "kind": "InfantCare",
+        "monthlyLimit": "2000",
+        "annualOnly": false,
+        "conditions": "未满3周岁的婴幼儿；核对人数及父母分摊比例，不与同一子女教育月份重复。"
+      },
+      {
+        "kind": "ContinuingEducation",
+        "monthlyLimit": "400",
+        "annualOnly": false,
+        "conditions": "境内学历（学位）继续教育，最长48个月。"
+      },
+      {
+        "kind": "ProfessionalEducation",
+        "monthlyLimit": "3600",
+        "annualOnly": true,
+        "conditions": "取得符合目录的职业资格证书当年；保留证书依据。"
+      },
+      {
+        "kind": "SeriousIllness",
+        "monthlyLimit": "80000",
+        "annualOnly": true,
+        "conditions": "年度汇算中医保目录范围个人负担超过15000元部分据实扣除，限额80000元；须核对亲属与实际自付金额。"
+      },
+      {
+        "kind": "MortgageInterest",
+        "monthlyLimit": "1000",
+        "annualOnly": false,
+        "conditions": "境内首套住房贷款利息实际发生期，最长240个月；夫妻与住房租金年度互斥。"
+      },
+      {
+        "kind": "HousingRent",
+        "monthlyLimit": "1500",
+        "annualOnly": false,
+        "conditions": "在主要工作城市无自有住房；按所在城市分档1500/1100/800元核对，夫妻与房贷年度互斥。"
+      },
+      {
+        "kind": "ElderCare",
+        "monthlyLimit": "3000",
+        "annualOnly": false,
+        "conditions": "被赡养人年满60周岁；独生子女3000元，非独生子女分摊总额3000元且每人不超过1500元。"
+      }
+    ]
+  }
+}

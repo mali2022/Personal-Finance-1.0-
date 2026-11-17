@@ -1,0 +1,116 @@
+/* ============================================================================
+ * 设计系统 v2 · 尺度 token（Apple 精修三代 / 方向 B）
+ * 契约：frontend/src/design/v2-spec.md —— 本文件是该契约的唯一数值落地点。
+ * 作用域：全部为新增命名空间 --ds-*，不与 v1 (--pf-* / legacy) 冲突，
+ *         因此在任何页面引用前都是惰性的 —— 导入本文件不改变现有外观。
+ * 迁移：波 1–5 的新规则写在 [data-ds='v2'] 作用域下，回滚只需把开关切回 v1。
+ * 主题：尺度与主题无关，只在这里定义一次；仅阴影三档在 dark 下覆写。
+ * ========================================================================== */
+
+:root {
+  /* 圆角 4 档 —— 全站只允许这 4 个值 */
+  --ds-r-1: 10px;      /* 面板项、列表项、行内小块 */
+  --ds-r-2: 12px;      /* rail 图标、卡片内嵌块、图例块 */
+  --ds-r-3: 16px;      /* 卡片、表格容器、抽屉、弹窗、图表容器 */
+  --ds-r-pill: 999px;  /* 按钮、chip、tag、搜索框、图标按钮、分段控件 */
+
+  /* 字阶 8 档 —— 全站只允许这 8 个字号 */
+  --ds-t-1: 11px;      /* 标签、meta 角标 */
+  --ds-t-2: 12px;      /* 元信息、辅助说明 */
+  --ds-t-3: 13px;      /* 次要正文、表头、侧栏条目 */
+  --ds-t-4: 14px;      /* 正文、表格单元格、表单 */
+  --ds-t-5: 16px;      /* 长文段落、抽屉标题 */
+  --ds-t-6: 22px;      /* 区块标题 */
+  --ds-t-7: 28px;      /* KPI 数值 */
+  --ds-t-8: 30px;      /* 页面标题 */
+
+  /* 行高与字重 */
+  --ds-lh-tight: 1.15;
+  --ds-lh-snug: 1.3;
+  --ds-lh-body: 1.5;
+  --ds-w-regular: 400;
+  --ds-w-medium: 500;
+  --ds-w-semibold: 600;
+  --ds-w-bold: 700;
+
+  /* 阴影 3 档 —— 全站只允许这 3 个投影 */
+  --ds-e-1: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 1px rgba(16, 24, 40, 0.03);
+  --ds-e-2: 0 2px 6px rgba(16, 24, 40, 0.06), 0 8px 24px rgba(16, 24, 40, 0.08);
+  --ds-e-3: 0 12px 32px rgba(16, 24, 40, 0.16), 0 2px 8px rgba(16, 24, 40, 0.08);
+  --ds-hairline: 1px solid var(--pf-separator);
+  --ds-hairline-strong: 1px solid var(--pf-separator-strong);
+
+  /* 焦点环与状态层 */
+  --ds-focus-ring: 0 0 0 3px var(--pf-tint-soft);
+  --ds-focus-outline: 2px solid var(--pf-tint);
+  --ds-focus-offset: 2px;
+  --ds-press-veil: rgba(0, 0, 0, 0.06);
+  --ds-disabled-opacity: 0.42;
+
+  /* 间距 8 档（4px 基准） */
+  --ds-s-1: 4px;
+  --ds-s-2: 8px;
+  --ds-s-3: 12px;
+  --ds-s-4: 16px;
+  --ds-s-5: 20px;
+  --ds-s-6: 24px;
+  --ds-s-7: 32px;
+  --ds-s-8: 40px;
+
+  /* 密度与控制件高度（B 不降密度：表行 52px 保持不变） */
+  --ds-row-h: 52px;
+  --ds-row-h-compact: 44px;
+  --ds-head-h: 44px;
+  --ds-control-h-sm: 28px;
+  --ds-control-h: 36px;
+  --ds-control-h-lg: 44px;
+  --ds-touch-min: 44px;
+
+  /* 布局（与 v1 同值，便于 v2 规则自包含） */
+  --ds-rail-w: 72px;
+  --ds-panel-w: 216px;
+  --ds-topbar-h: 68px;
+  --ds-content-max: 1480px;
+  --ds-gutter: 24px;
+  --ds-gutter-tight: 16px;
+
+  /* 动效 */
+  --ds-dur-1: 120ms;
+  --ds-dur-2: 200ms;
+  --ds-dur-3: 320ms;
+  --ds-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --ds-ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* 金额排版 */
+  --ds-num-font: var(--pf-font-numeric);
+  --ds-num-features: var(--pf-num-features);
+}
+
+/* 暗色只覆写阴影：尺度 token 主题无关，禁止在 dark 段重复定义。 */
+[data-theme='dark'] {
+  --ds-e-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --ds-e-2: 0 2px 8px rgba(0, 0, 0, 0.55), 0 10px 28px rgba(0, 0, 0, 0.45);
+  --ds-e-3: 0 16px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.5);
+  --ds-press-veil: rgba(255, 255, 255, 0.08);
+}
+/* 颜色别名：v2 层只允许引用 --ds-c-*，其值一律由 --pf-* 晚绑定，
+   因此暗色主题无需重复声明，也不会引入新的色值。 */
+:root {
+  --ds-c-bg: var(--pf-bg);
+  --ds-c-surface: var(--pf-surface);
+  --ds-c-surface-sub: var(--pf-surface-2);
+  --ds-c-surface-sunk: var(--pf-surface-3);
+  --ds-c-fill: var(--pf-fill);
+  --ds-c-fill-strong: var(--pf-fill-2);
+  --ds-c-line: var(--pf-separator);
+  --ds-c-line-strong: var(--pf-separator-strong);
+  --ds-c-text: var(--pf-label);
+  --ds-c-text-2: var(--pf-label-2);
+  --ds-c-text-3: var(--pf-label-3);
+  --ds-c-tint: var(--pf-tint);
+  --ds-c-tint-soft: var(--pf-tint-soft);
+  --ds-c-pos: var(--pf-positive);
+  --ds-c-neg: var(--pf-negative);
+  --ds-c-warn: var(--pf-warning);
+  --ds-c-info: var(--pf-info);
+}

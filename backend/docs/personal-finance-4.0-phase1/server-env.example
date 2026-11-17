@@ -1,0 +1,31 @@
+# Server-only example; not automatically loaded. Keep real keys out of files shared with clients.
+Ai__Enabled=false
+Ai__DeepSeek__ApiKey=
+Ai__DeepSeek__BaseUrl=https://api.deepseek.com
+Ai__DeepSeek__Model=deepseek-chat
+Ai__DeepSeek__ReasoningModel=deepseek-reasoner
+Ai__DeepSeek__EnableReasoningTools=false
+Ai__DeepSeek__SupportsTools=true
+Ai__DeepSeek__SupportsJson=true
+Ai__DeepSeek__SupportsStreaming=true
+Ai__DeepSeek__TimeoutSeconds=60
+Ai__DeepSeek__MaxRetries=2
+Ai__DeepSeek__MaxOutputTokens=4096
+Ai__TotalTimeoutSeconds=120
+Ai__MaxToolRounds=4
+Ai__MaxTotalTools=16
+Ai__MaxQueryDays=366
+Ai__MaxRecords=50
+Ai__MaxContextBytes=128000
+Ai__MaxConcurrentRequests=4
+Ai__DailyCallLimit=100
+Ai__ConversationRetentionDays=90
+Ai__ConfigurationVersion=phase1-v1
+# Optional cost budgets. Configure all rates using a verified current tariff before enabling.
+# Ai__InputPricePerMillion=
+# Ai__CachedInputPricePerMillion=
+# Ai__OutputPricePerMillion=
+# Ai__DailyCostBudget=
+# Ai__MonthlyCostBudget=
+# Ai__PriceCurrency=USD
+# Ai__PriceEffectiveDate=YYYY-MM-DD

@@ -1,0 +1,10 @@
+{
+  "银行入账日期": "Bank posting date",
+  "对方账号": "Counterparty account",
+  "付款来源": "Payment source",
+  "流水方向": "Statement flow direction",
+  "智能对账中心": "Smart reconciliation center",
+  "独立余额调整": "Independent balance adjustment",
+  "预览外部流水": "Preview external statements",
+  "行。外部流水时间按上海时区解析，金额按明确类型或流水方向规范化，不执行正式入账。": "rows. Statement times use the Shanghai timezone, and signed amounts follow explicit types or directions. No ledger transactions are posted."
+}

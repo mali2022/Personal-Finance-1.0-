@@ -1,0 +1,15 @@
+bin/
+obj/
+.runtime/
+.nuget/
+src/**/appsettings.Local.json
+src/**/bootstrap-credentials.local.json
+src/**/integration-credentials.local.json
+test-results/
+.keys/
+.backups/
+
+src/**/*-credentials.local.json
+.c2-build/
+.d-build/
+.f-build/

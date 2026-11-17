@@ -1,0 +1,760 @@
+/* Application shell: persistent rail, group panel, touch navigation. */
+/* Application shell: a rail of group icons plus the detail panel of the open
+   group. Both live in one aside so the workspace content never re-flows twice. */
+.app-shell .shell-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 30;
+  display: flex;
+  width: calc(var(--pf-rail) + var(--pf-panel));
+  background: var(--pf-panel-surface);
+  border-right: 1px solid var(--pf-separator);
+  color: var(--pf-label-2);
+}
+.app-shell .shell-sidebar.is-collapsed {
+  width: var(--pf-rail);
+}
+.app-shell .main-layout {
+  margin-left: calc(var(--pf-rail) + var(--pf-panel));
+}
+.app-shell .main-layout.collapsed {
+  margin-left: var(--pf-rail);
+}
+
+/* Rail: one icon per group, always the same geometry. */
+.shell-rail {
+  display: flex;
+  flex: 0 0 var(--pf-rail);
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: var(--pf-rail);
+  padding: 12px 0 10px;
+  background: var(--pf-rail-surface);
+  border-right: 1px solid var(--pf-separator);
+}
+.rail-brand {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 44px;
+  margin-bottom: 8px;
+}
+.rail-brand .brand-symbol {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--pf-radius-sm);
+  background: var(--pf-tint);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0, 122, 255, 0.22);
+}
+.rail-brand .brand-symbol svg {
+  width: 22px;
+  height: 22px;
+}
+.rail-groups {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.rail-groups::-webkit-scrollbar {
+  width: 0;
+}
+.rail-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--pf-separator);
+}
+.rail-group {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 42px;
+  border: 0;
+  border-radius: var(--pf-radius-md);
+  background: transparent;
+  color: var(--pf-label-3);
+  font-size: 19px;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--pf-dur-fast) var(--pf-ease),
+    color var(--pf-dur-fast) var(--pf-ease);
+}
+.rail-group:hover,
+.rail-group:focus-visible {
+  background: var(--pf-fill);
+  color: var(--pf-label);
+}
+.rail-group.is-open {
+  background: var(--pf-surface);
+  color: var(--pf-label);
+  box-shadow: var(--pf-shadow-1);
+}
+.rail-group.is-current {
+  color: var(--pf-tint);
+}
+.rail-group.is-current::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  width: 3px;
+  height: 20px;
+  border-radius: 0 3px 3px 0;
+  background: var(--pf-tint);
+  transform: translateY(-50%);
+}
+.rail-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.rail-collapse.ant-btn {
+  width: 40px;
+  height: 36px;
+  margin-top: 2px;
+  color: var(--pf-label-3);
+  border-radius: var(--pf-radius-sm);
+}
+.rail-collapse.ant-btn:hover {
+  color: var(--pf-label);
+  background: var(--pf-fill) !important;
+}
+
+/* Panel: the open group's destinations, sorted into labelled bands. */
+.shell-panel {
+  display: flex;
+  flex: 0 0 var(--pf-panel);
+  flex-direction: column;
+  width: var(--pf-panel);
+  min-width: 0;
+}
+.panel-head {
+  flex: 0 0 auto;
+  padding: 18px 18px 10px;
+}
+.panel-eyebrow {
+  display: block;
+  color: var(--pf-label-3);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.panel-title {
+  margin: 3px 0 0;
+  color: var(--pf-label);
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.2px;
+}
+.panel-nav {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 2px 10px 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pf-fill-2) transparent;
+}
+.panel-section + .panel-section {
+  margin-top: 14px;
+}
+.panel-section-label {
+  margin: 0 0 4px;
+  padding: 0 8px;
+  color: var(--pf-label-3);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.panel-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.panel-link {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 10px;
+  border-radius: var(--pf-radius-xs);
+  color: var(--pf-label-2);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background-color var(--pf-dur-fast) var(--pf-ease),
+    color var(--pf-dur-fast) var(--pf-ease);
+}
+.panel-link:hover,
+.panel-link:focus-visible {
+  background: var(--pf-fill);
+  color: var(--pf-label);
+}
+.panel-link[aria-current='page'] {
+  background: var(--pf-tint-soft);
+  color: var(--pf-tint);
+  font-weight: 600;
+}
+.panel-footer {
+  flex: 0 0 auto;
+  padding: 10px 14px max(10px, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--pf-separator);
+}
+.shell-panel .sidebar-workspace {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.shell-panel .workspace-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--pf-separator);
+  border-radius: var(--pf-radius-xs);
+  background: var(--pf-surface);
+  color: var(--pf-label-2);
+  font-size: 16px;
+}
+.shell-panel .sidebar-workspace strong {
+  display: block;
+  color: var(--pf-label);
+  font-size: 12px;
+  font-weight: 600;
+}
+.shell-panel .sidebar-workspace small {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+  color: var(--pf-label-3);
+  font-size: 11px;
+}
+.shell-panel .workspace-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--pf-positive);
+}
+.shell-panel .workspace-status {
+  margin-left: auto;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: var(--pf-fill);
+  color: var(--pf-label-2);
+  font-size: 10px;
+}
+
+/* Below the tablet breakpoint the drawer carries navigation; the touch tab bar
+   keeps its own layout. */
+@media (max-width: 760px) {
+  .app-shell .shell-sidebar {
+    display: none;
+  }
+}
+
+.app-shell .topbar.ant-layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 80px;
+  padding: 0 32px;
+  gap: 24px;
+  justify-content: flex-start;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.app-shell .topbar .header-context {
+  min-width: 0;
+  flex: 0 0 auto;
+}
+.app-shell .topbar .header-breadcrumb {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.app-shell .topbar .header-breadcrumb li:last-child {
+  font-weight: 600;
+  color: var(--text);
+}
+.app-shell .topbar .header-breadcrumb .ant-breadcrumb-separator {
+  margin-inline: 10px;
+  color: var(--text-disabled);
+}
+.app-shell .topbar .global-search {
+  height: 42px;
+  flex: 1;
+  min-width: 120px;
+  max-width: 330px;
+  padding-inline: 13px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--canvas);
+  color: var(--text-secondary);
+  box-shadow: none;
+}
+.app-shell .topbar .global-search .ant-input {
+  font-size: 13px;
+  background: transparent;
+}
+.app-shell .topbar .global-search .ant-input-prefix {
+  margin-right: 10px;
+}
+.app-shell .topbar .global-search:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 10%, transparent);
+}
+.app-shell .topbar .global-search kbd {
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 23px;
+  padding: 0;
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--text-disabled);
+  font-size: 11px;
+}
+.app-shell .topbar .header-actions {
+  flex: 0 0 auto;
+  margin-left: auto;
+  gap: 14px;
+}
+.app-shell .topbar .header-utilities,
+.app-shell .topbar .header-compose {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.app-shell .topbar .header-utilities > .ant-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: var(--text-secondary);
+  font-size: 17px;
+}
+.app-shell .topbar .header-utilities > .global-copilot-button {
+  width: auto;
+  padding: 0 10px;
+}
+.app-shell .topbar .global-copilot-label {
+  font-size: 12px;
+}
+.app-shell .topbar .header-utilities .language-select {
+  margin-right: 3px;
+  font-size: 12px;
+}
+.app-shell .topbar .header-utilities .language-select .ant-select-selector {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  font-size: 12px;
+}
+.app-shell .topbar .header-utilities > .ant-tag {
+  margin: 0 4px;
+  font-size: 11px;
+}
+.app-shell .topbar .header-entry.ant-btn {
+  height: 42px;
+  padding-inline: 16px;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 550;
+}
+.app-shell .topbar .header-more.ant-btn {
+  width: 34px;
+  height: 42px;
+  padding: 0;
+  border-color: transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 18px;
+}
+.app-shell .topbar .user-button.ant-btn {
+  height: 42px;
+  padding: 0 0 0 14px;
+  gap: 9px;
+  border-left: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--text);
+  font-size: 13px;
+}
+.app-shell .topbar .user-button .ant-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.app-shell .topbar .user-button .user-name {
+  max-width: 82px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.app-shell .topbar .user-chevron {
+  font-size: 9px;
+  color: var(--text-secondary);
+}
+.app-shell .topbar .mobile-search-toggle,
+.app-shell .topbar .mobile-page-name {
+  display: none;
+}
+
+.shell-mobile-drawer .ant-drawer-header {
+  padding: 18px 16px;
+}
+.shell-mobile-drawer .ant-drawer-body {
+  padding: 10px 12px 24px;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+}
+.shell-mobile-drawer .ant-menu {
+  border-inline-end: 0;
+  background: transparent;
+}
+.shell-mobile-drawer .shell-shortcut {
+  color: var(--text-secondary);
+}
+.shell-mobile-drawer .shell-shortcut:hover,
+.shell-mobile-drawer .shell-shortcut[aria-current='page'] {
+  color: var(--primary);
+  background: var(--surface-secondary);
+}
+.shell-mobile-drawer .shell-shortcut .anticon {
+  font-size: 19px;
+}
+.shell-mobile-drawer .shell-nav-divider {
+  height: 1px;
+  margin: 16px 12px;
+  background: var(--line);
+}
+.shell-mobile-drawer .ant-menu-item,
+.shell-mobile-drawer .ant-menu-submenu-title {
+  min-height: 44px;
+}
+
+@media (max-width: 1440px) {
+  .app-shell .topbar.ant-layout-header {
+    padding-inline: 24px;
+    gap: 18px;
+  }
+  .app-shell .topbar .user-button .user-name,
+  .app-shell .topbar .user-button .user-chevron,
+  .app-shell .topbar .global-copilot-label {
+    display: none;
+  }
+  .app-shell .topbar .header-utilities > .global-copilot-button {
+    width: 40px;
+    padding: 0;
+  }
+  .app-shell .topbar .header-actions {
+    gap: 8px;
+  }
+  .app-shell .topbar .header-utilities > .ant-tag {
+    display: none;
+  }
+}
+@media (max-width: 1180px) {
+  .app-shell .topbar .header-context {
+    display: none;
+  }
+  .app-shell .topbar .global-search {
+    max-width: 360px;
+  }
+}
+@media (max-width: 760px) {
+  .app-shell .main-layout,
+  .app-shell .main-layout.collapsed {
+    margin-left: 0;
+  }
+  .app-shell .topbar.ant-layout-header {
+    height: calc(64px + env(safe-area-inset-top));
+    padding: env(safe-area-inset-top) max(10px, env(safe-area-inset-right)) 0
+      max(10px, env(safe-area-inset-left));
+    gap: 4px;
+  }
+  .app-shell .topbar .mobile-menu-toggle {
+    display: inline-flex;
+    flex: 0 0 44px;
+    height: 44px;
+    padding: 0;
+    border-color: transparent;
+    background: transparent;
+    color: var(--text);
+    font-size: 19px;
+  }
+  .app-shell .topbar .header-context {
+    display: block;
+    flex: 1;
+    min-width: 0;
+  }
+  .app-shell .topbar .header-breadcrumb {
+    display: none;
+  }
+  .app-shell .topbar .mobile-page-name {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 650;
+  }
+  .app-shell .topbar .global-search {
+    display: none;
+  }
+  .app-shell .topbar.mobile-search-open {
+    height: calc(120px + env(safe-area-inset-top));
+    padding-bottom: 56px;
+  }
+  .app-shell .topbar.mobile-search-open .global-search {
+    display: inline-flex;
+    position: absolute;
+    bottom: 10px;
+    left: max(14px, env(safe-area-inset-left));
+    right: max(14px, env(safe-area-inset-right));
+    width: auto;
+    max-width: none;
+    height: 44px;
+  }
+  .app-shell .topbar .global-search .ant-input {
+    font-size: 16px;
+  }
+  .app-shell .topbar .global-search kbd {
+    display: none;
+  }
+  .app-shell .topbar .header-actions {
+    margin-left: 0;
+    gap: 0;
+  }
+  .app-shell .topbar .header-utilities {
+    gap: 0;
+  }
+  .app-shell .topbar .header-utilities > .ant-btn,
+  .app-shell .topbar .user-button.ant-btn {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    justify-content: center;
+  }
+  .app-shell .topbar .header-utilities .mobile-search-toggle {
+    display: inline-flex;
+  }
+  .app-shell .topbar .header-utilities .language-select,
+  .app-shell .topbar .header-utilities > .global-copilot-button,
+  .app-shell .topbar .header-compose {
+    display: none;
+  }
+  .app-shell .topbar .user-button .ant-avatar-string {
+    display: inline-block;
+  }
+  .app-shell nav.mobile-nav {
+    padding: 8px max(4px, env(safe-area-inset-right))
+      calc(8px + env(safe-area-inset-bottom))
+      max(4px, env(safe-area-inset-left));
+    border-top: 1px solid var(--line);
+    background: var(--surface);
+    box-shadow: 0 -4px 28px #17243d08;
+    min-height: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom));
+  }
+  .app-shell .mobile-nav button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+    background: transparent;
+    flex: 1;
+    min-width: 0;
+    min-height: 52px;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-size: 11px;
+    justify-content: center;
+  }
+  .app-shell .mobile-nav button .anticon {
+    font-size: 21px;
+  }
+  .app-shell .mobile-nav button[aria-current='page'] {
+    color: var(--primary);
+    font-weight: 650;
+  }
+  .app-shell .mobile-nav button[aria-current='page'] .anticon {
+    padding: 3px 12px;
+    margin-top: -3px;
+    margin-bottom: -3px;
+    border-radius: 9px;
+    background: var(--surface-secondary);
+  }
+  .app-shell .mobile-nav .mobile-add {
+    flex: 0 0 58px;
+    min-height: 58px;
+    margin: -16px 4px 0;
+    padding: 8px;
+    border: 4px solid var(--surface);
+    border-radius: 20px;
+    background: #4564ed;
+    color: #fff;
+    box-shadow: 0 5px 16px #4564ed2b;
+  }
+  .app-shell .mobile-nav .mobile-add .anticon {
+    font-size: 24px;
+  }
+}
+/* Management entry inside the touch drawer. */
+.shell-mobile-drawer .shell-settings-entry {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.shell-mobile-drawer .shell-settings-entry {
+  color: var(--text);
+}
+.shell-mobile-drawer .shell-settings-entry:hover,
+.shell-mobile-drawer .shell-settings-entry[aria-current='page'] {
+  color: var(--primary);
+  background: var(--surface-secondary);
+}
+.shell-mobile-drawer .ant-drawer-footer {
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+.shell-mobile-drawer .ant-drawer-body {
+  min-height: 0;
+  overflow-y: auto;
+}
+.app-shell .mobile-nav button {
+  flex: 1;
+}
+
+
+/* ==========================================================================
+ * Apple / macOS shell layer
+ * Light-first chrome, quiet separators, material only on the sticky toolbar
+ * and the mobile tab bar (never a full-screen backdrop filter).
+ * ========================================================================== */
+/* Toolbar: one material surface, one hairline. */
+.app-shell .topbar.ant-layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: var(--pf-topbar);
+  line-height: normal;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--pf-separator);
+  background: var(--pf-material);
+  -webkit-backdrop-filter: var(--pf-blur);
+  backdrop-filter: var(--pf-blur);
+}
+.app-shell .topbar .global-search {
+  height: 38px;
+  border: 1px solid transparent;
+  border-radius: var(--pf-radius-pill);
+  background: var(--pf-fill);
+  color: var(--pf-label-2);
+}
+.app-shell .topbar .global-search:focus-within {
+  border-color: var(--pf-tint);
+  background: var(--pf-surface);
+  box-shadow: var(--pf-shadow-focus);
+}
+.app-shell .topbar .global-search .ant-input {
+  background: transparent;
+  font-size: 13px;
+}
+.app-shell .topbar .global-search kbd {
+  border: 1px solid var(--pf-separator);
+  border-radius: 5px;
+  background: var(--pf-surface);
+  color: var(--pf-label-3);
+}
+.app-shell .topbar .header-utilities > .ant-btn {
+  border-radius: var(--pf-radius-sm);
+  color: var(--pf-label-2);
+}
+.app-shell .topbar .header-utilities > .ant-btn:hover {
+  color: var(--pf-label);
+  background: var(--pf-fill) !important;
+}
+.app-shell .topbar .header-entry.ant-btn {
+  height: 38px;
+  border-radius: var(--pf-radius-pill);
+  padding-inline: 18px;
+  font-weight: 550;
+  box-shadow: none;
+}
+.app-shell .topbar .header-entry.ant-btn:hover {
+  background: var(--pf-tint-hover) !important;
+}
+.app-shell .topbar .header-more.ant-btn,
+.app-shell .topbar .user-button.ant-btn {
+  color: var(--pf-label-2);
+  border-color: transparent;
+}
+.app-shell .topbar .user-button.ant-btn {
+  border-left: 1px solid var(--pf-separator);
+}
+.app-shell .topbar .user-button .ant-avatar {
+  border: 1px solid var(--pf-separator);
+}
+.app-shell .topbar .header-breadcrumb li:last-child {
+  color: var(--pf-label);
+  font-weight: 600;
+}
+
+/* Touch tab bar. */
+@media (max-width: 760px) {
+  .app-shell nav.mobile-nav {
+    border-top: 1px solid var(--pf-separator);
+    background: var(--pf-material);
+    -webkit-backdrop-filter: var(--pf-blur);
+    backdrop-filter: var(--pf-blur);
+    box-shadow: none;
+  }
+  .app-shell .mobile-nav button {
+    color: var(--pf-label-2);
+  }
+  .app-shell .mobile-nav button[aria-current='page'] {
+    color: var(--pf-tint);
+  }
+  .app-shell .mobile-nav button[aria-current='page'] .anticon {
+    background: var(--pf-tint-soft);
+  }
+  .app-shell .mobile-nav .mobile-add {
+    background: var(--pf-tint);
+    border-color: var(--pf-surface);
+    box-shadow: 0 6px 18px rgba(0, 122, 255, 0.28);
+  }
+  .app-shell .topbar.ant-layout-header {
+    background: var(--pf-material);
+    -webkit-backdrop-filter: var(--pf-blur);
+    backdrop-filter: var(--pf-blur);
+  }
+}

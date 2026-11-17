@@ -1,0 +1,24 @@
+import { test, expect } from '@playwright/test';
+import fs from 'node:fs';
+if(!process.env.PF_MILLION_SESSION) throw new Error('Set PF_MILLION_SESSION to the absolute isolated session JSON path');
+const session=JSON.parse(fs.readFileSync(process.env.PF_MILLION_SESSION,'utf8').replace(/^\uFEFF/,''));
+const fixture=JSON.parse(fs.readFileSync(session.output+'/fixture.json','utf8').replace(/^\uFEFF/,''));
+for(const width of [360,1440]) test('百万真实API页面 '+width,async({page})=>{
+ await page.setViewportSize({width,height:1000});
+ const errors:string[]=[];const requests:{path:string;status:number}[]=[];
+ page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(new URL(r.url()).pathname.startsWith('/api/'))requests.push({path:new URL(r.url()).pathname,status:r.status()});});
+ await page.goto('/login');await page.getByLabel('邮箱',{exact:true}).fill(session.email);await page.getByLabel('密码',{exact:true}).fill(session.password);
+ await page.getByRole('button',{name:/登\s*录/,exact:true}).click();await expect(page).not.toHaveURL(/login/);
+ const list=page.waitForResponse(r=>new URL(r.url()).pathname==='/api/transactions'&&r.status()===200);
+ await page.goto('/transactions');const data=(await (await list).json()).data;expect(data.total).toBeGreaterThanOrEqual(1000000);expect(data.items.length).toBeGreaterThan(0);
+ await expect(page.getByRole('heading',{name:'全部交易',exact:true})).toBeVisible();
+ await page.goto('/transactions/'+data.items.find((t:{type:string})=>t.type==='Expense').id);
+ const detail=page.getByRole('dialog',{name:'交易详情',exact:true});await detail.getByRole('button',{name:'添加退款',exact:true}).click();
+ const entry=page.getByRole('dialog',{name:'记一笔',exact:true});await expect(entry.getByText('原消费交易',{exact:true})).toBeVisible();await expect(entry.getByText(/可退/).first()).toBeVisible();await entry.locator('.ant-drawer-close').click();
+ const accountRows=page.waitForResponse(r=>new URL(r.url()).pathname==='/api/transactions'&&new URL(r.url()).searchParams.get('accountId')===fixture.accountId&&r.status()===200);
+ await page.goto('/accounts/'+fixture.accountId);expect((await (await accountRows).json()).data.items.length).toBeGreaterThan(0);
+ await expect(page.getByText('账户交易',{exact:true})).toBeVisible();
+ await page.screenshot({path:session.output+'/million-ui-'+width+'.png',fullPage:true});
+ expect(errors).toEqual([]);expect(requests.filter(r=>r.status>=500)).toEqual([]);
+ fs.writeFileSync(session.output+'/million-ui-'+width+'.json',JSON.stringify({synthetic:true,width,requests,errors},null,2));
+});

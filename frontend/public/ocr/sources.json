@@ -1,0 +1,12 @@
+[
+  {
+    "language": "eng",
+    "source": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/main/eng.traineddata",
+    "sha256": "f22e6d9b2804c62b69c5d2afd9007724469ded1c523f939be743bf829fcf9c6d"
+  },
+  {
+    "language": "chi_sim",
+    "source": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/main/chi_sim.traineddata",
+    "sha256": "ed85cc1662e3b47492c22a63e9e7e71bdbc67d638a0a783520244b2d7fa7e15a"
+  }
+]

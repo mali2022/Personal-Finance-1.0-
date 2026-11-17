@@ -1,0 +1,10 @@
+.runtime/
+.nuget/
+**/bin/
+**/obj/
+**/.keys/
+**/*credentials.local.json
+**/appsettings.Local.json
+tests/
+test-results/
+.backups/

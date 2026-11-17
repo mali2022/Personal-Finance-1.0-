@@ -1,0 +1,25 @@
+.concert-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.concert-metrics .ant-card-body > div {
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+}
+.concert-report-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+@media (max-width: 767px) {
+  .concert-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .concert-report-grid {
+    grid-template-columns: 1fr;
+  }
+}

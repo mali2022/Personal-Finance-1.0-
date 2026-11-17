@@ -1,0 +1,84 @@
+.time-assets-page {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.time-assets-page .ant-table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.time-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 12px;
+}
+.time-heading-icon {
+  color: var(--primary-color, #1677ff);
+  font-size: 48px;
+  opacity: 0.75;
+}
+.time-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0 20px;
+}
+.time-navigation a {
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color, #d9d9d9);
+  border-radius: 24px;
+  padding: 8px 16px;
+}
+.time-navigation a[aria-current='page'] {
+  color: #fff;
+  background: #1677ff;
+  border-color: #1677ff;
+}
+.time-assets-page > .ant-card,
+.time-assets-page > .ant-alert,
+.time-assets-page > .ant-table-wrapper {
+  margin-bottom: 20px;
+}
+.time-metrics {
+  margin: 20px 0 !important;
+}
+.time-toolbar {
+  padding: 16px 0;
+}
+.time-evidence {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 420px;
+  overflow: auto;
+}
+@media (max-width: 600px) {
+  .time-heading-icon {
+    display: none;
+  }
+  .time-selection .ant-picker-range {
+    max-width: 100%;
+  }
+  .time-selection .ant-space {
+    width: 100%;
+  }
+  .time-navigation {
+    gap: 6px;
+  }
+  .time-navigation a {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+@media print {
+  .time-navigation,
+  .time-selection button,
+  .time-assets-page button,
+  aside,
+  header {
+    display: none !important;
+  }
+  .time-assets-page .ant-card {
+    break-inside: avoid;
+  }
+}

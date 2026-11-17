@@ -1,0 +1,19 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {setTimeout as delay} from 'node:timers/promises';
+const session=JSON.parse(fs.readFileSync(process.argv[2],'utf8').replace(/^\uFEFF/,''));assert.match(session.origin,/^http:\/\/127\.0\.0\.1:\d+$/);assert.match(session.database,/^PersonalFinanceWeb_RestoreCheck_[a-f0-9]{32}$/);
+const fixture=JSON.parse(fs.readFileSync(path.join(session.output,'fixture.json'),'utf8').replace(/^\uFEFF/,''));
+const name=process.argv[3] || 'soak';assert.match(name,/^[a-z0-9-]+$/);
+const output=path.join(session.output,name);fs.mkdirSync(output,{recursive:false});const samples=[],failures=[];let token,cycles=0,expected=100000n;
+function persist(){fs.writeFileSync(path.join(output,'results.json'),JSON.stringify({synthetic:true,transactionsBefore:1000000,requestedSeconds:300,workers:4,cycles,samples,failures,expectedMinor:expected.toString()},null,2));}
+async function request(route,{method='GET',body,version,key=crypto.randomUUID()}={}){const start=performance.now();let row={route,method,status:0,ms:0};try{const r=await fetch(session.origin+'/api'+route,{method,headers:{Authorization:'Bearer '+token,...(body?{'Content-Type':'application/json'}:{}),...(method!=='GET'?{'Idempotency-Key':key}:{}),...(version?{'If-Match':version}:{})},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(15000)});row.status=r.status;const json=await r.json();assert.equal(r.status,200,route+': '+JSON.stringify(json));return json.data??json;}catch(e){row.error=e.message;failures.push(row);throw e;}finally{row.ms=+(performance.now()-start).toFixed(2);samples.push(row);fs.appendFileSync(path.join(output,'requests.jsonl'),JSON.stringify(row)+'\n');}}
+const login=await fetch(session.origin+'/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:session.email,password:session.password})});assert.equal(login.status,200);token=(await login.json()).data.accessToken;assert.equal((await request('/verification-context')).database,session.database);
+const account=await request('/accounts',{method:'POST',body:{name:'Synthetic soak '+crypto.randomUUID(),type:'Cash',currency:'CNY',openingBalance:'1000.00',status:'Active'}});
+const routes=['/transactions?pageSize=20&accountId='+fixture.accountId,'/transactions?page=50000&pageSize=20','/accounts','/refund-sources?keyword=unmatched-soak-needle'];
+const started=Date.now(),until=started+300000;
+await Promise.all([
+ ...Array.from({length:4},async(_,worker)=>{let index=worker;while(Date.now()<until){try{await request(routes[index++%routes.length]);}catch{};await delay(500);}}),
+ (async()=>{while(Date.now()<until){try{const body={type:'Expense',accountId:account.id,categoryId:fixture.categoryId,currency:'CNY',amount:'0.01',occurredAt:new Date().toISOString(),fee:'0',note:'synthetic soak '+cycles};const t=await request('/transactions/expense',{method:'POST',body});expected-=1n;let detail=await request('/transactions/'+t.id);await request('/transactions/'+t.id,{method:'DELETE',version:detail.version});expected+=1n;detail=await request('/transactions/'+t.id);await request('/transactions/'+t.id+'/restore',{method:'POST',body:{},version:detail.version});expected-=1n;cycles++;persist();}catch{break};await delay(2000);}})()
+]);
+const accounts=await request('/accounts');const actual=accounts.find(x=>x.id===account.id).balance;const expectedText=(expected/100n).toString()+'.'+(expected%100n).toString().padStart(2,'0');assert.equal(actual,expectedText);persist();fs.writeFileSync(path.join(output,'complete.json'),JSON.stringify({passed:failures.length===0,balanceExact:true,actual,cycles,durationMs:Date.now()-started,failures:failures.length,samples:samples.length},null,2));console.log('MILLION_SOAK_FINISHED '+JSON.stringify({cycles,failures:failures.length,actual}));

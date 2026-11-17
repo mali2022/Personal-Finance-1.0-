@@ -1,0 +1,116 @@
+/* 设计系统 v2 · 通用层
+   全部规则挂在 [data-ds='v2'] 之下：v1 命中率为零，靠 html[data-ds] 一键回退。
+   颜色只引用 --ds-c-*，尺度只引用 --ds-*。 */
+
+[data-ds='v2'] {
+  font-family: var(--pf-font);
+  font-size: var(--ds-t-4);
+  line-height: var(--ds-lh-body);
+  color: var(--ds-c-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-ds='v2'] :where(h1, h2, h3, h4, h5) {
+  margin: 0;
+  color: var(--ds-c-text);
+  font-weight: var(--ds-w-semibold);
+  letter-spacing: -0.01em;
+}
+
+[data-ds='v2'] h1 {
+  font-size: var(--ds-t-8);
+  line-height: var(--ds-lh-tight);
+  letter-spacing: -0.022em;
+  font-weight: var(--ds-w-bold);
+}
+
+[data-ds='v2'] h2 {
+  font-size: var(--ds-t-6);
+  line-height: var(--ds-lh-snug);
+}
+
+[data-ds='v2'] h3 {
+  font-size: var(--ds-t-5);
+  line-height: var(--ds-lh-snug);
+}
+
+[data-ds='v2'] :where(p, li, dd) {
+  line-height: var(--ds-lh-body);
+}
+
+[data-ds='v2'] :where(strong, b) {
+  font-weight: var(--ds-w-semibold);
+}
+
+[data-ds='v2'] a {
+  color: var(--ds-c-tint);
+  text-decoration: none;
+  transition: color var(--ds-dur-1) var(--ds-ease);
+}
+
+[data-ds='v2'] a:hover {
+  color: var(--pf-tint-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* 焦点环：只在键盘导航时出现，形状跟随元素圆角。 */
+[data-ds='v2']
+  :where(
+    a,
+    button,
+    summary,
+    [role='button'],
+    [role='tab'],
+    [tabindex]:not([tabindex='-1'])
+  ):focus-visible {
+  outline: var(--ds-focus-outline);
+  outline-offset: var(--ds-focus-offset);
+}
+
+[data-ds='v2'] :where(input, select, textarea):focus-visible {
+  outline: none;
+  border-color: var(--ds-c-tint);
+  box-shadow: var(--ds-focus-ring);
+}
+
+[data-ds='v2'] ::selection {
+  background: var(--ds-c-tint-soft);
+  color: var(--ds-c-text);
+}
+
+/* 金额与计数：等宽数字，避免滚动时列宽抖动。 */
+[data-ds='v2'] .ds-num {
+  font-family: var(--ds-num-font);
+  font-feature-settings: var(--ds-num-features);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+[data-ds='v2'] .ds-hairline {
+  border: 0;
+  border-top: var(--ds-hairline);
+  margin: 0;
+}
+
+[data-ds='v2'] .ds-meta {
+  font-size: var(--ds-t-2);
+  color: var(--ds-c-text-3);
+  line-height: var(--ds-lh-snug);
+}
+
+[data-ds='v2'] .ds-label {
+  font-size: var(--ds-t-1);
+  font-weight: var(--ds-w-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ds-c-text-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-ds='v2'] * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

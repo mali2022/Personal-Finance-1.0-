@@ -1,0 +1,35 @@
+-- One-time cleanup of fixtures created by the initial API smoke run in the owner account.
+-- Subsequent tests use integration@personal.finance and never touch the owner ledger.
+USE PersonalFinanceWeb;
+SET XACT_ABORT ON;
+SET QUOTED_IDENTIFIER ON;
+SET ANSI_NULLS ON;
+SET ANSI_PADDING ON;
+SET ANSI_WARNINGS ON;
+SET ARITHABORT ON;
+SET CONCAT_NULL_YIELDS_NULL ON;
+SET NUMERIC_ROUNDABORT OFF;
+SET NOCOUNT ON;
+BEGIN TRANSACTION;
+DECLARE @user nvarchar(36)=(SELECT Id FROM finance.Users WHERE Email=N'owner@personal.finance');
+DECLARE @accounts TABLE(Id nvarchar(36) PRIMARY KEY);
+DECLARE @business TABLE(Id nvarchar(36) PRIMARY KEY);
+DECLARE @transactions TABLE(Id nvarchar(36) PRIMARY KEY);
+DECLARE @imports TABLE(Id nvarchar(36) PRIMARY KEY);
+DECLARE @ids TABLE(Id nvarchar(36) PRIMARY KEY);
+INSERT @business SELECT Id FROM finance.Businesses WHERE UserId=@user AND Counterparty IN(N'集成对象',N'集成借入',N'集成报销');
+INSERT @accounts SELECT Id FROM finance.Accounts WHERE UserId=@user AND (Name LIKE N'集成测试资产-%' OR Name LIKE N'集成测试钱包-%' OR Name LIKE N'集成测试信用卡-%' OR Id IN(SELECT ContractAccountId FROM finance.Businesses WHERE Id IN(SELECT Id FROM @business)));
+INSERT @transactions SELECT Id FROM finance.Transactions WHERE UserId=@user AND (AccountId IN(SELECT Id FROM @accounts) OR ToAccountId IN(SELECT Id FROM @accounts) OR BusinessId IN(SELECT Id FROM @business));
+INSERT @imports SELECT DISTINCT ImportJobId FROM finance.Transactions WHERE Id IN(SELECT Id FROM @transactions) AND ImportJobId IS NOT NULL;
+INSERT @ids SELECT Id FROM @transactions UNION SELECT Id FROM @business UNION SELECT Id FROM @accounts UNION SELECT Id FROM @imports UNION SELECT Id FROM finance.Reconciliations WHERE UserId=@user AND AccountId IN(SELECT Id FROM @accounts);
+DELETE finance.Documents WHERE UserId=@user AND TransactionId IN(SELECT Id FROM @transactions);
+DELETE finance.Transactions WHERE UserId=@user AND Id IN(SELECT Id FROM @transactions);
+DELETE finance.Businesses WHERE UserId=@user AND Id IN(SELECT Id FROM @business);
+DELETE finance.Imports WHERE UserId=@user AND Id IN(SELECT Id FROM @imports);
+DELETE finance.Reconciliations WHERE UserId=@user AND AccountId IN(SELECT Id FROM @accounts);
+DELETE finance.Directory WHERE UserId=@user AND (Name LIKE N'集成项目-%' OR Name LIKE N'集成标签-%');
+DELETE finance.Accounts WHERE UserId=@user AND Id IN(SELECT Id FROM @accounts);
+DELETE finance.Idempotencies WHERE UserId=@user AND JSON_VALUE(Response,'$.id') IN(SELECT Id FROM @ids);
+DELETE b FROM finance.Budgets b WHERE b.UserId=@user AND b.Total=1000 AND EXISTS(SELECT 1 FROM finance.BudgetLine l WHERE l.BudgetId=b.Id AND l.Limit=200) AND (SELECT COUNT(*) FROM finance.BudgetLine l WHERE l.BudgetId=b.Id)=1;
+COMMIT;
+SELECT COUNT(*) AS OwnerRemainingTransactions FROM finance.Transactions WHERE UserId=@user;

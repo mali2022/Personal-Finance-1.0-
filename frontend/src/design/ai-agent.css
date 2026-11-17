@@ -1,0 +1,118 @@
+.agent-page {
+  min-width: 0;
+}
+.agent-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.agent-workspace {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.5fr);
+  gap: 20px;
+}
+.agent-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+  margin-top: 20px;
+}
+.agent-page .ant-form {
+  margin-top: 20px;
+}
+.agent-task-link {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  white-space: normal;
+  text-align: start;
+  padding: 10px 4px;
+  gap: 8px;
+}
+.agent-task-link span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.agent-answer {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin-top: 20px;
+  line-height: 1.8;
+}
+.agent-json {
+  max-height: 420px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--surface-muted, #f1f5f9);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.agent-hash {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.agent-approval {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 0;
+}
+.agent-page .ant-tabs-content-holder,
+.agent-page .ant-card,
+.agent-page .ant-card-body {
+  min-width: 0;
+}
+.agent-page .ant-list-item-meta-description {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.agent-page .ant-alert {
+  margin-bottom: 16px;
+}
+.agent-page .ant-collapse-header-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+[data-theme='dark'] .agent-json {
+  background: #162235;
+}
+@media (max-width: 760px) {
+  .agent-workspace,
+  .agent-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .agent-heading {
+    align-items: stretch;
+  }
+  .agent-heading > button {
+    width: 100%;
+    min-height: 44px;
+  }
+  .agent-page .ant-list-item {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .agent-page .ant-list-item-action {
+    margin-inline-start: 0;
+  }
+  .agent-page .ant-card-head-title {
+    white-space: normal;
+  }
+  .agent-page .ant-input,
+  .agent-page .ant-input-number-input {
+    font-size: 16px;
+  }
+  .agent-page .ant-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}

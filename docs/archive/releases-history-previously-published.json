@@ -1,0 +1,2749 @@
+{
+  "currentVersion": "2026.11.17.2",
+  "releases": [
+    {
+      "id": "category-recovery-fix-20261117-2",
+      "version": "2026.11.17.2",
+      "productVersion": "6.30.1",
+      "date": "2026-11-17",
+      "kind": "fixed",
+      "title": {
+        "zh": "修复分类「全部删除」与 CSV 导入无法提交",
+        "en": "Fixed blocked category delete-all and CSV import submissions"
+      },
+      "changes": [
+        {
+          "zh": "修复分类页「全部删除」和 CSV 导入确认时提示「无法保存提交记录…」，请求实际没有发出、分类一条也没有删除的问题：这两类提交现在会正常登记并发送，成功后自动清除登记记录。",
+          "en": "Fixed the delete-all and CSV import confirmations on the category page failing with a save-record error before anything was sent, so no category was deleted: both submissions are now registered and sent normally, and the record is cleared after success."
+        },
+        {
+          "zh": "分类导入与全部删除的服务端校验不变：仍逐个校验引用与版本号，只删除预览中允许的条目，并返回删除与保留数量。",
+          "en": "Server-side validation for category import and delete-all is unchanged: each row is still checked for references and version, only the rows allowed in the preview are deleted, and deleted and kept counts are still reported."
+        }
+      ]
+    },
+    {
+      "id": "ui-refresh-20261117-1",
+      "version": "2026.11.17.1",
+      "productVersion": "6.30.0",
+      "date": "2026-11-17",
+      "kind": "improved",
+      "title": {
+        "zh": "前端界面全面升级：统一的卡片、字号与金额排版",
+        "en": "Interface refresh: one card language, one type scale, clearer amounts"
+      },
+      "changes": [
+        {
+          "zh": "全站统一视觉语言：卡片圆角与投影、标题层级、胶囊形按钮、表格行高与表头字号在所有页面保持一致，交易、账户、报表、记账、设置、分类与对账等页面同步更新。",
+          "en": "A single visual language across the app: card radii and shadows, heading levels, pill buttons, table row height and header size now match on every page, including transactions, accounts, reports, bookkeeping, settings, categories and reconciliation."
+        },
+        {
+          "zh": "金额排版：所有金额使用等宽数字并右对齐，正负号与红绿配色规则不变；表格内的按钮与标签收到更紧凑的尺寸，行高从约 70px 降到 52px，同一屏能看到更多记录。",
+          "en": "Amounts use tabular figures and right alignment everywhere, with the existing sign and colour rules unchanged; buttons and tags inside tables are more compact, so row height drops from about 70px to 52px and more records fit on one screen."
+        },
+        {
+          "zh": "图表排版：坐标轴、图例与提示框的字号、配色、虚线与圆角统一，提示框投影与卡片一致；页面上同时展示的图表风格保持一致。",
+          "en": "Chart typography is unified: axis labels, legends and tooltips share one size scale, palette, dashed grid and corner radius, and tooltip shadows match the cards."
+        },
+        {
+          "zh": "深色主题同步更新；如需对照旧版界面，可在地址后加 ?ds=v1，或在地址后加 ?ds=v2 强制使用新版（该开关仅用于过渡期对照，后续版本移除）。",
+          "en": "The dark theme is updated too; to compare with the previous interface append ?ds=v1 to the address, or ?ds=v2 to force the new one (this switch is transitional and will be removed later)."
+        }
+      ]
+    },
+    {
+      "id": "export-transaction-category-20261116-3",
+      "version": "2026.11.16.3",
+      "productVersion": "6.29.2",
+      "date": "2026-11-16",
+      "kind": "improved",
+      "title": {
+        "zh": "交易导出 CSV/Excel 新增「收支分类」列",
+        "en": "Transaction exports now include a category path column"
+      },
+      "changes": [
+        {
+          "zh": "交易页导出的 CSV 与 Excel 在「账户」之后新增一列「收支分类」，写入该笔交易的完整分类路径（如「生活 / 餐饮」），与列表里的「分类路径」写法一致；未填分类或转账交易保持空白。",
+          "en": "CSV and Excel exports from the transactions page now carry a category path column right after the account column, written the same way as the category path shown in the list (for example \"生活 / 餐饮\"); uncategorised and transfer rows stay blank."
+        },
+        {
+          "zh": "分摊到多个分类的支出在该列写「多分类拆分」，不展开每笔拆分金额；导出的筛选条件与单次上限（10 万条）保持不变。",
+          "en": "An expense split across several categories shows \"多分类拆分\" in that column instead of listing each split amount, and the export filters and the 100,000 row limit are unchanged."
+        }
+      ]
+    },
+    {
+      "id": "category-csv-20261116-2",
+      "version": "2026.11.16.2",
+      "productVersion": "6.29.1",
+      "date": "2026-11-16",
+      "kind": "new",
+      "title": {
+        "zh": "收入分类与支出分类支持 CSV 导入、导出、全部删除和导入模板",
+        "en": "Income and expense categories can be imported, exported, cleared and templated as CSV"
+      },
+      "changes": [
+        {
+          "zh": "分类页新增四个按钮：导入CSV、导出CSV、导入模板、全部删除。导出按当前层级顺序写出「分类名称、父级分类、状态」三列，带 BOM，Excel 直接打开不乱码；导入模板给出收入与支出两份示例。",
+          "en": "The category page now has Import CSV, Export CSV, Import template and Delete all. Export writes the columns name, parent path and status in the current hierarchy order with a BOM so Excel opens it without garbled text, and the template ships both an income and an expense example."
+        },
+        {
+          "zh": "导入分两步：先上传并预览，逐行标出可导入、同名已存在和错误原因（父级不存在、上级已停用、超过三级、状态非法），确认后才写入；重复提交用同一个幂等键，不会写入两遍。",
+          "en": "Importing takes two steps: upload and preview first, with each row marked as ready, duplicate or the reason it fails (missing parent, archived parent, more than three levels, unknown status), and only the confirmed rows are written; the confirmation reuses one idempotency key so a retry cannot insert twice."
+        },
+        {
+          "zh": "全部删除也分两步：先列出全部条目并标出可删除与保留，保留项写明仍被交易、预算、周期规则、自动分类规则、导入记录等引用，或被未删除的子分类挡住；确认框要求手动输入「删除全部收入分类」才可提交。",
+          "en": "Delete all is also two steps: every entry is listed as removable or kept, kept rows name the transactions, budgets, recurring rules, auto-category rules or import records that still reference them, or the child categories still below them, and the dialog only submits after typing the confirmation phrase."
+        },
+        {
+          "zh": "后端按分类逐个校验引用与版本号，只删除预览中允许的行，返回删除与保留数量；筛选入口只影响列表显示，导出、导入与全部删除始终针对该分类类型下的全部分类。",
+          "en": "The server checks each category version and reference set, deletes only the rows the preview allowed and reports how many were deleted or kept; on-screen filters only affect the list, while export, import and delete-all always cover every category of that kind."
+        }
+      ]
+    },
+    {
+      "id": "floating-ai-chat-20261116-1",
+      "version": "2026.11.16.1",
+      "productVersion": "6.29.0",
+      "date": "2026-11-16",
+      "kind": "new",
+      "title": {
+        "zh": "新增右侧悬浮的 AI 记账助理独立入口",
+        "en": "A separate floating AI bookkeeping assistant on the right edge"
+      },
+      "changes": [
+        {
+          "zh": "窗口右侧中部新增一个圆形头像悬浮按钮，点开即在按钮左侧展开 AI 对话面板：桌面端是 380px 浮窗，手机端整屏。它与原有的全站 Copilot 相互独立，互不影响。",
+          "en": "A round avatar button now sits on the middle of the right edge; clicking it opens an AI chat panel to its left, a 380px window on desktop and full screen on phones. It is independent of the existing site-wide Copilot and neither one changes the other."
+        },
+        {
+          "zh": "对话直接走服务端流式接口，回答逐字出现，可随时点「停止」中断；Enter 发送、Shift+Enter 换行，多轮对话沿用同一会话。",
+          "en": "The panel streams answers from the server, so text appears as it is generated and can be interrupted with Stop; Enter sends, Shift+Enter adds a line, and follow-up questions stay in the same conversation."
+        },
+        {
+          "zh": "服务端 AI 未启用或未配置模型密钥时，面板会说明原因并给出「去 AI 设置」与「重试」，不会静默失败；设置读取失败同样会显示错误与重试。",
+          "en": "When server-side AI is disabled or no model key is configured, the panel explains why and offers Open AI settings and Retry instead of failing silently; a failed settings read shows the error with a retry as well."
+        },
+        {
+          "zh": "面板支持 Esc 关闭，关闭时会中断正在生成的回答；「新对话」立即清空上下文，按钮带无障碍标签与键盘焦点样式。",
+          "en": "Escape closes the panel and interrupts an answer that is still being generated; New conversation clears the context at once, and the entry carries an accessible label and a visible keyboard focus ring."
+        }
+      ]
+    },
+    {
+      "id": "drilldown-categories-zero-amount-20261115-2",
+      "version": "2026.11.15.2",
+      "productVersion": "6.28.0",
+      "date": "2026-11-15",
+      "kind": "improved",
+      "title": {
+        "zh": "记账分类改为逐级进入式选择，实际金额支持 0.00",
+        "en": "Step-by-step category picking, and a 0.00 actual amount"
+      },
+      "changes": [
+        {
+          "zh": "记账时的分类选择改为逐级进入：先点一级大类，再点二级子类，最后点三级具体分类；面板顶部随时可搜索关键词，命中的分类直接显示完整路径并可一步选中，底部实时显示「最终分类路径」。",
+          "en": "Category selection now drills down: pick a top-level group, then a subgroup, then a specific category. The panel keeps a keyword search at the top whose hits show the full path and can be chosen in one step, and the bottom of the panel always shows the final path."
+        },
+        {
+          "zh": "二级分类下还有三级分类时必须选到三级；没有子类的一级分类不再出现在可选列表里，与后端「只能选择二级或三级分类」的规则保持一致。",
+          "en": "A second-level category that still has third-level children must be drilled into, and a top-level group without children is no longer offered, matching the backend rule that only a second- or third-level category may be chosen."
+        },
+        {
+          "zh": "历史交易沿用原分类路径回显；停用的分类只在编辑历史交易时出现并标注「已停用」，手机端选择面板整屏展示。",
+          "en": "Existing transactions keep showing their stored category path; archived categories appear only while editing history and are marked as archived; on phones the picker takes the full screen."
+        },
+        {
+          "zh": "支出、收入和转账的实际金额现在允许 0.00：点击保存后弹出确认框，确认才写入，取消则留在表单继续编辑。",
+          "en": "A 0.00 actual amount is now allowed for expenses, income and transfers: saving asks for confirmation, and cancelling keeps you in the form without writing anything."
+        },
+        {
+          "zh": "0 元交易不写资金分录，但仍计入分类统计与明细（金额 0 元）；0 元加手续费的转账照旧保留手续费分录。",
+          "en": "A zero-amount transaction writes no money entries yet still appears in category statistics and details at 0; a zero-amount transfer with a fee keeps its fee entry as before."
+        },
+        {
+          "zh": "0 元交易只能使用一个付款账户和一条拆分；跨币种转账与退款仍要求金额大于 0，周期记账和订阅模板的金额也仍然必须大于 0。",
+          "en": "A zero-amount transaction accepts a single payment account and a single split; cross-currency transfers and refunds still require an amount above zero, as do recurring entries and subscription templates."
+        },
+        {
+          "zh": "修复折叠左侧导航后仍留出一块空白的问题：折叠时侧栏宽度收缩到 72px 图标轨道，内容不再被空白挤到右侧。",
+          "en": "Fixed the blank strip left behind after collapsing the sidebar: the collapsed rail is now 72px wide, so content no longer shifts behind empty space."
+        }
+      ]
+    },
+    {
+      "id": "sidebar-rail-navigation-20261115-1",
+      "version": "2026.11.15.1",
+      "productVersion": "6.27.0",
+      "date": "2026-11-15",
+      "kind": "improved",
+      "title": {
+        "zh": "导航栏重设计：图标轨道 + 分组详情栏",
+        "en": "Navigation redesign: an icon rail with a grouped detail panel"
+      },
+      "changes": [
+        {
+          "zh": "左侧导航改为 72px 图标轨道加 216px 详情栏：轨道放七个分组图标，点选某个分组后详情栏只列出该组入口，当前页面与当前分组分别高亮。",
+          "en": "The sidebar is now a 72px icon rail plus a 216px detail panel: the rail holds seven group icons, and selecting one lists only that group’s entries in the panel, with the current page and current group highlighted separately."
+        },
+        {
+          "zh": "九个分组归并为七个（总览、记账、账户与资产、薪酬与社保、预算与计划、分析与报告、AI 智能中心），原「专项财务」「时间资产管理」作为节标题分别并入记账、分析与报告；分组内再按交易/组织/专项等小节排列。",
+          "en": "Nine groups became seven (Overview, Bookkeeping, Accounts & assets, Payroll & social benefits, Budgets & planning, Analysis & reports, AI finance center); the former special-finance and time-asset entries now sit as section headings inside Bookkeeping and Analysis & reports, and each group is further ordered by sections."
+        },
+        {
+          "zh": "原有入口全部保留，仅调整归属与展示层级；设置与管理仍固定在轨道底部。",
+          "en": "Every previous destination is still reachable; only its group and presentation changed. Settings & management stays pinned at the bottom of the rail."
+        },
+        {
+          "zh": "轨道可一键折叠为纯图标，折叠状态与窗口宽度联动；点击分组时自动展开详情栏。",
+          "en": "The rail collapses to icons with one click and follows the window width; picking a group expands the panel automatically."
+        },
+        {
+          "zh": "顶栏的内容、顺序与快捷键（/ 搜索、n 记支出、i 记收入、t 转账、e 记账）保持不变，仅与新的轨道对齐间距与分隔线。",
+          "en": "The top bar keeps its content, order and shortcuts (/ search, n expense, i income, t transfer, e new entry); only its spacing and dividers were aligned with the new rail."
+        },
+        {
+          "zh": "手机端的底部导航与「全部功能」抽屉保持原有交互，同步更新为新分组名称；补充对应英文词条。",
+          "en": "On mobile the bottom bar and the all-features drawer keep their behaviour and adopt the new group names; matching English labels were added."
+        }
+      ]
+    },
+    {
+      "id": "lean-ui-panels-20261104-2",
+      "version": "2026.11.04.2",
+      "productVersion": "6.26.0",
+      "date": "2026-11-04",
+      "kind": "improved",
+      "title": {
+        "zh": "界面再瘦身：清理面板、卡片与弹窗内的说明文字",
+        "en": "Leaner UI, part two: removed explanatory copy inside panels, cards and dialogs"
+      },
+      "changes": [
+        {
+          "zh": "移除各功能面板、卡片与弹窗内的业务规则与口径说明，页面只保留标题、数据与操作。",
+          "en": "Removed business-rule and methodology explanations inside panels, cards and dialogs, leaving titles, data and actions."
+        },
+        {
+          "zh": "移除卡片标题下的副标题、指标解释与营销短句，并清理侧边栏的多余小标签。",
+          "en": "Removed card subtitles, metric explanations and marketing lines, and cleaned up redundant labels in the sidebar."
+        },
+        {
+          "zh": "保留错误、警告、隐私模式、权限、数据限制与知情同意等随状态变化的提示，并统一标题与内容间距。",
+          "en": "Kept state-dependent notices such as errors, warnings, privacy, permissions, data limits and consent, and normalized spacing between headings and content."
+        },
+        {
+          "zh": "同步移除对应英文词条与失效样式。",
+          "en": "Removed the matching English entries and unused styles."
+        }
+      ]
+    },
+    {
+      "id": "lean-ui-headers-20261104-1",
+      "version": "2026.11.04.1",
+      "productVersion": "6.25.0",
+      "date": "2026-11-04",
+      "kind": "improved",
+      "title": {
+        "zh": "界面瘦身：移除多余的二级标签与说明文字",
+        "en": "Leaner UI: removed redundant eyebrow labels and explanatory copy"
+      },
+      "changes": [
+        {
+          "zh": "全站页面标题区域不再显示英文小标签和标题下的副标题说明，页面结构与操作直接呈现，布局本身承担解释。",
+          "en": "Page headers no longer include English eyebrow labels or subtitle descriptions; the structure and actions now speak for themselves."
+        },
+        {
+          "zh": "移除页面顶部的业务规则说明条，保留错误、警告、隐私模式、权限与数据限制等随状态变化的提示。",
+          "en": "Removed page-level business-rule banners while keeping state, error, privacy, permission and data-limitation notices."
+        },
+        {
+          "zh": "同步清理对应样式与英文翻译条目，统一页面标题组件。",
+          "en": "Cleaned up the related styles, English translations and the shared page-title component."
+        }
+      ]
+    },
+    {
+      "id": "concert-p1-trips-memories-budget-20261103-1",
+      "version": "2026.11.03.1",
+      "productVersion": "6.24.0",
+      "date": "2026-11-03",
+      "kind": "new",
+      "title": {
+        "zh": "演唱会 P1：行程、收藏、回忆与预算中心",
+        "en": "Concert P1: trips, collections, memories and budgets"
+      },
+      "changes": [
+        {
+          "zh": "新增独立及多场联合旅行、机酒与活动时间线、预订和改签状态、原消费引用及场次凭证归档。共享费用明确列出未分配部分，不同原币分别统计，可查看原交易的资金与汇率记录。",
+          "en": "Plan single-event or multi-event trips with booking and activity timelines, changes and archived scene documents. Link real expenses and explicitly show unassigned shares, with separate original-currency totals and access to original money and FX records."
+        },
+        {
+          "zh": "新增场馆档案与座位位置比较，记录个人视野、遮挡、音效、交通和性价比体验；复用原场次照片凭证，所有评分均为个人主观记录。",
+          "en": "Adds venue archives and seat-position comparisons with personal view, obstruction, sound, transport and value ratings, reusing original scene photos and documents."
+        },
+        {
+          "zh": "新增商品与音乐收藏档案、规格位置、数量统计、重复提示、心愿和预购记录、实际购入来源及价格历史。出售可关联分次收款和返款；原预付款与原购买服务继续处理定金、尾款和退货，预计价格不计入净资产。",
+          "en": "Adds merchandise and music collections, specifications, storage, quantities, duplicate reminders, wishlists, preorders, real acquisition links and price history. Link installment sale receipts and repayments; deposits, balances and returns stay in their original services. Estimates never enter net worth."
+        },
+        {
+          "zh": "新增演唱会日记、同行、高光、Setlist、嘉宾、安可与媒体引用，支持年度回忆和当日纪念日。视频使用外部链接，照片、票根和海报可引用原场次凭证。",
+          "en": "Record diaries, companions, highlights, setlists, guests, encores and media links, with annual memories and anniversaries. Videos use external links; photos, ticket stubs and posters can reference existing scene documents."
+        },
+        {
+          "zh": "新增年度、巡演、单场、门票、旅行、日常周边和品牌分析预算，可关联原储蓄目标与资金预留，查看执行、调整历史、超支及按自填费用假设估算的可增加场次。分析预算不重复占用资金，各范围不相加。",
+          "en": "Adds annual, tour, scene, ticket, trip, daily-merchandise and brand analysis budgets linked to existing savings goals and fund holds, with execution, adjustment history, overspending and additional-show estimates based on your own cost assumption. Analysis budgets reserve no extra cash and overlapping scopes are not summed."
+        },
+        {
+          "zh": "专项首页改为真实数据总览，提供下一场倒计时、年度费用与预算、待用门票、待结算与退款、周边消费、艺人排行、行程和回忆，并支持明细下钻、快速记账及现有 AI 消费审批入口。",
+          "en": "The concert home now shows live upcoming countdowns, annual costs and budgets, unused tickets, settlements and refunds, merchandise spending, artists, trips and memories, with detail navigation, quick entry and the existing AI spending-approval entry."
+        }
+      ]
+    },
+    {
+      "id": "investment-returns-irr-xirr-20261102-4",
+      "version": "2026.11.02.4",
+      "productVersion": "6.23.0",
+      "date": "2026-11-02",
+      "kind": "new",
+      "title": {
+        "zh": "投资收益率分析 2.0：真实现金流与年化收益",
+        "en": "Investment returns 2.0: real cash flows and annualized performance"
+      },
+      "changes": [
+        {
+          "zh": "新增实际日期 XIRR、等间隔 IRR 及复利年化，分开展示简单累计收益率。缺少估值、汇率或求根不唯一时显示原因，不显示虚假 0%。",
+          "en": "Adds actual-date XIRR, periodic IRR and compound annualization, separate from simple cumulative return. Missing valuations, FX or ambiguous roots show explicit reasons instead of a false 0%."
+        },
+        {
+          "zh": "投资账户及组合使用明确核对的完整现金与持仓估值，排除内部证券交易和所选账户间转账。可登记期初、期末价值并保留更正历史；无法识别的资金或资产调拨会阻止计算。",
+          "en": "Account and portfolio returns use explicitly verified full cash-and-holdings values, excluding internal security trades and transfers within selected accounts. Record opening and closing values with correction history; unclassified movements block calculation."
+        },
+        {
+          "zh": "支持精确日期历史汇率折算、净收益金额归因及期末汇率基准分解；基准分解不代表独立已实现汇兑收入。可明确登记带生效日期的整项资产项目分类，并在资产对比中筛选，不自动猜测逐笔项目分摊。",
+          "en": "Supports exact-date FX conversion, net-profit attribution and a closing-rate baseline decomposition, which is not separate realized FX income. Record effective-dated whole-asset project classifications and filter comparisons without inferring transaction allocations."
+        },
+        {
+          "zh": "新增可追溯现金流明细、价值与收益趋势、资产收益对比、JSON 与报告导出及摘要分享入口。缺失历史点留空，不插值；历史分析和批量计算设有明确范围限制。",
+          "en": "Adds traceable cash-flow details, value and profit history, asset comparisons, JSON and report exports, and a summary-sharing entry. Missing historical points remain gaps, with explicit limits for history and batch calculations."
+        },
+        {
+          "zh": "投资工作台、自定义与年度财务报告、现有只读 AI 工具复用正式收益计算。交易、估值和汇率更正会使相关缓存失效；新增计算不改写投资交易或生成资金流水。",
+          "en": "The investment workbench, custom and annual financial reports, and existing read-only AI tools reuse the formal return calculations. Trade, valuation and FX corrections invalidate related caches. Calculations do not rewrite investment trades or post money."
+        }
+      ]
+    },
+    {
+      "id": "concert-p0-financial-lifecycle-20261102-3",
+      "version": "2026.11.02.3",
+      "productVersion": "6.22.0",
+      "date": "2026-11-02",
+      "kind": "new",
+      "title": {
+        "zh": "演唱会 P0 财务生命周期与结案",
+        "en": "Concert P0 financial lifecycle and closing"
+      },
+      "changes": [
+        {
+          "zh": "门票可明确逐票实付及本人承担分配，关联原交易的部分退款；延期保留已领取状态和资金历史。免费获赠票可登记来源、日期及规则确认后零实付出票。演出支持演唱会、联合演出及音乐节类型。",
+          "en": "Assign ticket payment and personal shares explicitly and allocate partial refunds from original transactions. Postponement preserves received tickets and financial history. Free gifted tickets record provenance, date and rule confirmation without inventing payments. Events support concert, joint concert and festival types."
+        },
+        {
+          "zh": "新增保险理赔实际收支关联、未使用门票净负担及专项结案。待处理资金和失效来源会阻止结案；已结案需明确重新打开后修改，原账本后续变更会提示重新核对。理赔不重复冲回原预算或记入损失。",
+          "en": "Link actual insurance receipts and repayments, review unused-ticket burden and close a scene after resolving outstanding items. Invalid sources prevent closing. Closed records require explicit reopening for edits, and later ledger changes trigger review. Insurance recovery is kept separate from budget expenses and loss entries."
+        },
+        {
+          "zh": "他人实际代付可经独立确认记录费用与应付，不增加本人现金；部分还款复用借贷服务。商家退款可明确退至代付人冲减应付，或退至本人真实账户。组合代付门票的转让结算单列，不再次计为个人收入或成本回收。",
+          "en": "Explicitly confirmed payments by others record expenses and payables without increasing personal cash. Partial repayments use the existing loan service. Merchant refunds specify whether they reduce the payable or reach a personal account. Advance-funded ticket-sale settlements are separated from personal income and cost recovery."
+        },
+        {
+          "zh": "联合场次支持逐费用及订单艺人比例覆盖，退款沿原分币权重冲减；未分配部分单列。成本、回款和返款共享真实来源额度，按原币分别报告，只纳入已发生且已确认的关联资金。历史交易关联候选改为先分页读取ID再加载本页详情。",
+          "en": "Override artist shares per cost or ticket order within joint scenes, with refunds following original cent allocations and unassigned amounts shown separately. Costs, receipts and repayments share source allocation caps. Reports remain separated by currency and use occurred, confirmed funding sources. Historical transaction candidates page through IDs before loading the selected rows."
+        },
+        {
+          "zh": "本次发布同时包含此前本地完成的独立巡演、艺人别名与成员、多艺人分配、逐票赠送及有偿转让，并在场次、年度和巡演报告中分别展示原成本与回收后净负担。",
+          "en": "This release also includes the previously prepared tour records, artist aliases and members, multi-artist attribution, individual ticket gifts and sales, with original costs and burden after recovery shown separately in scene, annual and tour reports."
+        }
+      ]
+    },
+    {
+      "id": "concert-ticket-transfer-recovery-20261102-2",
+      "version": "2026.11.02.2",
+      "productVersion": "6.21.10",
+      "date": "2026-11-02",
+      "kind": "new",
+      "title": {
+        "zh": "门票有偿转让与实际票款回收",
+        "en": "Ticket sales and actual proceeds recovery"
+      },
+      "changes": [
+        {
+          "zh": "本人普通消费付款的门票可逐张登记转让，并关联已确认的同币种收入及返款支出，支持分次收款、部分返款、跨票金额校验、撤销与修改历史。登记不自动创建资金流水，含代垫本金的订单暂不支持此流程。",
+          "en": "Record sales of individually tracked, self-funded tickets and link confirmed same-currency income and buyer repayments. Supports installments, partial repayments, allocation caps, revocation and history. Records never create transactions automatically; advance-funded orders are not supported in this flow."
+        },
+        {
+          "zh": "场次、年度和巡演单列有效票款回收及回收后净负担，保留原购票成本、预算和艺人消费口径。约定未收票款不计收入或资产；撤销须实际票款抵平，原流水失效时提示重新核对。",
+          "en": "Scene, annual and tour reports show verified net proceeds and burden after recovery separately, preserving ticket costs, budgets and artist spending. Uncollected agreed prices are not income or assets. Revocation requires balanced receipts and repayments; changed source transactions trigger review warnings."
+        }
+      ]
+    },
+    {
+      "id": "concert-ticket-gift-records-20261102-1",
+      "version": "2026.11.02.1",
+      "productVersion": "6.21.9",
+      "date": "2026-11-02",
+      "kind": "new",
+      "title": {
+        "zh": "逐张门票赠送记录与历史",
+        "en": "Individual ticket gift records and history"
+      },
+      "changes": [
+        {
+          "zh": "已出票且已领取或使用的门票可登记赠送人、接收人、当地赠送日期及备注，并保留修改前后历史；可撤销记录，旧客户端遗漏新字段时保留已有记录。",
+          "en": "For issued tickets that have been collected or used, record the giver, recipient, local gift date and notes with before-and-after history. Revoke a record explicitly; older clients preserve saved gifts when omitting the new field."
+        },
+        {
+          "zh": "赠送登记须填写必要资料并由用户确认符合票务平台规则。登记、撤销或取消门票都不自动创建收入、退款、结算或免除代付款，原已支付成本保留；系统不代为执行平台转赠。",
+          "en": "Gift records require complete details and the user’s confirmation of platform rules. Recording, revoking or cancelling tickets never creates income, refunds or settlements or forgives advances automatically; paid costs remain, and no platform transfer is executed."
+        }
+      ]
+    },
+    {
+      "id": "concert-joint-artist-allocation-20261101-7",
+      "version": "2026.11.01.7",
+      "productVersion": "6.21.8",
+      "date": "2026-11-01",
+      "kind": "new",
+      "title": {
+        "zh": "联合演出多艺人费用归属",
+        "en": "Shared concert cost attribution across artists"
+      },
+      "changes": [
+        {
+          "zh": "场次可为多位艺人填写明确费用比例，合计不得超过100%，未分配部分单独展示。可明确返回主艺人口径；修改保留审计，不创建付款、退款或结算流水。",
+          "en": "Assign explicit scene-cost percentages to multiple artists, capped at 100%, with the remainder shown separately. Return explicitly to primary-artist attribution; changes are audited without creating payments, refunds or settlements."
+        },
+        {
+          "zh": "原费用逐笔按分归属，退款按原分币金额冲减，商品保留自身艺人金额分配。场次和年度报告分别展示全场费用、个人自担及未分配金额，消费分析按艺人明确归属筛选，不重复累计代垫本金或计划费用。",
+          "en": "Attribute each original cost in cents and allocate refunds against those original cent amounts. Products retain their own artist allocations. Scene and annual reports separate full costs, personal costs and unassigned amounts; artist filters avoid double-counting advances or plans."
+        }
+      ]
+    },
+    {
+      "id": "concert-artist-aliases-members-20261101-6",
+      "version": "2026.11.01.6",
+      "productVersion": "6.21.7",
+      "date": "2026-11-01",
+      "kind": "new",
+      "title": {
+        "zh": "艺人别名、乐队成员与修改历史",
+        "en": "Artist aliases, band members and change history"
+      },
+      "changes": [
+        {
+          "zh": "艺人档案支持个人艺人或乐队/组合、别名、成员角色及加入/离开日期；校验重复、自我引用、品牌/乐队成员和跨用户引用，旧客户端更新保留已有资料。",
+          "en": "Artist archives support solo artists or bands, aliases, member roles and joining or leaving dates. Duplicate, self, brand, nested-band and cross-user references are validated, and older client updates preserve saved profiles."
+        },
+        {
+          "zh": "支持按别名搜索、查看档案修改前后记录；历史交易候选可依据别名给出待确认文字匹配建议。别名及成员关系不自动关联交易，不继承消费或生成资金流水。",
+          "en": "Search aliases and review before-and-after archive history. Historical transaction candidates can suggest alias text matches for review. Aliases and membership never auto-link transactions, inherit spending or create ledger entries."
+        }
+      ]
+    },
+    {
+      "id": "concert-primary-artist-link-20261101-5",
+      "version": "2026.11.01.5",
+      "productVersion": "6.21.6",
+      "date": "2026-11-01",
+      "kind": "improved",
+      "title": {
+        "zh": "场次主艺人档案关联与更名统计",
+        "en": "Primary artist links and rename-safe concert reports"
+      },
+      "changes": [
+        {
+          "zh": "场次可明确关联现有艺人/乐队档案，或解除关联并保留显示名称。关联校验用户归属和档案类型，修改保留审计；旧客户端遗漏字段时保留已有关联。",
+          "en": "Link a scene to an existing primary artist or band archive, or unlink while retaining its display name. Ownership and archive types are validated, changes are audited, and older clients preserve existing links when omitting the new field."
+        },
+        {
+          "zh": "已关联场次按艺人身份统计，更名后保持归属，年度排行按同一身份合并；旧档案继续沿用名称口径并提示核对，明确解除的场次不会再次按同名自动归属。关联不创建交易或改变成本。",
+          "en": "Linked scenes retain artist attribution after renaming and group by identity in annual rankings. Legacy exact-name attribution remains with review notices; explicitly unlinked scenes do not revert to name matching. Links create no transactions or cost changes."
+        }
+      ]
+    },
+    {
+      "id": "concert-local-timezones-20261101-4",
+      "version": "2026.11.01.4",
+      "productVersion": "6.21.5",
+      "date": "2026-11-01",
+      "kind": "improved",
+      "title": {
+        "zh": "演出当地时区与跨年统计",
+        "en": "Concert local time zones and year boundaries"
+      },
+      "changes": [
+        {
+          "zh": "场次支持IANA当地时区；场次列表、详情和巡演明细显示当地时间与时区。旧档案继续默认Asia/Shanghai。时间输入明确使用当前设备时区，修改场次时区不移动已保存的实际时刻。",
+          "en": "Scenes support IANA time zones and show local times in scene lists, details and tour reports. Legacy scenes retain Asia/Shanghai. Time input explicitly uses the device time zone; changing the scene zone preserves the saved instant."
+        },
+        {
+          "zh": "年度和月度演唱会报告按场次当地演出日期归属，正确处理跨年和夏令时；时间及时区修改保留审计，不改写资金交易或日常消费的购买日期口径。",
+          "en": "Annual and monthly concert reports use each scene’s local calendar date across year boundaries and daylight saving changes. Schedule edits are audited without rewriting financial transactions or purchase-date reporting."
+        }
+      ]
+    },
+    {
+      "id": "concert-tour-cost-report-20261101-3",
+      "version": "2026.11.01.3",
+      "productVersion": "6.21.4",
+      "date": "2026-11-01",
+      "kind": "new",
+      "title": {
+        "zh": "巡演成本汇总与场次明细",
+        "en": "Tour cost summaries and scene details"
+      },
+      "changes": [
+        {
+          "zh": "巡演档案可查看全部关联场次的预算、已确认费用、退款、全场净费用、个人自担、待收代付款和未发生计划；不同币种分别展示，不混币相加。",
+          "en": "Tour archives show linked scenes with budgets, confirmed costs, refunds, net costs, personal costs, outstanding advances and unspent plans, grouped separately by currency."
+        },
+        {
+          "zh": "支持从巡演报表进入场次核对交易与退款，展示失效交易等警告；金额复用原场次报告，计划与代付款不重复计为个人消费。",
+          "en": "Open scene details from tour reports to review transactions and refunds, including invalid-transaction warnings. Amounts reuse scene reports without counting plans or advances again as personal spending."
+        }
+      ]
+    },
+    {
+      "id": "concert-independent-tours-20261101-2",
+      "version": "2026.11.01.2",
+      "productVersion": "6.21.3",
+      "date": "2026-11-01",
+      "kind": "new",
+      "title": {
+        "zh": "独立巡演档案与场次关联",
+        "en": "Independent tour archives and scene links"
+      },
+      "changes": [
+        {
+          "zh": "可独立新增、编辑和搜索巡演名称、艺人、日期范围、状态与备注，并查看关联场次数；没有场次也可建立巡演。",
+          "en": "Create, edit and search independent tours with an artist, date range, status and notes, and view linked scene counts even before any performances are recorded."
+        },
+        {
+          "zh": "场次可选择巡演档案，校验用户归属和引用；保留历史巡演分组与名称，支持解除关联。巡演修改复用版本、幂等与审计，不自动创建资金流水或退款。",
+          "en": "Scenes can select tour archives with ownership and reference validation, retain legacy tour groups and names, and unlink safely. Tour changes use version checks, idempotency and auditing without creating payments or refunds."
+        }
+      ]
+    },
+    {
+      "id": "concert-individual-tickets-20261101-1",
+      "version": "2026.11.01.1",
+      "productVersion": "6.21.2",
+      "date": "2026-11-01",
+      "kind": "new",
+      "title": {
+        "zh": "演唱会逐张门票档案与确认交易归集",
+        "en": "Individual concert tickets and confirmed spending"
+      },
+      "changes": [
+        {
+          "zh": "门票订单支持逐张补录票区、座位、观演人、电子或纸质类型及领取、使用、取消状态，保留旧订单资料；逐张记录不新增付款或退款。",
+          "en": "Record individual ticket tiers, seats, attendees, electronic or paper formats and collection, usage or cancellation states while retaining existing orders. Ticket records do not create payments or refunds."
+        },
+        {
+          "zh": "门票数量和状态变更接受校验，已登记门票保留历史并记录操作审计。场次费用只关联和统计已确认交易，待复核交易提示重新核对。",
+          "en": "Ticket counts and state changes are validated; saved tickets retain their history and audit records. Concert spending links and includes only confirmed transactions, with review warnings for unconfirmed entries."
+        }
+      ]
+    },
+    {
+      "id": "home-pending-drilldown-refresh-20261031-3",
+      "version": "2026.10.31.3",
+      "productVersion": "6.21.1",
+      "date": "2026-10-31",
+      "kind": "fixed",
+      "title": {
+        "zh": "首页待办明细与记账后自动刷新",
+        "en": "Pending drill-downs and post-entry refresh"
+      },
+      "changes": [
+        {
+          "zh": "修正首页待处理卡片的明细筛选：待确认使用严格状态标记、异常使用全部异常规则、未分类使用分类异常规则，卡片数量与点击后的明细总数一致；去整理与待整理中心指向真实待整理队列。",
+          "en": "Fix pending-card drill-downs: pending review uses the strict status flag, anomalies use all anomaly rules and uncategorized uses the category anomaly rule, so each card count matches its detail total. Review links now open the real review queue."
+        },
+        {
+          "zh": "仪表盘异常与对账模块的待复核、未分类可点击下钻，交易总数可进入全部交易；统计口径不变。",
+          "en": "Dashboard anomaly and reconciliation cards now drill into pending review, uncategorized and all transactions; the statistical basis is unchanged."
+        },
+        {
+          "zh": "记账、修改、删除成功后，首页净资产/收支/预算/储蓄率/待办与仪表盘趋势、结构、预算、异常等统计自动刷新，无需手动刷新页面；交易列表、报表与交易日历同步更新。",
+          "en": "After a successful create, edit or delete, Home net worth, income/expense, budget, savings rate and pending counts plus Dashboard trends, structure, budget and anomaly statistics refresh automatically without a manual reload; transaction lists, reports and the calendar follow the same event."
+        },
+        {
+          "zh": "新增严格状态筛选参数仅用于查询，不改变账务处理、统计规则或历史数据；重复提交仍由既有幂等与版本校验保护。",
+          "en": "The new strict status filter is query-only and does not change posting, statistics or historical data; duplicate submissions remain protected by the existing idempotency and version checks."
+        }
+      ]
+    },
+    {
+      "id": "apple-home-dashboard-20261031-2",
+      "version": "2026.10.31.2",
+      "productVersion": "6.21.0",
+      "date": "2026-10-31",
+      "kind": "improved",
+      "title": {
+        "zh": "Apple 风格首页与财务仪表盘重构",
+        "en": "Apple-style home and financial dashboard redesign"
+      },
+      "changes": [
+        {
+          "zh": "首页重构为个人财务控制中心：问候与真实财务状态、可切换 7/30/90/1 年区间的净资产趋势、本月收支/预算/储蓄率/现金流概览、八个真实快捷入口、AI 财务洞察、待处理事项和最近交易。",
+          "en": "Rebuild the home page as a personal finance control center: greeting with live status, net worth trend across 7/30/90/365 day ranges, monthly income, expense, budget, savings-rate and cash-flow overview, eight real shortcuts, AI insights, pending items and recent transactions."
+        },
+        {
+          "zh": "仪表盘重构为专业分析工作台：收支趋势、净资产历史、资产与负债结构、消费分类、预算执行、现金流、储蓄率与结余、目标进度、异常与对账、AI 摘要采用模块化 Bento 布局，统一账期与区间口径，支持模块显示/隐藏、排序和本地布局持久化。",
+          "en": "Rebuild the dashboard as a professional analysis workbench with bento modules for income/expense trends, net-worth history, asset and liability structure, spending categories, budget execution, cash flow, savings rate and surplus, goal progress, anomalies and reconciliation, and AI summaries. A shared period and range filter keeps one basis, and module visibility, ordering and layout persist locally."
+        },
+        {
+          "zh": "新增 Apple 风格设计系统：系统字体栈与等宽数字、16–24px 圆角卡片、浅色优先并适配深色、自然缓动与 reduced-motion、清晰焦点状态；侧边栏与工具栏改为可折叠的浅色 macOS 风格。",
+          "en": "Add an Apple-style design system: system font stack with tabular numbers, 16-24px card radii, light-first surfaces with dark support, natural easing with reduced-motion handling and visible focus states, plus a collapsible light macOS-style sidebar and toolbar."
+        },
+        {
+          "zh": "图表按需加载并降低噪声：悬停显示精确数值、金额与日期正确格式化、支持空数据与缺失数据；统计仍由服务端聚合，不在浏览器加载全量交易后计算。",
+          "en": "Charts load on demand with less visual noise, exact values on hover, correct money and date formatting and explicit empty or missing-data states. Aggregates still come from the server; full transaction sets are never loaded into the browser for statistics."
+        },
+        {
+          "zh": "保留现有业务能力与流程：右侧快捷记账与独立记账页、对账、AI 消费审批、消费价值分析、人生财务模拟、预算、目标、交易日历、账户资产、财务规划与历史回顾入口均可用。",
+          "en": "Keep every existing capability and flow: the side quick-entry drawer and standalone bookkeeping page, reconciliation, AI spending approvals, spending-value analysis, life simulation, budgets, goals, transaction calendar, account balances, planning and history remain reachable."
+        }
+      ]
+    },
+    {
+      "id": "vehicle-intelligence-2-20261031-1",
+      "version": "2026.10.31.1",
+      "productVersion": "6.20.0",
+      "date": "2026-10-31",
+      "kind": "new",
+      "title": {
+        "zh": "智能车辆能源与用车成本中心 2.0",
+        "en": "Vehicle Intelligence and Cost Center 2.0"
+      },
+      "changes": [
+        {
+          "zh": "升级七个车辆工作台，增加车辆档案、满箱法计算依据、有效油耗趋势、数据质量核对与期间购油比较。历史未知加满状态保持未知，里程表重置不跨段计算。",
+          "en": "Add seven vehicle workspaces, richer profiles, traceable full-to-full calculations, valid-consumption trends, data-quality review and purchase comparisons. Unknown historical tank states remain unknown; odometer resets separate intervals."
+        },
+        {
+          "zh": "支持优惠、积分、挂牌价及支付方式、图片或PDF凭证、本地图片OCR核对、当前页面草稿、CSV导入导出、批量操作和可恢复回收站。识别结果须确认，不自动推断加满或修改账务。",
+          "en": "Support discounts, points, posted prices, payment methods, image/PDF receipts, reviewed local image OCR, page drafts, CSV import/export, bulk actions and recoverable trash. Recognition requires confirmation and never infers full tanks or changes the ledger automatically."
+        },
+        {
+          "zh": "新增加油站目录、收藏、归档和别名合并，历史油价按车辆、油品与原币归组；原始站名保留。绕行及节油模拟使用明确价格和里程假设，不提供实时油价。",
+          "en": "Add station profiles, favorites, archiving and alias merges while retaining raw station names. Historical prices stay separate by vehicle, grade and currency. Detour and fuel-saving simulations use explicit assumptions, without live price claims."
+        },
+        {
+          "zh": "车辆费用可关联已有交易或经确认新建支出，支持分摊、退款报销、月年预算及原交易查看；关联限制重复计费。已有车辆资产沿用原估值模型，现金成本与经济成本估算分别展示。",
+          "en": "Link existing transactions or explicitly create expenses; allocate costs, refunds and reimbursements, track budgets and inspect source transactions. Links prevent duplicate allocation. Existing vehicle assets reuse native valuation models, with cash costs separate from economic estimates."
+        },
+        {
+          "zh": "AI基于匿名汇总和实际计算依据，在授权并确认发送后分析；关闭历史不保存分析文本，调用失败不影响记录与统计。出行比较、费用审批和长期换车决策复用原消费价值实验室、审批中心与人生模拟器，不自动付款。",
+          "en": "AI explains anonymous aggregates and calculated evidence after consent; disabling history avoids storing advice, and failures leave core tools available. Transport comparisons, approvals and replacement scenarios reuse native value, approval and life-planning modules without automatic payments."
+        }
+      ]
+    },
+    {
+      "id": "music-interest-purchases-20261029-9",
+      "version": "2026.10.29.9",
+      "productVersion": "6.19.0",
+      "date": "2026-10-29",
+      "kind": "new",
+      "title": {
+        "zh": "艺人与品牌长期消费管理",
+        "en": "Artist and brand interest spending"
+      },
+      "changes": [
+        {
+          "zh": "演唱会模块新增日常周边、艺人和品牌、商品收藏及消费分析；购买计划无需场次，已购商品关联原账本付款，支持多商品、优惠、明确艺人分配和部分退款。",
+          "en": "Add daily merchandise, artists and brands, collections and spending analysis. Plans need no concert; purchases allocate existing payments across items, discounts, artists and partial refunds."
+        },
+        {
+          "zh": "现场商品同步进入场次成本，解除艺人关联保留原交易。新增图片凭证、可编辑品牌关系及有效期、确认关联历史订单和专题预算预警；商品持有不计金融净资产。",
+          "en": "Live merchandise contributes to concert costs; removing artist links retains ledger transactions. Add receipts, editable brand relationships and validity periods, confirmed historical-order linking and topic budget warnings. Holdings do not become financial net assets."
+        },
+        {
+          "zh": "支持累计、月度和年度趋势、品牌与类别分析及真实交易下钻；沿用原币分别汇总。购买计划可提交既有审批中心，授权后获取AI建议，均不自动扣款或自动修改专题。",
+          "en": "Explore cumulative, monthly and yearly trends, brands and categories, with ledger drill-down and separate original-currency totals. Plans reuse approvals and consented AI advice without automatic payment or topic changes."
+        }
+      ]
+    },
+    {
+      "id": "festival-finance-2026-10-29-8",
+      "version": "2026.10.29.8",
+      "productVersion": "6.18.0",
+      "date": "2026-10-29",
+      "kind": "new",
+      "title": {
+        "zh": "节日与纪念日财务中心",
+        "en": "Festival and occasion finance center"
+      },
+      "changes": [
+        {
+          "zh": "新增节日计划、分类预算、礼物与活动采购、送礼对象、附件、日历与跨年比较；支持农历节日模板及确认创建下一年计划。",
+          "en": "Add occasion plans, category budgets, purchases, recipients, attachments, calendar and year comparisons, with lunar templates and confirmed yearly renewal."
+        },
+        {
+          "zh": "关联已有支出及退款，校验跨节日分配上限，区分实际净支出、采购承诺和意向；跨币种明确记录用户确认汇率，不重复创建资金分录。",
+          "en": "Allocate existing expenses and refunds with cross-event limits, separate actual costs from commitments and intentions, and retain confirmed exchange-rate evidence without duplicate ledger entries."
+        },
+        {
+          "zh": "使用现有授权与AI服务生成三种方案；用户确认后仅添加采购意向，审批复用现有中心，价值比较复用消费价值实验室内核。",
+          "en": "Generate three plans through existing AI consent and provider services; adoption adds intentions only, while approvals and value comparisons reuse existing capabilities."
+        },
+        {
+          "zh": "退款归属不明确或原交易变化时提示核对；储蓄建议为计划口径，不视为实际存款。清明和特殊地区日期需明确录入，提醒沿用现有站内规划摘要。",
+          "en": "Flag ambiguous refunds or changed transactions. Savings suggestions are plans, not deposits. Enter Qingming and special regional dates explicitly; reminders use existing in-app planning summaries."
+        }
+      ]
+    },
+    {
+      "id": "spending-approval-extraction-feedback-20261029",
+      "version": "2026.10.29.7",
+      "productVersion": "6.17.2",
+      "date": "2026-10-29",
+      "kind": "fixed",
+      "title": {
+        "zh": "修复自然语言申请点击与提取反馈",
+        "en": "Fix spending application extraction and feedback"
+      },
+      "changes": [
+        {
+          "zh": "修复AI提取申请及审批确认弹窗的兼容问题；失败原因直接显示在页面，操作期间显示加载状态，支持重新尝试。",
+          "en": "Fix compatibility of extraction and approval confirmation dialogs. Show failures inline and loading feedback while processing, with retry available."
+        },
+        {
+          "zh": "提取时，模型改写或推测的商品名称、购买理由将留空待确认，避免因未知信息导致整次申请提取失败。",
+          "en": "Leave rephrased or inferred item names and purchase reasons unconfirmed rather than rejecting the entire extraction."
+        },
+        {
+          "zh": "使用隔离数据库完成真实模型浏览器提取、审批、授权开关及两个API进程并发审批验证。1.1其余尚未完成的验收项仍保留在开发报告中。",
+          "en": "Verify live-model extraction, approval, consent changes and competing approval requests across two API processes in an isolated database. Remaining 1.1 acceptance items are documented separately."
+        }
+      ]
+    },
+    {
+      "id": "spending-approval-evidence-20261029",
+      "version": "2026.10.29.6",
+      "productVersion": "6.17.1",
+      "date": "2026-10-29",
+      "kind": "improved",
+      "title": {
+        "zh": "消费审批补充信息与财务核验",
+        "en": "Spending approval evidence and financial checks"
+      },
+      "changes": [
+        {
+          "zh": "支持商品图片凭据、独立问答、分期总成本和已购买未记账状态；补充信息需要重新评估。图片不会自动识别或发送模型。",
+          "en": "Add image evidence, independent answers, installment total costs and purchased-but-unrecorded state. Supplemental information requires reevaluation; images are not automatically recognized or sent to AI."
+        },
+        {
+          "zh": "对未核实的预留重叠显示资金上下界；支持交易商品金额分摊及退款状态，无法核实的部分退款归属明确标注。",
+          "en": "Show cash bounds for unresolved reservation overlap, support receipt allocations and refund status, and disclose uncertain allocation of partial refunds."
+        },
+        {
+          "zh": "审批互斥改用共享数据库会话锁。此增量不代表1.1完整验收通过；完整多实例、异常网络及后台任务恢复矩阵仍待验收。",
+          "en": "Use shared database session locks for AI approval exclusion. This increment does not certify full 1.1 acceptance; complete multi-instance, network-failure and background-recovery validation remains outstanding."
+        }
+      ]
+    },
+    {
+      "id": "spending-approval-center-20261029",
+      "version": "2026.10.29.5",
+      "productVersion": "6.17.0",
+      "date": "2026-10-29",
+      "kind": "new",
+      "title": {
+        "en": "AI spending approval workflow",
+        "zh": "AI 消费审批基础闭环"
+      },
+      "changes": [
+        {
+          "en": "Add spending applications, natural-language extraction, AI evaluation, cooling periods, independent decisions, existing-expense linking and basic reviews. Approvals never create transactions or change balances.",
+          "zh": "新增消费申请、自然语言提取、AI评估、冷静期、独立购买决定、已有支出交易关联及基础复盘。审批不会自动创建交易或改变余额。"
+        },
+        {
+          "en": "Use actual accounts, budgets, asset valuations and cash forecasts as evidence. Missing information is disclosed and financial safeguards override AI recommendations. Add preferences and emergency reserve settings.",
+          "zh": "复用真实账户、预算、资产估值与现金流预测作为财务依据；缺失数据会提示补充，财务安全规则独立于AI结论。支持审批偏好及应急储备设置。"
+        },
+        {
+          "en": "Initial version: separate cross-currency asset valuation from same-currency available cash; check cooling periods in the app. Dedicated debates, deep scenario integration, automatic notifications and long-term preference learning are not included.",
+          "zh": "当前为基础版本：跨币种资产估值与同币种可用现金分别展示；冷静期在打开页面后查看。消费辩论、多方案深度集成、自动到期通知与长期偏好学习尚未提供。"
+        }
+      ]
+    },
+    {
+      "id": "transaction-seconds-20261029",
+      "version": "2026.10.29.4",
+      "productVersion": "6.16.1",
+      "date": "2026-10-29",
+      "kind": "improved",
+      "title": {
+        "zh": "交易时间显示精确到秒",
+        "en": "Transaction timestamps with seconds"
+      },
+      "changes": [
+        {
+          "zh": "全部交易与账户交易的桌面表格和移动端卡片显示北京时间的时、分、秒，保留原有按日分组及统计口径。",
+          "en": "Show Shanghai-time hours, minutes and seconds in desktop and mobile transaction lists, preserving daily grouping and statistics."
+        }
+      ]
+    },
+    {
+      "id": "dashboard-cockpit-20261029",
+      "version": "2026.10.29.3",
+      "productVersion": "6.16.0",
+      "date": "2026-10-29",
+      "kind": "improved",
+      "title": {
+        "en": "Dashboard preferences and cash flow overview",
+        "zh": "首页模块配置与现金流概览"
+      },
+      "changes": [
+        {
+          "en": "Add dashboard visibility preferences, work modes and a 30-day cash forecast with assumptions and data gaps.",
+          "zh": "新增首页模块显示配置、工作模式及未来30天现金流概览，展示预测依据与数据缺口。"
+        }
+      ]
+    },
+    {
+      "id": "spending-value-lab-v2-20261029",
+      "version": "2026.10.29.2",
+      "productVersion": "6.15.0",
+      "date": "2026-10-29",
+      "kind": "new",
+      "title": {
+        "zh": "消费价值决策实验室 2.0",
+        "en": "Spending Value Lab 2.0"
+      },
+      "changes": [
+        {
+          "zh": "新增智能组合生成，支持确认价格与效用档位、必选与排除、互斥与依赖、组合优惠、保留现金及时间精力约束；大规模搜索明确标注近似结果。",
+          "en": "Generate spending combinations with confirmed price and utility levels, required and excluded items, dependencies, exclusive groups, discounts, retained cash, time and energy constraints. Larger searches are explicitly approximate."
+        },
+        {
+          "zh": "新增多目标价值对比、返回集内非劣解、权重重排及参数情景分析，严格区分客观成本与主观偏好。",
+          "en": "Add multi-objective comparisons, Pareto alternatives within the returned set, preference reweighting and parameter scenarios while keeping objective costs separate from subjective preferences."
+        },
+        {
+          "zh": "新增需隐私授权的 AI 想法设计与定性解释；候选价格和主观评分仍需用户确认，金额由正式计算服务提供。",
+          "en": "Add privacy-gated AI idea design and qualitative explanations. Candidate prices and subjective scores require user confirmation, and financial amounts come from deterministic calculations."
+        },
+        {
+          "zh": "新增主动授权的透明偏好学习、暂停与撤销、决策来源去重，以及关联真实支出的追加费用、使用体验和价值偏差复盘；模拟不产生正式交易。",
+          "en": "Add opt-in transparent preference learning, pause and revocation controls, decision-source deduplication, and reviews of linked real expenses, additional costs, usage and value deviations. Simulations never post transactions."
+        }
+      ]
+    },
+    {
+      "id": "spending-value-lab-20261029",
+      "version": "2026.10.29.1",
+      "productVersion": "6.14.0",
+      "date": "2026-10-29",
+      "kind": "new",
+      "title": {
+        "zh": "消费价值决策实验室",
+        "en": "Spending Value Lab"
+      },
+      "changes": [
+        {
+          "zh": "新增同预算多方案与组合消费比较，展示成本、剩余资金、资金和时间约束及用户确认的主观偏好。",
+          "en": "Compare spending options and combinations within one budget, with retained funds, financial and time constraints, and user-confirmed preferences."
+        },
+        {
+          "zh": "支持自定义权重、敏感性分析、非劣解、决策历史和真实消费关联复盘；模拟不产生正式交易。",
+          "en": "Add custom weights, sensitivity analysis, Pareto alternatives, decision history and links to actual spending for review. Simulations do not post transactions."
+        }
+      ]
+    },
+    {
+      "id": "financial-consistency-audit-20261028",
+      "version": "2026.10.28.4",
+      "productVersion": "6.13.3",
+      "date": "2026-10-28",
+      "kind": "fixed",
+      "title": {
+        "zh": "财务计算一致性与异常复核",
+        "en": "Financial calculation consistency and diagnostics"
+      },
+      "changes": [
+        {
+          "zh": "统一投资流水与报表的现金变动公式，修复按账户查询时收入总计与趋势归属不一致。",
+          "en": "Share investment cash movement rules and align account-scoped income totals with trend attribution."
+        },
+        {
+          "zh": "完善收支分类类型检查，新增只读财务诊断接口，提示交易完整性、负债余额与投资资金关联问题。",
+          "en": "Detect category kind mismatches and add read-only diagnostics for transaction integrity, debt balances and investment cash links."
+        },
+        {
+          "zh": "修复报表极限日期边界，写入提交后刷新异常检查缓存；保留历史原始交易。",
+          "en": "Fix terminal report date boundaries and refresh anomaly caches after writes while preserving historical transactions."
+        }
+      ]
+    },
+    {
+      "id": "ai-unrestricted-consent-20261028",
+      "version": "2026.10.28.3",
+      "productVersion": "6.13.2",
+      "date": "2026-10-28",
+      "kind": "improved",
+      "title": {
+        "zh": "AI 执行与统一财务读取授权",
+        "en": "AI execution and unified financial read consent"
+      },
+      "changes": [
+        {
+          "zh": "解除模型执行中的内部费用、调用次数与任务 Token 预算拦截；费用保持可选统计，保留超时、上下文容量和重复查询保护。",
+          "en": "Remove internal cost, call-count and task token quota enforcement while retaining timeouts, context capacity and repeat-query protection."
+        },
+        {
+          "zh": "新增默认关闭的全量财务只读授权，支持保存与撤销；扩展投资收益与人生模拟依据查询，财务写操作仍需独立权限和确认。",
+          "en": "Add opt-in full financial read consent with revocation, investment performance and life simulation evidence tools; financial writes retain separate permissions and confirmation."
+        },
+        {
+          "zh": "修复工具名称重复、并行授权复查的数据库上下文冲突及长日期范围被月度快捷查询错误收窄的问题；全局工具不再提示不支持的账户筛选参数。",
+          "en": "Fix duplicate tool names, shared database context access during parallel consent checks, and monthly shortcuts narrowing explicit date ranges. Global tools no longer advertise unsupported account filters."
+        },
+        {
+          "zh": "修复全量只读授权对备注、商户等描述字段的继承；改进有查询范围依据的中文日期简写核验，保留金额校验、用户隔离和写入确认。",
+          "en": "Apply full read consent to financial descriptions and improve validation of scoped Chinese date ranges while retaining amount checks, user isolation and write confirmation."
+        }
+      ]
+    },
+    {
+      "id": "ai-tool-schema-20261028",
+      "version": "2026.10.28.2",
+      "productVersion": "6.13.1",
+      "date": "2026-10-28",
+      "kind": "fixed",
+      "title": {
+        "zh": "修复 AI 工具调用参数被拒绝",
+        "en": "Fix rejected AI tool parameters"
+      },
+      "changes": [
+        {
+          "zh": "修复工具参数定义顶层被生成为可空对象的问题，恢复 AI 助手、财务洞察及 Agent 使用只读业务工具的请求兼容性；保留字段级可空参数及原有服务端授权校验。",
+          "en": "Require an object at the root of tool parameter definitions, restoring request compatibility for the AI assistant, financial insights and Agent while preserving nullable fields and server-side authorization."
+        }
+      ]
+    },
+    {
+      "id": "life-financial-simulator-20261028",
+      "version": "2026.10.28.1",
+      "productVersion": "6.13.0",
+      "date": "2026-10-28",
+      "kind": "new",
+      "title": {
+        "zh": "人生财务决策模拟工作台",
+        "en": "Life financial decision simulation workbench"
+      },
+      "changes": [
+        {
+          "zh": "新增独立人生模拟入口，支持冻结个人财务基准、明确未来假设、编辑买房、工作、失业、还贷、退休及投资事件，按月计算现金、资产、负债与净资产，模拟不写入正式账务。",
+          "en": "Add an isolated life simulation workbench with personal baseline snapshots, explicit assumptions, housing, job, unemployment, repayment, retirement and investment events, and monthly cash, asset, debt and net worth calculations without ledger writes."
+        },
+        {
+          "zh": "支持情景保存与复制、历史运行、多方案比较、名义与实际净资产、敏感性网格、固定种子概率模拟以及浏览器打印、CSV和JSON报告导出。所有预测依赖输入假设，不代表收益保证。",
+          "en": "Support saved and copied scenarios, archived runs, comparisons, nominal and real net worth, sensitivity grids, seeded probability simulation, browser printing and CSV/JSON reports. Projections depend on assumptions and do not guarantee returns."
+        },
+        {
+          "zh": "新增退休年龄、养老金起领时间、医疗费用和投资提款向导，通过同一模拟引擎测算资金目标及额外储蓄需求；房产和受限资产不会自动用于提款。",
+          "en": "Add retirement age, pension timing, medical costs and investment drawdown planning, using the same engine for funding targets and additional saving needs. Property and restricted assets are not automatically withdrawn."
+        },
+        {
+          "zh": "同用户相同条件的并发关键词搜索复用在途计算；保留完整统计与权限隔离，支持独立取消，完成后不缓存财务查询结果。",
+          "en": "Coalesce identical concurrent keyword searches for the same user while retaining full statistics, isolation and independent cancellation, without caching completed financial responses."
+        },
+        {
+          "zh": "升级AI本人只读分析授权与结构化报告展示，统一聊天、洞察及报告中的依据呈现；真实财务变更仍需独立确认。",
+          "en": "Upgrade AI personal read-only analysis permissions and structured reports with consistent evidence across chat, insights and reports. Real financial changes still require separate confirmation."
+        },
+        {
+          "zh": "本版基准仅纳入个人账本；贷款条款、未来计划及可投资资产分类需审核。暂不支持家庭共享基准、日息和利率路径、自动税前薪酬联算、后台大规模任务或服务端PDF。",
+          "en": "Baselines cover personal ledgers only. Review loan terms, future plans and investable asset classification. Shared-space baselines, daily interest and rate paths, integrated gross-pay calculations, large background jobs and server-side PDF are not supported."
+        }
+      ]
+    },
+    {
+      "id": "bookkeeping-center-20261027",
+      "version": "2026.10.27.2",
+      "date": "2026-10-27",
+      "kind": "new",
+      "title": {
+        "zh": "新增独立记账中心",
+        "en": "New bookkeeping center"
+      },
+      "changes": [
+        {
+          "zh": "新增记账中心导航和独立记账页面，复用快捷记账的全部交易类型、表单校验、保存接口及缓存刷新，支持保存、保存并继续、重置与取消。",
+          "en": "Add a bookkeeping navigation entry and dedicated page sharing all quick-entry transaction types, validation, saving and cache refresh, with save, save and continue, reset and cancel."
+        },
+        {
+          "zh": "保留全局记一笔抽屉，独立页面与抽屉分别保留输入状态；页面提供桌面双列及移动端单列布局。",
+          "en": "Keep the global quick-entry drawer with separate form state and provide desktop two-column and mobile single-column page layouts."
+        }
+      ],
+      "productVersion": "6.12.0"
+    },
+    {
+      "id": "smart-reconciliation-2-20261027",
+      "version": "2026.10.27.1",
+      "productVersion": "6.11.0",
+      "date": "2026-10-27",
+      "kind": "new",
+      "title": {
+        "zh": "智能自动对账 2.0",
+        "en": "Smart Reconciliation 2.0"
+      },
+      "changes": [
+        {
+          "zh": "升级统一对账中心，提供账户进度、外部流水与系统交易候选、匹配解释、人工复核、批量确认、撤销及操作历史。确认关系不会新增收支或改变账户余额。",
+          "en": "Upgrade the reconciliation center with account progress, external statements, transaction candidates, matching explanations, review, batch confirmation, undo and history. Confirming links does not create financial transactions or change balances."
+        },
+        {
+          "zh": "导入中心支持独立的对账流水用途、原始来源追溯、分批接收与重复导入识别；匹配支持有界组合、部分金额、多支付、转账及退款关联，复杂或存在歧义的关系须人工确认。",
+          "en": "Import statements as separate reconciliation evidence with source tracing, bounded batches and duplicate detection. Review bounded combinations, partial allocations, multiple payments, transfers and refunds; complex or ambiguous links require manual confirmation."
+        },
+        {
+          "zh": "新增对账规则与保存前预览、差异工作台、可暂停和恢复的建议任务、银行余额调节与历史快照。自动确认默认关闭，只有通过来源审批及严格安全校验的普通收支才可显式执行；不提供银行自动联网同步。",
+          "en": "Add rules and previews, discrepancy review, pausable and resumable suggestion tasks, bank balance reconciliation and historical snapshots. Automatic confirmation is off by default and requires approved sources and strict safety checks for ordinary income or expenses. No live bank synchronization is provided."
+        },
+        {
+          "zh": "加强金额精度、权限隔离、版本冲突、幂等重试与审计，优化大账本重复候选和账务异常查询，保留原有记账、导入及余额调整入口。",
+          "en": "Strengthen exact amounts, access isolation, version conflicts, idempotent retries and audit history. Optimize duplicate and ledger anomaly queries while preserving existing bookkeeping, import and balance adjustment flows."
+        }
+      ]
+    },
+    {
+      "id": "complex-million-query-20261026",
+      "version": "2026.10.26.2",
+      "productVersion": "6.10.1",
+      "date": "2026-10-26",
+      "kind": "improved",
+      "title": {
+        "zh": "百万级复杂查询专项优化",
+        "en": "Targeted optimization for complex million-transaction queries"
+      },
+      "changes": [
+        {
+          "zh": "优化金额排序和转入账户筛选的数据库索引，减少大账本扫描与排序，保留稳定的交易顺序。",
+          "en": "Improve indexes for amount sorting and destination-account filtering to reduce large-ledger scans and sorting while preserving stable transaction order."
+        },
+        {
+          "zh": "广泛关键词搜索先验证账户匹配是否覆盖筛选范围，减少重复的文本、分类和标签匹配，保持其他筛选条件及写入后的查询结果。",
+          "en": "Prove filtered-ledger coverage before simplifying broad account-name searches, avoiding repeated text, category and tag matching while retaining filters and visibility after writes."
+        },
+        {
+          "zh": "复盘及净值归因复用同次查询中的相同统计和估值，保留完整年度预算及跨币种覆盖；首页最近交易与列表统一稳定排序，分类概览精简字段，商户异常先核对资料。",
+          "en": "Reuse identical statistics and valuations within reviews and net-worth analysis while retaining full-year budgets and currency coverage. Align dashboard recent ordering with transaction lists, trim category projections and resolve merchant metadata first."
+        }
+      ]
+    },
+    {
+      "id": "million-ledger-performance-20261026",
+      "version": "2026.10.26.1",
+      "productVersion": "6.10.0",
+      "date": "2026-10-26",
+      "kind": "improved",
+      "title": {
+        "zh": "大账本性能与全局响应优化",
+        "en": "Large-ledger performance and responsiveness"
+      },
+      "changes": [
+        {
+          "zh": "优化交易列表、深分页、广泛命中搜索和交易后余额计算，保留完整分录与精确交易顺序。",
+          "en": "Optimize transaction lists, deep pagination, broad searches and running balances while retaining full ledger history and exact transaction ordering."
+        },
+        {
+          "zh": "退款原消费选项改为批量加载，减少重复详情与余额计算。",
+          "en": "Load original expense refund choices in batches without repeating full details and balance calculations."
+        },
+        {
+          "zh": "减少首页、账户统计和高级报表中的重复聚合，优化分类统计、异常检测与历史回顾。",
+          "en": "Reduce repeated aggregation in dashboards, account statistics and advanced reports, and improve category statistics, anomaly detection and historical reviews."
+        },
+        {
+          "zh": "改善查询与记账同时进行时的锁等待，使用一致性读取保留已提交账务口径。",
+          "en": "Reduce lock contention between queries and bookkeeping with consistent reads of committed ledger data."
+        },
+        {
+          "zh": "页面静置时减少账户、分类和资料的重复刷新，保留专用状态刷新及保存后的数据更新。",
+          "en": "Reduce idle refreshes of accounts, categories and profiles while keeping dedicated status polling and updates after saves."
+        },
+        {
+          "zh": "精简 AI 任务工具信息，修复默认上下文预算不足；增强大账本数据库升级的适配。",
+          "en": "Compact AI task tool metadata to fit the default context budget and improve database upgrade handling for large ledgers."
+        }
+      ]
+    },
+    {
+      "id": "entry-refund-account-loan-workflows-20261025",
+      "version": "2026.10.25.1",
+      "productVersion": "6.9.9",
+      "date": "2026-10-25",
+      "kind": "improved",
+      "title": {
+        "zh": "记账日期、退款、账户交易与借贷操作优化",
+        "en": "Improve dates, refunds, account transactions and loan actions"
+      },
+      "changes": [
+        {
+          "zh": "记账增加今天、昨天、前天与现在快捷日期选择，切换日期保留原时间。",
+          "en": "Add today, yesterday, two days ago and now shortcuts; date shortcuts preserve the selected time."
+        },
+        {
+          "zh": "消费详情支持添加退款并带入原交易；退款搜索支持备注、商品名、金额和日期。",
+          "en": "Start a linked refund from expense details and search original expenses by notes, product, amount or date."
+        },
+        {
+          "zh": "优化账户交易查询与交易后余额计算，切换账户重置分页，加载失败可重试。",
+          "en": "Optimize account transaction and running balance queries, reset pagination on account changes and allow retries."
+        },
+        {
+          "zh": "常规交易编辑支持切换类型，切换时清理不适用字段，保留关联业务保护。",
+          "en": "Allow editing ordinary transaction types, clear incompatible fields and retain linked-business protections."
+        },
+        {
+          "zh": "借出与借入列表及详情支持删除，统一撤销本金和关联还款，并归档有效还款计划。",
+          "en": "Delete loans from lists or details, reverse principal and related repayments and archive active repayment plans."
+        }
+      ]
+    },
+    {
+      "id": "workspace-summary-query-fix-20261024",
+      "version": "2026.10.24.4",
+      "productVersion": "6.9.8",
+      "date": "2026-10-24",
+      "kind": "fixed",
+      "title": {
+        "zh": "修复待整理筛选统计查询性能",
+        "en": "Fix review workspace summary query performance"
+      },
+      "changes": [
+        {
+          "zh": "异常检测拆分查询并在单次请求内复用结果，待整理列表与统计复用筛选范围，减少复杂嵌套查询和重复计算。",
+          "en": "Run anomaly rules separately and reuse matches within each request; reuse the review filter scope for lists and summaries to reduce nested queries and repeated work."
+        }
+      ]
+    },
+    {
+      "id": "transaction-workspace-layout-20261024",
+      "version": "2026.10.24.3",
+      "date": "2026-10-24",
+      "kind": "improved",
+      "title": {
+        "zh": "待整理中心布局与错误反馈优化",
+        "en": "Review workspace layout and error feedback"
+      },
+      "changes": [
+        {
+          "zh": "收起视图管理操作，仅在选中交易后显示批量操作，优化窄屏布局。",
+          "en": "Collapse view management, show batch actions after selection, and improve narrow layouts."
+        },
+        {
+          "zh": "列表加载失败时保留筛选条件并集中展示重试入口，统计失败提示改为非阻断警告。",
+          "en": "Keep filters and provide a focused retry area on list failures; show summary failures as non-blocking warnings."
+        }
+      ],
+      "productVersion": "6.9.7"
+    },
+    {
+      "id": "full-account-card-category-actions-20261024",
+      "version": "2026.10.24.2",
+      "productVersion": "6.9.6",
+      "date": "2026-10-24",
+      "kind": "improved",
+      "title": {
+        "zh": "完整卡号与分类操作整合",
+        "en": "Full card numbers and consolidated category actions"
+      },
+      "changes": [
+        {
+          "zh": "银行卡和信用卡账户支持保存、编辑和查看完整卡号，CSV 导入同步支持，兼容已有末四位资料。",
+          "en": "Bank and credit card accounts can save, edit and view full card numbers, including CSV import, while retaining existing last-four-digit records."
+        },
+        {
+          "zh": "收支分类每行操作整合为统一菜单，保留详情、修改、排序、停用或恢复、添加下级和删除入口。",
+          "en": "Income and expense category row actions share one menu for details, editing, ordering, disabling or restoring, adding children and deletion."
+        }
+      ]
+    },
+    {
+      "id": "account-deletion-audit-fix-20261024",
+      "version": "2026.10.24.1",
+      "date": "2026-10-24",
+      "kind": "fixed",
+      "title": {
+        "zh": "修复账户删除检查与处理提示",
+        "en": "Fix account deletion checks and guidance"
+      },
+      "changes": [
+        {
+          "zh": "AI 请求与工具审计快照不再阻止空账户删除，审计记录继续保留。",
+          "en": "AI request and tool audit snapshots no longer block empty account deletion; audit records are retained."
+        },
+        {
+          "zh": "有交易或业务引用的账户显示保留历史说明和归档入口，已归档账户可直接关闭提示。",
+          "en": "Accounts with financial history or references show retention guidance and an archive action; archived accounts can dismiss the notice."
+        }
+      ],
+      "productVersion": "6.9.5"
+    },
+    {
+      "date": "2026-10-23",
+      "changes": [
+        {
+          "en": "Reuse anomaly matches for pagination and propagate cancellation to primary list and summary database queries.",
+          "zh": "异常列表复用匹配范围，减少重复计算；列表与统计主要数据库查询响应请求取消。"
+        },
+        {
+          "en": "Remove fixed polling from transaction lists and summaries while retaining refresh after operations; load review and matching history on expansion.",
+          "zh": "交易列表与统计取消固定轮询，保留操作后的刷新；异常复核和匹配历史在展开时加载。"
+        }
+      ],
+      "productVersion": "6.9.4",
+      "version": "2026.10.23.6",
+      "title": {
+        "en": "Transaction query and detail loading improvements",
+        "zh": "交易查询与详情加载性能优化"
+      },
+      "kind": "improved",
+      "id": "performance-audit-fixes-20261023"
+    },
+    {
+      "version": "2026.10.23.5",
+      "title": {
+        "en": "Optimize anomaly filtering and summaries",
+        "zh": "优化全部异常筛选和统计"
+      },
+      "kind": "fixed",
+      "productVersion": "6.9.3",
+      "changes": [
+        {
+          "en": "Group duplicate candidates and reuse matched transaction scopes for anomaly summaries to reduce repeated scans and timeouts on large ledgers.",
+          "zh": "重复交易检测改为分组关联，异常统计复用已匹配交易范围，减少大账本下重复扫描与查询超时。"
+        }
+      ],
+      "date": "2026-10-23",
+      "id": "anomaly-query-performance-20261023"
+    },
+    {
+      "id": "transaction-detail-panel-fix-20261023",
+      "productVersion": "6.9.2",
+      "date": "2026-10-23",
+      "version": "2026.10.23.4",
+      "title": {
+        "zh": "修复交易详情重复复核面板",
+        "en": "Fix repeated transaction review panels"
+      },
+      "kind": "fixed",
+      "changes": [
+        {
+          "zh": "修复切换交易详情时复核面板与交易历史使用重复组件标识导致的重复显示，保持各区域独立更新。",
+          "en": "Use distinct component keys for review and history sections to prevent duplicate panels when switching transaction details."
+        }
+      ]
+    },
+    {
+      "id": "transaction-request-performance-20261023",
+      "version": "2026.10.23.3",
+      "date": "2026-10-23",
+      "kind": "improved",
+      "title": {
+        "en": "Transaction request performance",
+        "zh": "全部交易请求性能优化"
+      },
+      "changes": [
+        {
+          "en": "Cancel obsolete list and summary requests, load after session confirmation, and briefly reuse query caches.",
+          "zh": "切换筛选时取消过期列表和统计请求；登录后加载数据，短时复用查询缓存，减少重复请求。"
+        }
+      ],
+      "productVersion": "6.9.1"
+    },
+    {
+      "id": "shared-finance-centers-20261023",
+      "version": "2026.10.23.2",
+      "productVersion": "6.9.0",
+      "date": "2026-10-23",
+      "kind": "new",
+      "title": {
+        "zh": "账本中心与家庭中心：共享记账、费用分摊及结算",
+        "en": "Book and family centers: shared transactions, expense splitting and settlements"
+      },
+      "changes": [
+        {
+          "zh": "新增账本卡片、新建及设置、排序、归档、成员权限、月度收支及预算；支持选择多个账本按币种合并报表。",
+          "en": "Added book cards, creation, settings, ordering, archiving, member permissions, monthly totals and budgets, with currency-separated reports across selected books."
+        },
+        {
+          "zh": "新增家庭总览、成员档案、站内邮箱邀请、家庭消费、成员消费统计及家庭预算；家庭汇总其关联账本，私人账户保持隔离。",
+          "en": "Added family overview, member profiles, in-app email-bound invitations, shared spending, consumer statistics and family budgets. Family reports aggregate linked books while private accounts remain isolated."
+        },
+        {
+          "zh": "交易新增和编辑可设置账本、消费人、付款人及费用承担人，支持均分、比例和指定金额分摊；校验合计并分配尾差，关联退款冲减往来。",
+          "en": "Transaction creation and editing now support book, consumer, payer and cost bearers, with equal, percentage and fixed-amount splits, validated totals, deterministic rounding and refund-adjusted balances."
+        },
+        {
+          "zh": "新增按币种的成员应收应付、实际付款结算登记及撤销记录；结算不自动扣款、不改变私人账户余额，也不重复计入收支。",
+          "en": "Added currency-separated member receivables/payables, records of completed settlement payments and reversals. Settlement records do not execute payments, change private account balances or count as income or expense."
+        },
+        {
+          "zh": "账本、家庭及多账本报表可由所有者确认后使用现有AI分析，仅发送月份和按币种汇总的收支，并遵循现有隐私授权；新增移动端卡片和横向滚动报表。",
+          "en": "Owners can confirm AI analysis for book, family and multi-book reports using existing privacy consent. Only the month and currency-separated totals are sent. Added responsive cards and horizontally scrollable reports."
+        }
+      ]
+    },
+    {
+      "id": "transaction-workspace-20261023",
+      "version": "2026.10.23.1",
+      "productVersion": "6.8.0",
+      "date": "2026-10-23",
+      "kind": "improved",
+      "title": {
+        "zh": "全部交易工作台：筛选、统计、复核与逐笔对账",
+        "en": "Transaction workspace: filtering, totals, reviews and statement matching"
+      },
+      "changes": [
+        {
+          "zh": "重构全部交易页面，新增覆盖全部匹配记录的原币统计、快捷及多条件筛选、三级分类树、多账户/商户/标签/项目、来源与异常条件，并保留URL筛选、跨页选择和服务端分页。",
+          "en": "Rebuilt the transaction workspace with original-currency totals over all matches, quick and advanced filters, category trees, multiple accounts/merchants/tags/projects, source and flag filters, URL state, cross-page selection and server pagination."
+        },
+        {
+          "zh": "新增紧凑、标准、舒适密度，列顺序、列宽和冻结配置，上海日期分组及全量每日小计；支持复制和默认筛选视图，手机使用交易卡片、筛选底部弹层、长按选择与全屏详情。",
+          "en": "Added three densities, column ordering, widths and freezing, Shanghai date groups and full daily subtotals, duplicate/default saved views, plus mobile cards, a filter sheet, long-press selection and full-screen details."
+        },
+        {
+          "zh": "扩展带预览、版本校验、幂等与事务保护的批量账户及状态修改；新增八类异常复核线索、解释和人工处理历史。异常不自动删除，也不默认从统计排除。",
+          "en": "Extended previewed, version-checked, idempotent and atomic batch edits to accounts and statuses. Added eight flag rules with explanations and manual review history. Flags never cause automatic deletion or exclusion from totals."
+        },
+        {
+          "zh": "新增逐笔账单标识匹配、带方向金额差额、核对说明及撤销历史，关联账户对账与导入来源；核对不自动调整余额，存在有效核对的流水受修改保护。",
+          "en": "Added statement-reference matching, signed amount differences, notes and revocation history, with links to account reconciliation and imports. Matching never adjusts balances automatically, and active matches protect the transaction from edits."
+        },
+        {
+          "zh": "复用现有DeepSeek与隐私授权提供自然语言搜索、分类和商户建议、异常解释及摘要。搜索需通过后端结构化参数白名单校验；分类建议需人工预览确认，金额及余额仍由账本服务计算。",
+          "en": "Reused DeepSeek and privacy consent for natural-language search, category/merchant suggestions, flag explanations and summaries. Search parameters are validated by the backend; classification requires manual preview and confirmation, while ledger services remain authoritative for amounts and balances."
+        }
+      ]
+    },
+    {
+      "id": "physical-asset-center-20261022",
+      "version": "2026.10.22.3",
+      "productVersion": "6.7.0",
+      "date": "2026-10-22",
+      "kind": "new",
+      "title": {
+        "zh": "实物资产中心：估值、生命周期与持有成本",
+        "en": "Physical asset center: valuation, lifecycle and ownership costs"
+      },
+      "changes": [
+        {
+          "zh": "新增实物资产总览、独立三级分类、扩展档案、分类结构与近12个月估值快照，按原币显示并标明缺失估值；分类支持排序、停用、默认估值配置及叶子分类合并。",
+          "en": "Added a physical asset overview, independent three-level categories, extended profiles, category distribution and 12 monthly valuation snapshots, grouped by currency with missing-value coverage. Categories support sorting, disabling, valuation defaults and leaf merges."
+        },
+        {
+          "zh": "支持手动、直线折旧、余额递减、固定、市场及数量乘单价六种估值；分别保留原始成本、账面价值、市场估值与估计净变现价值，历史规则与处置按日期追溯，并复用到资产配置报表。",
+          "en": "Supports manual, straight-line, declining-balance, fixed, market and quantity-price valuations. Original cost, book value, market value and estimated net realizable value remain separate, with date-effective rule and disposal history shared by asset allocation."
+        },
+        {
+          "zh": "新增启用、闲置、借出、维修、出租、转让、出售、报废、丢失与归档记录，支持部分处置及依次撤销。持有费用关联已确认交易并防止重复归属，不创建额外现金支出。",
+          "en": "Added lifecycle events, partial disposals and sequential reversals. Ownership costs link confirmed transactions with duplicate attribution checks, without creating additional cash expenses."
+        },
+        {
+          "zh": "新增保修、维护、长期未估值、定期盘点及闲置提醒；经汇总数据授权复用现有AI服务分析健康、成本、更换建议与自然语言检索，缺少市场价格时明确未知。照片和凭证当前支持HTTPS链接。",
+          "en": "Added warranty, maintenance, stale valuation, inventory and idle reminders. With summary consent, the existing AI service analyzes health, costs, replacement suggestions and natural-language searches, marking absent market prices as unknown. Photos and receipts currently use HTTPS links."
+        }
+      ]
+    },
+    {
+      "id": "uncategorized-statistics-fee-filter-20261022",
+      "version": "2026.10.22.2",
+      "productVersion": "6.6.1",
+      "date": "2026-10-22",
+      "kind": "fixed",
+      "title": {
+        "zh": "关闭手续费时保留未分类费用与退款",
+        "en": "Retain unclassified expenses and refunds when excluding fees"
+      },
+      "changes": [
+        {
+          "zh": "修复手续费筛选将费用分类和手续费分类同时为空的有效分录排除的问题；未分类费用及其退款仍进入适用总额，只有存在明确手续费分类的匹配分录才按开关排除。",
+          "en": "Fixed fee filtering excluding valid entries when both expense and fee categories were absent. Unclassified expenses and refunds remain in totals; exclusions require an explicit matching fee category."
+        },
+        {
+          "zh": "同步统一收支、趋势、分类、账户、目录、自定义报表及财务报告中的费用筛选，保持统计口径管理预览与现有报表一致。",
+          "en": "Aligned expense filtering across totals, trends, categories, accounts, directories, custom reports and financial reports with policy previews."
+        }
+      ]
+    },
+    {
+      "id": "financial-statistics-ten-modules-20261022",
+      "version": "2026.10.22.1",
+      "productVersion": "6.6.0",
+      "date": "2026-10-22",
+      "kind": "improved",
+      "title": {
+        "zh": "十模块财务统计口径管理与多口径分析",
+        "en": "Ten-module financial policy management and multi-basis analysis"
+      },
+      "changes": [
+        {
+          "zh": "新增独立统计口径管理入口，按收入、支出、账户、债务、投资、账期、预算储蓄、薪酬、币种和数据质量十个模块管理；区分全账本开关、分析配置、固定核算原则、专项入口及暂缺数据的规则。",
+          "en": "Added a dedicated policy manager organized into ten modules, distinguishing ledger-wide settings, analysis options, accounting principles, specialist modules and rules lacking supporting data."
+        },
+        {
+          "zh": "提供日常记账、资产管理、综合财务和自定义方案，按用户保存并保护方案与全账本规则两个版本；支持已关联奖励、存款利息、投资现金收入及一次性收入储蓄率筛选，保留变更审计。",
+          "en": "Added everyday, asset, comprehensive and custom presets with per-user persistence, separate policy and ledger version checks, linked-income and savings filters, and change audits."
+        },
+        {
+          "zh": "支持自定义月起始日、财务年度起始月和周起始日，按上海时区与原币预览；短月自动取月末，未来交易与未确认记录排除，已保存方案对比明确提示账期差异。",
+          "en": "Supports custom monthly, fiscal-year and weekly boundaries in Asia/Shanghai and original currencies, with short-month handling, exclusion of future and unsettled records, and explicit period differences in saved-policy comparisons."
+        },
+        {
+          "zh": "分列日常收支与储蓄率、流动账户现金流与结余率、债务本金和已核对费用、投资损益、账面财富变动与综合估值、工资应发扣缴实发及数据质量提示，避免本金和附表重复计入消费。",
+          "en": "Separates daily income and savings, liquid-account cash flows, debt principal and reconciled costs, investment performance, wealth and valuation, payroll and data-quality signals, avoiding duplicate principal and schedule amounts in spending."
+        }
+      ]
+    },
+    {
+      "id": "statistics-policy-management-20261021",
+      "version": null,
+      "date": "2026-10-21",
+      "kind": "improved",
+      "title": {
+        "zh": "财务统计口径管理与变更预览",
+        "en": "Financial statistics policy management and impact preview"
+      },
+      "changes": [
+        {
+          "zh": "高级统计规则扩展为口径管理，提供日常收支、不含手续费、含损失与调减预设，列明退款、转账、借贷、余额、时间和币种等实际核算规则。",
+          "en": "Expanded statistics settings with everyday, fee-excluded and loss-inclusive presets, documenting actual refund, transfer, loan, balance, time and currency treatment."
+        },
+        {
+          "zh": "按月份及币种只读预览真实账本的费用组成、支出及结余变化；查看最近50次口径审计，保存沿用版本保护并刷新统计数据。",
+          "en": "Preview ledger expense components and changes in expenses and surplus by month and currency without writes. View the latest 50 policy audits; saving retains version checks and refreshes reporting data."
+        }
+      ],
+      "productVersion": "6.5.0"
+    },
+    {
+      "id": "financial-memory-timeline-20261021",
+      "version": "2026.10.21.5",
+      "productVersion": "6.4.0",
+      "date": "2026-10-21",
+      "kind": "improved",
+      "title": {
+        "zh": "历史上的今天：消费时光机与财务回忆",
+        "en": "On this day: financial timeline and spending memories"
+      },
+      "changes": [
+        {
+          "zh": "重构历史同日页面，新增时光机主卡片、净消费与退款摘要、柱状及趋势图、按年展开的交易时间线和分类、商户、标签回顾；缺失年份与有记录的零消费分开展示。",
+          "en": "Redesigned the page with a time-machine hero, net spending and refund summaries, bar and line charts, expandable annual timelines, and category, merchant and tag memories. Missing years remain distinct from recorded zero spending."
+        },
+        {
+          "zh": "按上海日历回顾当前年份之前已确认的交易，金额复用现有财务统计规则并按原币展示；支持多年份、交易类型、分类、商户、标签、账户、币种和备注关键词筛选，条件同步到地址栏。筛选匹配整笔交易。",
+          "en": "Review confirmed transactions before the current Shanghai calendar year, using existing financial statistics rules in each original currency. URL filters support years, types, categories, merchants, tags, accounts, currencies and note keywords, matching whole transactions."
+        },
+        {
+          "zh": "随机日期、年份、消费与商户回忆从当前用户及筛选范围的真实候选中选择；空结果提供最近有记录日期、随机回顾、重置和全部交易入口。",
+          "en": "Random dates, years, expenses and merchants come from actual candidates within the current user and filter scope. Empty results offer the nearest recorded date, random memories, reset and all transactions."
+        },
+        {
+          "zh": "新增按用户保存的日期与交易收藏、个人记忆备注及PNG回忆卡片下载；AI在确认摘要传输且已有隐私授权后，基于实际日期、年份及统计生成回忆或年度消费故事，不发送交易备注。",
+          "en": "Added per-user date and transaction bookmarks, personal notes and downloadable PNG memory cards. With explicit summary transmission and existing privacy consent, AI generates memories or annual spending stories from actual dates, years and statistics without sending transaction notes."
+        }
+      ]
+    },
+    {
+      "id": "optional-concert-accounting-20261021",
+      "version": "2026.10.21.4",
+      "productVersion": "6.3.0",
+      "date": "2026-10-21",
+      "kind": "new",
+      "title": {
+        "zh": "可选演唱会专项记账模块",
+        "en": "Optional concert accounting module"
+      },
+      "changes": [
+        {
+          "zh": "设置新增按用户保存的演唱会模块开关，默认关闭；开启后专项财务显示演唱会档案，关闭保留原档案与账本。",
+          "en": "Added a per-user concert module switch, off by default. Enabling reveals concert records under Special finances; disabling retains records and ledger data."
+        },
+        {
+          "zh": "记录艺人、巡演、演出时间地点、预算、人数和附件；门票订单单独保存平台、订单号、票面价、张数、实付金额、手续费、座位、持票人和订单退款状态，同平台检查重复订单号。",
+          "en": "Manage concert profiles and ticket orders, storing face values, actual payments, fees, seats, holders and refund status separately, with platform-scoped order number checks."
+        },
+        {
+          "zh": "专项费用按明确金额关联真实消费或交易拆分，并校验跨场次分配上限；门票订单支持组合关联原本人支出与代垫付款，手续费单独归类，优惠不生成重复收入。计划费用与实际预算执行分开。",
+          "en": "Allocate explicit amounts from real transactions or split entries with cross-concert limits. Ticket orders can combine existing personal expense and advance payments, separating fees without discount income or duplicate posting. Planned costs remain separate from actual spending."
+        },
+        {
+          "zh": "退款申请、批准与到账分开，实际退款关联原交易；同行分摊复用当前用户的代买代付应收及结算，不合并不同用户资金。",
+          "en": "Separate refund applications, approvals and receipts. Link receipts to original payments and reuse the current user’s advance and settlement services for companions without merging user funds."
+        },
+        {
+          "zh": "提供单场预算与净成本、年度场次与成本趋势、艺人与城市分布和类别占比；不同币种分别统计。状态变化保留审计，修改校验数据版本，附件按当前用户与场次校验访问。",
+          "en": "Added per-concert and annual reports, artist and city distributions, category shares and currency-separated totals, with state audits, version checks and user-scoped attachment access."
+        }
+      ]
+    },
+    {
+      "id": "standard-income-expense-csv-20261021",
+      "version": "2026.10.21.3",
+      "productVersion": "6.2.1",
+      "date": "2026-10-21",
+      "kind": "improved",
+      "title": {
+        "zh": "标准收支CSV模板与导入预览优化",
+        "en": "Standard income and expense CSV template and preview improvements"
+      },
+      "changes": [
+        {
+          "zh": "标准模板包含日期时间、金额、交易类型、商户、商品、三级分类路径、备注、交易状态、币种和优惠金额，保留可选交易单号；仅接受支出与收入，转账继续使用专用模板。",
+          "en": "The standard template includes date and time, amount, type, merchant, product, three category levels, note, source status, currency and discount, plus an optional transaction ID. It accepts income and expenses; transfers retain their dedicated template."
+        },
+        {
+          "zh": "商品与备注独立保存，三级分类可留空，分类按完整路径校验；预览支持分别查看商品、备注、优惠及来源状态，并可修正商品、分类和优惠金额。",
+          "en": "Products and notes are stored separately. The third category level is optional and full category paths are validated. Preview products, notes, discounts and source statuses, and correct products, categories and discounts before importing."
+        },
+        {
+          "zh": "金额按实付或实收记账，支出优惠只记录原价信息，不重复扣款；失败、关闭、取消记录排除，未完成或未知状态需核对，旧版CSV及转账模板保持兼容。",
+          "en": "Amounts post as actually paid or received. Expense discounts retain original-price information without deducting twice. Failed, closed and cancelled rows are excluded; pending or unknown statuses require review. Legacy CSV files and transfer templates remain compatible."
+        }
+      ]
+    },
+    {
+      "id": "loan-repayment-schedules-20261021",
+      "version": "2026.10.21.2",
+      "productVersion": "6.2.0",
+      "date": "2026-10-21",
+      "kind": "new",
+      "title": {
+        "zh": "借款还款计划与逐期金额调整",
+        "en": "Loan repayment schedules and installment amount adjustments"
+      },
+      "changes": [
+        {
+          "zh": "专项财务新增借款还款计划，支持等额本息、等额本金和先息后本，按借款本金、利率和还款日期生成逐期计划。",
+          "en": "Added loan repayment schedules under Special finances, with equal payments, equal principal and interest-only repayment modes."
+        },
+        {
+          "zh": "可逐期修改本金、利息、逾期利息金额并登记实还日期；应还合计、剩余本金和逾期天数自动重算，计划单独保存，不自动记账。",
+          "en": "Edit principal, interest and overdue interest per installment and record payment dates. Totals, remaining principal and overdue days recalculate. Plans are saved separately without posting transactions."
+        }
+      ]
+    },
+    {
+      "id": "fuel-history-and-price-calculation-20261021",
+      "version": "2026.10.21.1",
+      "productVersion": "6.1.5",
+      "date": "2026-10-21",
+      "kind": "improved",
+      "title": {
+        "zh": "历史加油补录与单价计算加油量",
+        "en": "Historical fuel backfills and quantity calculation from unit prices"
+      },
+      "changes": [
+        {
+          "zh": "新增历史补录选项：今天之前的加油记录可以不填累计里程；普通加油记录仍要求填写里程。缺失值独立保存，不用零或估算里程替代，已记录里程保持不变。",
+          "en": "Added historical backfill mode: fills before today may omit the odometer, while regular fills still require a reading. Missing readings are stored separately rather than as zero or estimates, preserving existing readings."
+        },
+        {
+          "zh": "无里程补录仍计入加油次数、油量和费用，列表标注未记录，CSV 对应单元格留空；缺少里程或同日顺序不明时重置油耗基线，后续完整满箱区间可重新计算。",
+          "en": "Historical fills without readings still count towards fill totals, litres and spending. Missing readings are labelled and exported as empty CSV cells. Missing readings and ambiguous same-day sequences reset the consumption baseline; subsequent complete full-tank intervals resume calculation."
+        },
+        {
+          "zh": "改进加油表单初始化，打开时正确带入日期、车辆、币种和满箱状态；编辑补录可继续留空或补齐里程。",
+          "en": "Improved fuel form initialization so dates, vehicles, currencies and full-tank defaults load correctly. Historical records can retain missing readings or have them completed later."
+        },
+        {
+          "zh": "新增按实付金额和每升单价自动计算加油量，保留3位小数，并保存录入单价及油量来源；仍可手动填写小票升数。",
+          "en": "Added automatic litres calculation from amount paid and unit price, rounded to three decimals, retaining entered prices and quantity provenance. Receipt litres can still be entered manually."
+        },
+        {
+          "zh": "引入所提供表格中2026-10-16的31省92/95/98号汽油及0号柴油参考价，可按省份、油号主动采用并标注估算；历史补录不会自动套用新价格，其他币种不套用人民币参考价。",
+          "en": "Added the supplied workbook’s 2026-10-16 reference prices for 31 provinces and four fuel grades, selectable explicitly and labelled as estimates. Newer prices are not automatically applied to historical records, and CNY reference prices are not applied to other currencies."
+        }
+      ]
+    },
+    {
+      "id": "account-group-deletion-click-flow-20261020",
+      "version": "2026.10.20.4",
+      "productVersion": "6.1.4",
+      "date": "2026-10-20",
+      "kind": "fixed",
+      "title": {
+        "zh": "修复账户分组删除操作",
+        "en": "Fix account group deletion workflow"
+      },
+      "changes": [
+        {
+          "zh": "修复前端提交恢复保护遗漏账户分组删除请求的问题，删除请求可携带版本及幂等标识正常发送至后端。",
+          "en": "Fixed the recoverable submission allowlist omitting account group deletion, allowing versioned and idempotent requests to reach the backend."
+        },
+        {
+          "zh": "账户分组删除改为点击打开分组选择窗口，再确认删除，方便手机触屏及桌面操作。删除分组保留成员账户、余额与历史记录，成员移至未分组。",
+          "en": "Account group deletion now opens a selection dialog on click, followed by confirmation, for touch and desktop use. Member accounts move to Ungrouped, preserving balances and history."
+        },
+        {
+          "zh": "补充删除成功与失败提示；失败后刷新分组并返回选择窗口，重新确认时使用最新分组版本，避免持续提交过期数据。",
+          "en": "Added success and failure feedback. Failed deletion refreshes groups and returns to selection so subsequent confirmation uses the latest group version."
+        }
+      ]
+    },
+    {
+      "id": "account-management-experience-20261020",
+      "version": "2026.10.20.3",
+      "productVersion": "6.1.3",
+      "date": "2026-10-20",
+      "kind": "improved",
+      "title": {
+        "zh": "账户管理布局与操作优化",
+        "en": "Account management layout and workflow improvements"
+      },
+      "changes": [
+        {
+          "zh": "新增可折叠资金摘要，按 CNY、USD 及其他原币分别展示资产、负债、净额和可用资金；信用额度不计入资产，可用资金扣除已确认冻结。",
+          "en": "Added collapsible summaries of assets, liabilities, net balances and available funds by original currency, including CNY and USD. Credit limits are excluded and confirmed holds reduce available funds."
+        },
+        {
+          "zh": "常用筛选集中展示，其余条件收入高级筛选；支持保存筛选偏好、隐藏零余额、分组折叠和删除分组。隐藏零余额仅影响显示。",
+          "en": "Streamlined primary and advanced filters with saved preferences, zero-balance hiding, collapsible groups and group deletion. Hiding zero balances only affects display."
+        },
+        {
+          "zh": "账户列表突出名称、机构、类型、余额和状态，区分正常欠款、溢缴款与异常负余额；保留拖拽、按钮及键盘排序。",
+          "en": "Account rows emphasize names, institutions, types, balances and statuses, distinguishing debt, overpayments and unexpected negative balances. Drag, button and keyboard ordering remain available."
+        },
+        {
+          "zh": "支持模板 CSV 预览并整批新增空账户，全部删除须通过历史及引用保护并二次确认；银行卡和信用卡新增开户银行、卡号末四位及银行网点字段。",
+          "en": "Preview template CSV imports and create empty accounts atomically. Deleting all accounts requires history and dependency checks plus explicit confirmation. Bank and credit card forms include bank name, card suffix and branch."
+        }
+      ]
+    },
+    {
+      "id": "search-performance-and-offline-shell",
+      "version": "2026.10.20.2",
+      "productVersion": "6.1.2",
+      "date": "2026-10-20",
+      "kind": "improved",
+      "title": {
+        "zh": "交易搜索性能与离线缓存优化",
+        "en": "Transaction search and offline caching improvements"
+      },
+      "changes": [
+        {
+          "zh": "优化商户、备注、商品、账户、分类、项目和标签关键词搜索；多处命中仍仅返回一条交易，并保留用户隔离及原有筛选条件。",
+          "en": "Optimized keyword matching across merchants, notes, products, accounts, categories, projects and tags, preserving deduplication, user isolation and existing filters."
+        },
+        {
+          "zh": "交易分页先确定当前页记录，再加载对应分录和标签，避免关联查询重复执行完整搜索；无结果时直接返回空列表。",
+          "en": "Transaction pagination selects the current page before loading its entries and tags, avoiding repeated full searches in related queries. Empty searches return immediately."
+        },
+        {
+          "zh": "离线安装优先缓存启动、登录和版本更新所需资源，其余页面模块在访问后缓存；继续排除账务 API 与版本检查文件，缓存空间不足时仍可使用正常网络响应。",
+          "en": "Offline installation prioritizes startup, login and release notes. Other page modules are cached after access. Financial APIs and release checks remain excluded, and cache quota errors preserve successful network responses."
+        },
+        {
+          "zh": "独立拆分 React 与图表运行资源，并补充关键词分页、离线阅读和按需模块缓存回归验证。",
+          "en": "Separated React and chart runtime resources and added regression coverage for keyword pagination, offline reading and on-demand module caching."
+        }
+      ]
+    },
+    {
+      "id": "project-stability-first-audit",
+      "version": "2026.10.20.1",
+      "productVersion": "6.1.1",
+      "date": "2026-10-20",
+      "kind": "fixed",
+      "title": {
+        "zh": "首轮项目体检与稳定性修复",
+        "en": "First project audit and stability fixes"
+      },
+      "changes": [
+        {
+          "zh": "修复手机端全局 Copilot 入口缺失：可从“全部功能”打开当前页面的 AI 助手；为分类拆分开关补充可访问名称。",
+          "en": "Restored the global Copilot in mobile All features navigation with the current page context, and added an accessible name to the category-split switch."
+        },
+        {
+          "zh": "完善请求参数校验：必填字段或集合元素为 null 时返回明确的参数错误，在进入业务写入前拒绝异常请求。",
+          "en": "Required request fields and collection elements reject null values with a clear validation error before business writes."
+        },
+        {
+          "zh": "加油记录及车辆删除失败时显示错误并保留确认窗口，便于重试；版本更新数据增加重复编号、日期顺序及产品版本一致性检查。",
+          "en": "Failed fuel and vehicle deletions display an error and retain confirmation for retry. Release data checks duplicate identities, date ordering and product-version consistency."
+        },
+        {
+          "zh": "升级测试依赖并修复检查配置，更新桌面和手机端关键流程回归；发布前校验源码、前后端产物及更新公告的完整性，阻止构建后被修改的内容进入发布包。",
+          "en": "Updated test dependencies and check configuration, refreshed desktop and mobile regressions, and added source, artifact and catalog integrity checks that block changes after a verified build."
+        }
+      ]
+    },
+    {
+      "id": "fuel-consumption-center",
+      "version": "2026.10.19.8",
+      "productVersion": "6.1.0",
+      "date": "2026-10-19",
+      "kind": "new",
+      "title": {
+        "zh": "加油与油耗：车辆档案、满箱油耗及费用分析",
+        "en": "Fuel & consumption: vehicles, full-tank efficiency and spending"
+      },
+      "changes": [
+        {
+          "zh": "在“分析与报告”下新增加油与油耗，支持多车辆档案、汽油/柴油/混合动力、加油日期、累计里程、升数、实付金额、币种、加油站及备注，支持编辑、确认删除和CSV导出。",
+          "en": "Added Fuel & consumption under Analysis & reports: multiple vehicles, petrol/diesel/hybrid, fill dates, odometer, litres, paid amount, currency, station and notes, with editing, confirmed deletion and CSV export."
+        },
+        {
+          "zh": "按满箱法计算油耗，两次加满间的补加量全部纳入；首次记录、未闭合区间和漏记不虚构油耗。加权平均使用有效区间总油量除以总里程，筛选期间之前的基线仍参与计算。",
+          "en": "Full-to-full consumption includes partial fills between full tanks. First records, open intervals and gaps never invent consumption. Weighted averages divide valid consumed fuel by valid distance, retaining baselines before the selected period."
+        },
+        {
+          "zh": "提供车辆、日期与币种筛选、加油次数、总量、实付金额、单价和月度加油量图表；不同币种金额不直接相加。记录按用户隔离，校验里程顺序、并发版本和重复提交，兼容隐藏隐私、中英文及手机布局。",
+          "en": "Vehicle/date/currency filters, counts, volume, spending, unit prices and monthly fuel charts keep currencies separate. User isolation, mileage ordering, version and idempotency checks support privacy mode, bilingual UI and mobile layouts."
+        },
+        {
+          "zh": "加油档案独立保存，不自动创建财务支出或改变账户余额，避免重复记账。已有财务流水继续通过原记账入口管理。",
+          "en": "Fuel records remain independent and never automatically post expenses or change balances, avoiding duplicate bookkeeping. Existing ledger entries continue through the original transaction workflow."
+        }
+      ]
+    },
+    {
+      "id": "complete-history-global-version-sync",
+      "version": "2026.10.19.7",
+      "productVersion": "6.0.1",
+      "date": "2026-10-19",
+      "kind": "improved",
+      "title": {
+        "zh": "完整历史更新与全站版本统一",
+        "en": "Complete update history and unified global version"
+      },
+      "changes": [
+        {
+          "zh": "补齐从 0.0.0 设计基线、1.0.0 首个测试版起的历次功能、优化和修复，包括基础记账、真实后端、周期订阅、批量整理、预算目标、分析债务、投资资产、优惠权益、账户分类、AI 中心与全局 Copilot；保留后续薪酬、财务报告、导入清洗和时间资产更新。",
+          "en": "Expanded history from the 0.0.0 design baseline and first 1.0.0 beta through bookkeeping, backend, recurring items, batch review, budgets/goals, analysis/debt, investments, benefits, accounts/categories, AI center and global Copilot, retaining later payroll, financial reports, import cleaning and time assets updates."
+        },
+        {
+          "zh": "登录页、全站版本标识、版本更新页、前端包元数据与后端版本接口统一为 Personal Finance 测试版 6.0.1；产品版本与日期发布号分开显示，支持按历史版本和更新内容搜索。",
+          "en": "Login, global version labels, release center, frontend package metadata and backend version API use Personal Finance Beta 6.0.1. Product versions and dated release numbers are shown separately, with searchable version history."
+        },
+        {
+          "zh": "历史阶段按原交付文档归档，保留当时的模拟接口、未完成事项与估算边界，不把计划、审计或本机验证包装成已发布功能。",
+          "en": "Historical stages follow original delivery records, preserving mock API, incomplete-work and estimation limits; plans, audits and local checks are not represented as shipped capabilities."
+        }
+      ]
+    },
+    {
+      "id": "time-assets-management-600",
+      "version": "2026.10.19.6",
+      "productVersion": "6.0.0",
+      "date": "2026-10-19",
+      "kind": "new",
+      "title": {
+        "zh": "时间资产管理：记录、估值、预算与联合分析",
+        "en": "Time Assets Management: tracking, valuation, budgets and analysis"
+      },
+      "changes": [
+        {
+          "zh": "新增时间资产概览与时间流水，支持跨日手动记录、实时计时与暂停继续、批量补录、重复模板、筛选搜索、编辑删除及CSV导出；覆盖率与分类比例明确分母，未记录时间保持未知。",
+          "en": "Added time overview and activities, cross-day recording, persistent timers with pause/resume, batch backfill, recurring templates, search, filters, editing, deletion and CSV export. Coverage and category shares state their denominators; unrecorded time remains unknown."
+        },
+        {
+          "zh": "新增劳动收入、可支配收入、机会成本和自定义时薪估值，保存来源、币种、生效日期及历史修订；支持日、周、月分类时间预算和超额提示。",
+          "en": "Labor-income, disposable-income, opportunity-cost and custom valuations retain sources, currencies, effective dates and revisions. Daily, weekly and monthly category budgets show progress and overruns."
+        },
+        {
+          "zh": "支持关联已有财务流水和时间投资项目，按去重收支分录及既有直接汇率计算劳动时长、资源成本和工作时薪；项目支持非货币回报。参考估值不创建收支或资金分录。",
+          "en": "Link existing transactions and time projects. Deduplicated ledger entries and existing direct FX quotes support labor-hour, resource-cost and effective-hourly-rate analysis. Projects accept non-monetary returns; reference valuations never post financial entries."
+        },
+        {
+          "zh": "新增月度、年度及项目时间报告，支持图表、JSON、CSV和打印PDF；复用DeepSeek与汇总授权，另需确认时间摘要传输，后端计算数字与情景依据，AI提供解释，不自动修改记录。",
+          "en": "Monthly, annual and project time reports include charts, JSON, CSV and print-to-PDF. AI reuses DeepSeek and summary permissions with explicit time-summary consent; backend calculations supply evidence and scenarios while AI explains without changing records."
+        }
+      ]
+    },
+    {
+      "id": "version-history-documentation-reorganization",
+      "version": "2026.10.19.5",
+      "productVersion": "5.2.2",
+      "date": "2026-10-19",
+      "kind": "improved",
+      "title": {
+        "zh": "版本历史与项目文档统一整理",
+        "en": "Unified version history and project documentation"
+      },
+      "changes": [
+        {
+          "zh": "产品版本从 0.0.0 基线、1.0.0 首个测试版起按阶段重新编号；项目文档增加版本、顺序与旧文件名对照，更新中心展示对应产品版本。日期发布号继续用于检查更新。",
+          "en": "Product history is renumbered from the 0.0.0 baseline and first 1.0.0 beta. Project documents gain version labels, ordered indexing and old-name mappings. Release notes display product versions; dated release numbers continue to drive update checks."
+        },
+        {
+          "zh": "早期记录按文档阶段归档；记录日期不补造首次上线时间，历史验证与未完成事项保持原意。",
+          "en": "Early entries are archival stage records. Their dates do not invent first deployment dates; historical validation and incomplete work retain their original meaning."
+        }
+      ]
+    },
+    {
+      "id": "import-cleaning-merchant-master-ai-412",
+      "version": "2026.10.19.4",
+      "date": "2026-10-19",
+      "kind": "improved",
+      "title": {
+        "en": "Import cleaning, merchant master data and AI recognition",
+        "zh": "导入清洗、商户主数据与AI辅助识别"
+      },
+      "changes": [
+        {
+          "en": "Transaction imports now offer job history, identical-file warnings, reuse of mappings for matching sources and headers, UTF-8/GB18030 support, original-file retention and SHA-256 fingerprints. Explicitly closed, failed and cancelled rows are excluded while duplicate review and batch confirmation remain in place.",
+          "zh": "交易导入增加任务追溯、相同文件提示、同来源同表头映射复用，支持UTF-8及GB18030编码，保留原文件与SHA-256指纹，明确排除关闭、失败和取消记录；现有重复判定与整批确认继续生效。"
+        },
+        {
+          "en": "Cleaning history records source rows, rule versions, before/after values and rule, user or accepted-AI origins. Export original data and history, undo the latest eligible preview edit, or rebuild the preview from original data.",
+          "zh": "新增可追溯清洗履历，记录来源行号、规则版本、前后值及人工或AI采纳来源，支持导出原始数据与清洗记录、撤销尚未入账的最后一步修改，以及从原始数据重新映射。"
+        },
+        {
+          "en": "Merchant management now shares standard names and explicit aliases, with conflict checks and retained old names after renaming. Merges require impact preview and version validation, updating transaction merchant names without changing amounts, accounts or ledger entries.",
+          "zh": "商户目录升级为统一标准名称与明确别名管理，校验别名冲突；更名保留旧名，合并须先预览影响并核对版本，统一交易商户名称而不改变金额、账户或分录。"
+        },
+        {
+          "en": "Reuse the existing DeepSeek configuration and recognition-text consent for merchant/category suggestions on up to 20 rows per page. Only merchant text and bounded candidates are sent; amounts, dates, accounts, notes and source files are excluded. Suggestions require individual review and validate candidate ownership, category types and freshness; they never create merchants or post transactions automatically.",
+          "zh": "复用现有DeepSeek服务端配置及识别文字授权，为当前页最多20行提供商户和分类建议。仅传输必要商户文字及候选信息；金额、时间、账户、备注和原文件不传输。建议逐条核对采纳，校验候选归属、分类类型及过期状态，不自动新增商户或入账。"
+        }
+      ],
+      "productVersion": "5.2.1"
+    },
+    {
+      "id": "social-insurance-delete-payroll-sync",
+      "version": "2026.10.19.3",
+      "date": "2026-10-19",
+      "kind": "new",
+      "title": {
+        "zh": "社会保险删除与工资条自动同步",
+        "en": "Social insurance deletion and payslip sync"
+      },
+      "changes": [
+        {
+          "zh": "社会保险记录支持确认删除；删除关联记录后不再自动重新添加，工资条及账户余额保留。",
+          "en": "Contribution records can be deleted with confirmation. Deleted linked records stay excluded from automatic sync, while payslips and account balances are retained."
+        },
+        {
+          "zh": "自动添加已有及新工资条中的养老、医疗、失业个人扣款，按工资条和险种去重。自动记录标记为待核对，保留手动核对结果，不推算单位缴费或缴费基数。",
+          "en": "Automatically add pension, medical and unemployment deductions from existing and new payslips, deduplicated per payslip and insurance type. Records start pending review, preserve manual edits and do not estimate employer amounts or contribution bases."
+        }
+      ],
+      "productVersion": "5.2.0"
+    },
+    {
+      "id": "transaction-historical-running-balances",
+      "version": "2026.10.19.2",
+      "date": "2026-10-19",
+      "kind": "fixed",
+      "title": {
+        "zh": "逐笔交易后账户余额",
+        "en": "Running balances after each transaction"
+      },
+      "changes": [
+        {
+          "zh": "交易列表新增交易后余额列，按账户期初余额和有效流水计算每笔交易后的余额，支持收入、支出、转账及多账户付款；详情和消费保存提示同步显示交易后余额。",
+          "en": "Transaction lists now include balances after each transaction, calculated from opening balances and active entries. Income, expenses, transfers and multiple payment accounts are supported, including transaction details and expense receipts."
+        },
+        {
+          "zh": "后续交易不再覆盖历史行的余额；补记、修改、删除和恢复会重新计算后续余额，筛选及分页不影响计算，隐私模式继续隐藏账户名称和金额。",
+          "en": "Later transactions no longer overwrite older row balances. Backdated entries, edits, deletion and restoration recalculate subsequent balances independently of filters or pagination. Privacy mode continues to hide names and amounts."
+        }
+      ],
+      "productVersion": "5.1.1"
+    },
+    {
+      "id": "expense-multiple-payment-accounts-balances",
+      "version": "2026.10.19.1",
+      "date": "2026-10-19",
+      "kind": "new",
+      "title": {
+        "zh": "消费多账户付款与最新余额",
+        "en": "Multiple payment accounts and current balances"
+      },
+      "changes": [
+        {
+          "zh": "同一笔消费支持2—10个同币种账户共同付款，付款合计须等于实付金额，可与分类拆分同时使用，消费总额只统计一次。",
+          "en": "A single expense can be funded by 2–10 accounts in the same currency. Payment allocations must equal the paid total and can coexist with category splits, while total spending is counted once."
+        },
+        {
+          "zh": "消费保存成功后显示各付款账户的最新账面余额，保存并继续时保留上一笔余额提示；消费列表与详情展示当前余额，并遵循隐私隐藏设置。",
+          "en": "Successful expense saves show current book balances for every payer. Save-and-continue retains the balance receipt, and expense lists and details show current balances while respecting privacy mode."
+        },
+        {
+          "zh": "同步适配编辑、退款、删除恢复、信用卡账单、账户统计与财务报告；付款分录按分精确分摊，校验重复账户、无效金额、停用账户及跨用户访问。",
+          "en": "Updated editing, refunds, deletion and restoration, credit-card statements, account statistics and financial reports. Allocations preserve exact cents and validate duplicate accounts, invalid amounts, inactive accounts and user ownership."
+        }
+      ],
+      "productVersion": "5.1.0"
+    },
+    {
+      "id": "financial-reports-center-410",
+      "version": "2026.10.18.8",
+      "date": "2026-10-18",
+      "kind": "new",
+      "title": {
+        "zh": "智能财务报告中心",
+        "en": "Financial Reports center"
+      },
+      "changes": [
+        {
+          "zh": "在分析与报告中新增财务报告中心、月报、年度专业报告、年度故事、AI分析、历史归档、导出分享和偏好设置八个页面，保留原分析功能。",
+          "en": "Added eight Financial Reports pages for the hub, monthly review, professional annual analysis, annual story, AI analysis, archives, export and sharing, and preferences, while preserving existing analysis tools."
+        },
+        {
+          "zh": "月报复用账本统计规则，提供收支结余、累计趋势、三级分类下钻、商户及标签、账户收支、预算执行、大额提示和环比同比；年报按十二章呈现资产、负债、目标及下一年规划入口。",
+          "en": "Monthly reports reuse ledger rules for income, expenses, surplus, cumulative trends, category drill-down, merchants, tags, account flows, budgets, large transactions and comparisons. Annual reports organize assets, debt, goals and planning into twelve chapters."
+        },
+        {
+          "zh": "复用现有 DeepSeek 服务端配置与分项授权，支持手动或偏好启用的自动汇总解读、建议及报告追问，并展示查询依据和数据限制；AI不自动修改账本。",
+          "en": "Reused existing server-side DeepSeek configuration and consent for manual or opt-in automatic summaries, recommendations and report questions, with evidence and limitations. AI analysis does not modify the ledger."
+        },
+        {
+          "zh": "支持按用户保存历史快照和报告偏好，导出UTF-8 CSV、完整JSON、浏览器打印PDF以及默认隐藏金额的分享长图；支持手机、深浅主题和减少动画。历史资产明确标注为推算，未结束期间不包装为全年事实。",
+          "en": "Added user-scoped report snapshots and preferences, UTF-8 CSV and JSON exports, browser print-to-PDF, and sharing images with amounts hidden by default. Supports mobile, themes and reduced motion, with estimated history and partial periods clearly labeled."
+        }
+      ],
+      "productVersion": "5.0.0"
+    },
+    {
+      "id": "dashboard-year-end-countdown",
+      "version": "2026.10.18.7",
+      "date": "2026-10-18",
+      "kind": "improved",
+      "title": {
+        "zh": "首页新增年末倒计时",
+        "en": "Year-end countdown on the dashboard"
+      },
+      "changes": [
+        {
+          "zh": "首页日期旁新增距离当年结束的剩余日数，按北京时间自动更新，跨年自动切换年份，支持中英文。",
+          "en": "Added remaining days in the year beside the dashboard date, updating automatically in Shanghai time and switching years at New Year, with Chinese and English support."
+        }
+      ],
+      "productVersion": "4.4.4"
+    },
+    {
+      "id": "profile-edit-analysis-navigation-template-fix",
+      "version": "2026.10.18.6",
+      "date": "2026-10-18",
+      "kind": "improved",
+      "title": {
+        "zh": "资料编辑与分析导航优化",
+        "en": "Profile editing and analysis navigation"
+      },
+      "changes": [
+        {
+          "zh": "个人信息默认只读，点击“修改信息”后可编辑，支持保存或取消未保存修改。",
+          "en": "Personal information starts read-only. Select Edit information to edit, save or cancel unsaved changes."
+        },
+        {
+          "zh": "期间对比、月报与年报、收支结构、资产负债归因、指标说明、债务压力、财务健康调整为“分析与报告”下的独立二级菜单，移除原报表页重复入口。",
+          "en": "Period comparison, monthly and annual reports, income and expense structure, net worth attribution, metric explanations, debt pressure and financial health now have unique second-level entries under Analysis & reports."
+        },
+        {
+          "zh": "修复商户和项目模板导入被安全提交白名单拦截、误提示无法保存提交记录的问题。",
+          "en": "Fixed merchant and project template imports being blocked by the safe submission allowlist and incorrectly reporting a submission record storage error."
+        },
+        {
+          "zh": "修复工资条与薪酬方案删除被安全恢复校验错误拦截的问题，保留删除确认与版本校验。",
+          "en": "Fixed safe recovery validation blocking payslip and compensation plan deletion, while retaining confirmation and version checks."
+        }
+      ],
+      "productVersion": "4.4.3"
+    },
+    {
+      "id": "navigation-eight-sections-single-entry",
+      "version": "2026.10.18.5",
+      "date": "2026-10-18",
+      "kind": "improved",
+      "title": {
+        "zh": "八大导航分组与唯一菜单入口",
+        "en": "Eight navigation sections with unique menu entries"
+      },
+      "changes": [
+        {
+          "zh": "主导航按总览、交易中心、账户与资产、薪酬与社保、预算与计划、分析与报告、AI 智能中心、专项财务排列，移除重复的常用入口和薪酬页重复导航。",
+          "en": "Primary navigation is organized as Overview, Transaction center, Accounts & assets, Payroll & benefits, Budgets & planning, Analysis & reports, AI center and Special finances, with duplicate shortcuts and payroll navigation removed."
+        },
+        {
+          "zh": "设置与管理独立固定在桌面侧栏和手机导航抽屉底部，头像可进入设置；个人资料、货币、AI 隐私、版本、帮助和管理员入口集中管理。",
+          "en": "Settings & management is pinned independently at the bottom of the desktop sidebar and mobile drawer, and is accessible through the avatar. Profile, currencies, AI privacy, updates, help and administrator access are consolidated."
+        },
+        {
+          "zh": "AI 中心不再重复列出预算、账户、现金流、订阅等已有业务；旧入口跳转到唯一页面，并保留查询参数与锚点，菜单高亮和面包屑跟随实际归属。",
+          "en": "The AI center no longer repeats budgets, accounts, cash flow, subscriptions and other existing features. Legacy addresses redirect to canonical pages while preserving queries and anchors, with consistent menu selection and breadcrumbs."
+        }
+      ],
+      "productVersion": "4.4.2"
+    },
+    {
+      "id": "expanded-currencies-latest-fx-defaults",
+      "version": "2026.10.18.4",
+      "date": "2026-10-18",
+      "kind": "improved",
+      "title": {
+        "zh": "更多货币、联网汇率与默认币种",
+        "en": "More currencies, online FX quotes and default currency"
+      },
+      "changes": [
+        {
+          "zh": "货币目录扩展至 32 种常用币种，包括欧元、英镑、日元、新加坡元、澳元、加元等；账户、交易、报表、投资、估值和模板导入同步支持。",
+          "en": "The shared catalog now supports 32 common currencies, including EUR, GBP, JPY, SGD, AUD and CAD, across accounts, transactions, reports, investments, valuations and template imports."
+        },
+        {
+          "zh": "货币与汇率页面可修改默认货币，应用于新账户、记账和主要报表的初始选择，首页按默认货币统计并显示对应货币标记；不会换算或改写已有账务。",
+          "en": "Change the default currency in Currency settings for new accounts, entry and main report defaults. Dashboard totals use the selected default currency with matching labels; existing ledger values remain unchanged."
+        },
+        {
+          "zh": "联网获取 Frankfurter 最新参考汇率，显示来源、报价日期与获取时间，支持换算、刷新和手动保存历史估值；参考价非实时成交价，周末或假日可能沿用上一交易日。",
+          "en": "Fetch the latest Frankfurter reference quotes with source, quote date and fetch time, conversion, refresh and explicit saving for historical valuation. Reference rates are not live execution prices and may use the prior business day."
+        },
+        {
+          "zh": "记账可选择币种并匹配对应资金账户，跨币种转账可填入最新参考汇率并核对实际金额；统一换算的四舍五入规则，校验币种与账户一致。",
+          "en": "Choose an entry currency and matching account, and fill cross-currency transfer rates from online reference quotes before reviewing actual amounts. Conversion rounding and account-currency validation are consistent."
+        }
+      ],
+      "productVersion": "4.4.1"
+    },
+    {
+      "id": "payroll-slips-plans-deletion",
+      "version": "2026.10.18.3",
+      "date": "2026-10-18",
+      "kind": "new",
+      "title": {
+        "zh": "工资条与薪酬方案支持删除",
+        "en": "Delete payslips and compensation plan versions"
+      },
+      "changes": [
+        {
+          "zh": "工资条列表、手机卡片和详情新增删除入口与二次确认，可删除工资条及其构成、附件和更正历史；删除后刷新薪酬统计。原收入交易与账户余额保留。",
+          "en": "Payslip lists, mobile cards and details now offer confirmed deletion of payslips, items, attachments and revision history, with refreshed payroll statistics. Income transactions and account balances are retained."
+        },
+        {
+          "zh": "薪酬方案支持按版本删除；有工资条引用的方案、有关联到账或缴费记录的工资条会提示先解除引用，并校验用户归属与数据版本。",
+          "en": "Compensation plans can be deleted per version. Referenced plans and payslips linked to receipts or contributions require unlinking first, with ownership and version checks."
+        }
+      ],
+      "productVersion": "4.4.0"
+    },
+    {
+      "id": "beta-4-0-2-template-imports",
+      "version": "2026.10.18.2",
+      "date": "2026-10-18",
+      "kind": "new",
+      "title": {
+        "zh": "五类模板导入",
+        "en": "template imports"
+      },
+      "changes": [
+        {
+          "zh": "商户、项目、投资资产、商品价格及借入与借出新增 CSV 模板下载、文件校验、逐行预览与确认导入，展示各行处理结果。",
+          "en": "CSV templates, validation, row previews, confirmation and per-row results for merchants, projects, investment assets, product prices and loans."
+        },
+        {
+          "zh": "投资资产导入仅登记资产资料；商品价格样本不产生支出；借贷确认后沿用现有记账规则影响资金账户余额。",
+          "en": "Asset imports register asset details only; product price samples create no expenses. Confirmed loans use existing accounting rules and affect account balances."
+        }
+      ],
+      "productVersion": "4.3.0"
+    },
+    {
+      "id": "beta-4-0-1-invitation-access",
+      "version": "2026.10.18.01",
+      "date": "2026-10-18",
+      "kind": "new",
+      "title": {
+        "zh": "邀请准入",
+        "en": "invitation access"
+      },
+      "changes": [
+        {
+          "zh": "关闭公开注册，新增管理员生成、限时、单次使用、可绑定邮箱及撤销的邀请码；后端独立校验并防止并发重复兑换。已有用户继续正常登录。",
+          "en": "Public signup is closed. Administrators can issue expiring, single-use invitations with optional email binding and revocation. Server-side checks prevent concurrent reuse; existing users retain normal login."
+        },
+        {
+          "zh": "登录页提供邀请码激活入口与状态提示，后台新增邀请码管理；统一产品版本、渠道和发布号，前后端共用版本公告源。",
+          "en": "Invitation activation and status feedback on the login flow, administrator invitation management, and shared frontend/backend product, channel and release metadata."
+        }
+      ],
+      "productVersion": "4.2.0"
+    },
+    {
+      "id": "dashboard-ai-insights-daily-totals",
+      "version": "2026.10.17.7",
+      "date": "2026-10-17",
+      "kind": "new",
+      "title": {
+        "zh": "AI 财务洞察与每日收支",
+        "en": "AI financial insights and daily totals"
+      },
+      "changes": [
+        {
+          "zh": "首页收支趋势下方新增 AI 财务洞察，复用现有 DeepSeek 及分项授权，自动分析消费异常、支出增长、高额消费和节省空间，支持查看工具依据及一键追问 Copilot。",
+          "en": "Dashboard AI insights reuse existing DeepSeek and data permissions to analyze unusual spending, expense growth, large purchases and savings, with tool evidence and Copilot follow-up."
+        },
+        {
+          "zh": "交易日历新增每日总收入、总支出及当日完整金额，支持选择统计币种，复用报表的退款、手续费及转账统计规则。",
+          "en": "The transaction calendar now shows daily income and expenses with full selected-day totals and a currency selector, using existing report rules for refunds, fees and transfers."
+        }
+      ],
+      "productVersion": "4.1.0"
+    },
+    {
+      "id": "dashboard-transaction-calendar-alignment",
+      "version": "2026.10.17.6",
+      "date": "2026-10-17",
+      "kind": "improved",
+      "title": {
+        "zh": "首页交易日历与卡片对齐",
+        "en": "Dashboard transaction calendar and aligned cards"
+      },
+      "changes": [
+        {
+          "zh": "首页新增跟随所选月份的交易日历，显示每日笔数，点击日期可查看当天交易并打开详情。",
+          "en": "A dashboard transaction calendar follows the selected month, shows daily counts and opens daily transactions and their details."
+        },
+        {
+          "zh": "桌面端最近交易与我的账户改为同一行，卡片底部对齐；手机端保持上下排列。",
+          "en": "Recent transactions and My accounts now share a desktop row with aligned card bottoms, while remaining stacked on mobile."
+        }
+      ],
+      "productVersion": "4.0.2"
+    },
+    {
+      "id": "mobile-merchant-dropdown",
+      "version": "2026.10.17.5",
+      "date": "2026-10-17",
+      "kind": "improved",
+      "title": {
+        "zh": "手机端商户下拉选择",
+        "en": "Mobile merchant dropdown"
+      },
+      "changes": [
+        {
+          "zh": "手机记账的商户、对象及付款方改用与分类一致的可搜索下拉框，支持选择已有商户、输入新名称和清空；保留商户推荐分类。",
+          "en": "Mobile merchant, counterparty and payer fields now use the same searchable dropdown as categories, with existing merchants, new names, clearing and category recommendations."
+        }
+      ],
+      "productVersion": "4.0.1"
+    },
+    {
+      "id": "payroll-social-benefits-center",
+      "version": "2026.10.17.4",
+      "date": "2026-10-17",
+      "kind": "new",
+      "title": {
+        "zh": "薪酬与社保中心",
+        "en": "Payroll & Social Benefits"
+      },
+      "changes": [
+        {
+          "zh": "升级薪酬与社保中心，集中管理多家就业单位、并行工作经历、薪酬方案与历史版本，以及工资结构、奖金和补贴。",
+          "en": "A dedicated center manages multiple employers, concurrent employment, versioned compensation plans, pay structure, bonuses and allowances."
+        },
+        {
+          "zh": "工资条支持生成、复制、核对确认、更正留痕、附件及 PDF 打印导出；可分批关联既有银行收入，不重复记账。",
+          "en": "Generate, copy, review and confirm payslips, retain correction history, attach files and print to PDF. Link existing bank income in installments without posting it again."
+        },
+        {
+          "zh": "社保与公积金分别跟踪个人、单位、预计和实际缴费，支持地方政策版本、差额核对、余额记录、提取、结息和转移。",
+          "en": "Track personal and employer social insurance and housing fund contributions, expected versus actual amounts, local policy versions, differences, reported balances, withdrawals, interest and transfers."
+        },
+        {
+          "zh": "新增版本化个税规则、专项附加扣除自查、累计预扣及年终奖情景，并可比较调薪与参保地区政策变化；模拟不替代申报。",
+          "en": "Versioned income-tax rules, reviewed additional deductions, cumulative withholding and bonus scenarios, with pay-change and insurance-city comparisons. Simulations do not replace tax filing."
+        },
+        {
+          "zh": "支持 Excel（XLSX）、CSV、图片和批量手工工资条导入；图片使用浏览器本地 OCR，经映射、校验和确认后保存草稿。",
+          "en": "Import Excel (XLSX), CSV, images or manual batches. Browser-local OCR feeds field mapping, validation and review before drafts are saved."
+        },
+        {
+          "zh": "新增薪酬日历、按归属月或发薪月统计、年度报告和中英文深浅主题界面；AI 薪酬助手复用现有 DeepSeek 连接及薪酬授权。",
+          "en": "Payroll calendar, earning-month or pay-date reporting, annual reports and bilingual light/dark interfaces. The AI payroll assistant reuses existing DeepSeek configuration and payroll consent."
+        }
+      ],
+      "productVersion": "4.0.0"
+    },
+    {
+      "id": "administration-help-feedback",
+      "version": "2026.10.17.3",
+      "date": "2026-10-17",
+      "kind": "new",
+      "title": {
+        "zh": "后台管理与帮助反馈",
+        "en": "Administration, help and feedback"
+      },
+      "changes": [
+        {
+          "zh": "新增后台概览、用户查询、会话撤销和后台操作记录，后台功能仅管理员可访问。",
+          "en": "Administrator-only overview, user search, session revocation and administration activity log."
+        },
+        {
+          "zh": "新增帮助与反馈入口，可搜索常见使用说明、提交问题或建议，并查看处理状态与管理员回复。",
+          "en": "Search help articles, submit questions or suggestions, and track progress and administrator replies."
+        },
+        {
+          "zh": "管理员可筛选、回复和处理反馈；反馈按用户隔离，并提供提交频率限制与处理版本检查。",
+          "en": "Administrators can filter, reply to and resolve feedback, with user isolation, submission limits and concurrency checks."
+        }
+      ],
+      "productVersion": "3.6.0"
+    },
+    {
+      "id": "transfer-topup-withdrawal-import",
+      "version": "2026.10.17.2",
+      "date": "2026-10-17",
+      "kind": "new",
+      "title": {
+        "zh": "充值、提现与转账导入",
+        "en": "Top-ups, withdrawals and transfer imports"
+      },
+      "changes": [
+        {
+          "zh": "记账新增独立的充值、提现入口；交易列表、详情和首页显示对应用途，后台仍按转账核算。",
+          "en": "Separate top-up and withdrawal entries, with purpose labels in transactions, details and the dashboard. Both use transfer accounting."
+        },
+        {
+          "zh": "新增转账 CSV 模板，支持逐行匹配转出与转入账户，以及充值、提现、手续费和跨币种转账导入。",
+          "en": "A transfer CSV template supports per-row source and destination accounts, top-ups, withdrawals, fees and foreign-currency transfers."
+        },
+        {
+          "zh": "导入预览可核对账户流向并修改账户、用途及手续费；校验无效账户、重复流水和金额汇率，转账本金不计收支。",
+          "en": "Preview account flows and edit accounts, purposes and fees. Validation checks accounts, duplicate references, amounts and exchange rates; transfer principal is excluded from income and expenses."
+        },
+        {
+          "zh": "手机记账类型改为下拉选择，交易可单独筛选充值、提现；导出保留转账用途、转入账户、手续费和汇率。",
+          "en": "Mobile entry types use a dropdown. Filter top-ups and withdrawals separately; exports include purpose, destination, fees and exchange rates."
+        }
+      ],
+      "productVersion": "3.5.0"
+    },
+    {
+      "id": "release-center",
+      "version": "2026.10.17.1",
+      "date": "2026-10-17",
+      "kind": "new",
+      "title": {
+        "zh": "版本更新中心",
+        "en": "Release center"
+      },
+      "changes": [
+        {
+          "zh": "新增版本更新页面，集中公示新功能、体验优化和问题修复。",
+          "en": "A dedicated page for new features, improvements and fixes."
+        },
+        {
+          "zh": "可搜索历史更新，查看当前版本，并检查、刷新到新版本。",
+          "en": "Search past updates, view your current version, and check for and apply updates."
+        },
+        {
+          "zh": "设置、功能导航和用户菜单均可进入版本更新页面。",
+          "en": "Open release notes from Settings, navigation or your user menu."
+        }
+      ],
+      "productVersion": "3.4.0"
+    },
+    {
+      "id": "expense-product-name",
+      "version": null,
+      "date": "2026-10-17",
+      "kind": "new",
+      "title": {
+        "zh": "支出新增商品名",
+        "en": "Product names for expenses"
+      },
+      "changes": [
+        {
+          "zh": "支出记账新增独立的商品名选填项，支持编辑、清空和连续记账。",
+          "en": "An optional product name for expenses, including editing, clearing and consecutive entries."
+        },
+        {
+          "zh": "交易详情、电脑列表和手机卡片显示商品名，支持关键词搜索及导出。",
+          "en": "Product names appear in details and transaction lists, and are included in search and exports."
+        }
+      ],
+      "productVersion": "3.3.0"
+    },
+    {
+      "id": "ai-analysis-unblocked",
+      "version": null,
+      "date": "2026-10-16",
+      "kind": "improved",
+      "title": {
+        "zh": "AI 完整分析与建议",
+        "en": "Complete AI analysis and advice"
+      },
+      "changes": [
+        {
+          "zh": "取消聊天与 Agent 回答的自动摘要替换，直接显示 AI 分析和建议。",
+          "en": "Chat and Agent answers retain their analysis and advice instead of being replaced by a summary."
+        },
+        {
+          "zh": "月度收支查询先读取已授权数据，再交给 AI 分析；权威查询数据继续保留。",
+          "en": "Monthly summaries retrieve authorized ledger data before AI analysis, with source results retained."
+        }
+      ],
+      "productVersion": "3.2.3"
+    },
+    {
+      "id": "conversation-layout",
+      "version": null,
+      "date": "2026-10-16",
+      "kind": "fixed",
+      "title": {
+        "zh": "会话历史布局修复",
+        "en": "Conversation history layout fixes"
+      },
+      "changes": [
+        {
+          "zh": "长标题最多显示两行，删除按钮保持在面板内，修复横向溢出。",
+          "en": "Long titles wrap to two lines and delete buttons stay inside the panel."
+        },
+        {
+          "zh": "会话标题显示实际问题，不再使用页面上下文说明；保留自定义名称。",
+          "en": "Conversation titles show the actual question rather than page context, while preserving custom names."
+        }
+      ],
+      "productVersion": "3.2.2"
+    },
+    {
+      "id": "monthly-ai-query",
+      "version": null,
+      "date": "2026-10-16",
+      "kind": "fixed",
+      "title": {
+        "zh": "月度收支查询改进",
+        "en": "Monthly income and expense queries"
+      },
+      "changes": [
+        {
+          "zh": "改进日期、编号、金额格式和百分比的校验，减少不必要的误判。",
+          "en": "Improved handling of dates, list numbering, amount formats and percentages."
+        },
+        {
+          "zh": "修复月度查询遗漏工具调用及已查询数据被误标为无依据的问题。",
+          "en": "Fixed missing monthly tool queries and incorrect missing-evidence labels."
+        }
+      ],
+      "productVersion": "3.2.1"
+    },
+    {
+      "id": "autonomous-finance-agent",
+      "version": null,
+      "date": "2026-10-16",
+      "kind": "new",
+      "title": {
+        "zh": "自主财务 Agent",
+        "en": "Autonomous finance Agent"
+      },
+      "changes": [
+        {
+          "zh": "支持跨模块分析、多轮工具调用、报告、记忆和定时工作流。",
+          "en": "Cross-module analysis, multiple tool rounds, reports, memory and scheduled workflows."
+        },
+        {
+          "zh": "新增建议、确认执行和授权自动执行模式，高风险操作独立授权。",
+          "en": "Suggestion, confirmation and scoped automatic modes, with separate high-risk authorization."
+        },
+        {
+          "zh": "提供模型、资源预算、数据范围、操作日志和紧急停止设置。",
+          "en": "Settings for models, resource budgets, data scope, operation logs and emergency stop."
+        }
+      ],
+      "productVersion": "3.2.0"
+    },
+    {
+      "id": "mobile-controls",
+      "version": null,
+      "date": "2026-10-16",
+      "kind": "improved",
+      "title": {
+        "zh": "手机端选择与筛选体验",
+        "en": "Mobile selection and filters"
+      },
+      "changes": [
+        {
+          "zh": "优化手机端日期时间、分类、账户等选择控件和筛选布局。",
+          "en": "Improved mobile date, time, category and account selectors and filter layouts."
+        },
+        {
+          "zh": "改进小屏操作区域、弹层定位与下拉选项展示。",
+          "en": "Better touch controls, popup placement and dropdown visibility on small screens."
+        }
+      ],
+      "productVersion": "3.1.2"
+    },
+    {
+      "id": "audit-fixes",
+      "version": null,
+      "date": "2026-10-15",
+      "kind": "fixed",
+      "title": {
+        "zh": "财务与权限问题修复",
+        "en": "Finance and authorization fixes"
+      },
+      "changes": [
+        {
+          "zh": "修复项目审查发现的财务处理、前端交互和 AI 授权问题。",
+          "en": "Fixed finance, interface and AI authorization issues identified during project review."
+        },
+        {
+          "zh": "加强运行账号权限、备份验证及发布检查。",
+          "en": "Strengthened runtime permissions, backup verification and release checks."
+        },
+        {
+          "zh": "修复 AI 草稿批量确认/删除被拦截、投资撤销持仓校验、重复导出旧文件及导出笔数显示。",
+          "en": "Fixed blocked AI draft bulk confirmation/deletion, investment reversal holding checks, stale export reuse and exported row counts."
+        },
+        {
+          "zh": "修复电子钱包漏算流动资金、内部转账手续费漏计承诺、跨币种收款活动遗漏，以及 AI 交易查询结束日边界。",
+          "en": "Fixed wallet liquidity classification, transfer-fee commitments, missing cross-currency receipt activity and AI query end-date boundaries."
+        },
+        {
+          "zh": "手机翻页保留排序和筛选，AI 草稿及历史标题遵从隐私隐藏；修复订阅未来价格与拆分模板冲突、工具分页截断提示及登录限流。",
+          "en": "Mobile pagination retains ordering and filters, AI drafts/history titles respect privacy, and subscription future-price split conflicts, tool pagination indicators and login rate limits are corrected."
+        },
+        {
+          "zh": "加强运行权限、依赖安全与发布恢复：备份失败阻止轮转，发布先校验备份、保留旧资源并支持代码回退；公开公告不包含配置与凭据。",
+          "en": "Strengthened runtime permissions, dependency security and deployment recovery: failed backups block rotation; releases verify and back up first, retain old assets and support code rollback. Public notes omit configuration and credentials."
+        }
+      ],
+      "productVersion": "3.1.1"
+    },
+    {
+      "id": "interface-redesign",
+      "version": null,
+      "date": "2026-10-14",
+      "kind": "improved",
+      "title": {
+        "zh": "首页与整体界面更新",
+        "en": "Dashboard and interface redesign"
+      },
+      "changes": [
+        {
+          "zh": "重新设计首页仪表盘、导航和主要功能页面，改善信息层级。",
+          "en": "Redesigned the dashboard, navigation and main pages for clearer information."
+        },
+        {
+          "zh": "完善手机、平板与桌面布局，并保留深色和中英文界面。",
+          "en": "Improved phone, tablet and desktop layouts with dark mode and Chinese/English support."
+        },
+        {
+          "zh": "AI 智能中心增加总览、Copilot、智能记账、分析、预测、预算、资产负债、风险、订阅、目标、报告、自动化、记忆与设置十四个入口，复用原有业务模块。",
+          "en": "The AI center adds fourteen entries for overview, Copilot, bookkeeping, analysis, forecasts, budgets, assets/debt, risk, subscriptions, goals, reports, automation, memory and settings, reusing existing modules."
+        },
+        {
+          "zh": "AI 总览展示账本摘要、提醒、洞察、未来现金流和最近报告，打开总览不自动调用模型；AI 报告保留来源依据，支持恢复会话与历史管理。",
+          "en": "AI overview shows ledger summaries, reminders, insights, forecast and recent reports without automatically calling the model. AI reports retain evidence and support conversation restoration and history management."
+        },
+        {
+          "zh": "全局 Copilot 位于已登录页面顶部，携带允许的页面、期间、币种及账户上下文；面板显示查询范围，切换页面取消未完成对话，退出登录清理上下文。",
+          "en": "Global Copilot appears in authenticated toolbars with allowed page, period, currency and account context, displays scope, cancels unfinished chat on navigation and clears context on logout."
+        },
+        {
+          "zh": "云端主账本、登录与 AI 运行问题修复，默认标签和商品价格目录补齐；目录样本不产生正式消费，原账本及授权边界保留。",
+          "en": "Fixed cloud-ledger, login and AI runtime issues and added default tag/product-price directories. Reference price samples create no expenses; existing ledgers and consent boundaries are preserved."
+        }
+      ],
+      "productVersion": "3.1.0"
+    },
+    {
+      "id": "ai-core-stage",
+      "version": null,
+      "productVersion": "3.0.0",
+      "date": "2026-10-13",
+      "kind": "new",
+      "title": {
+        "zh": "AI 核心升级阶段",
+        "en": "AI core upgrade stage"
+      },
+      "changes": [
+        {
+          "zh": "归档 Phase 0 审计与 Phase 1 AI 核心交付。审计、迁移计划与已交付能力分别按原文记录。",
+          "en": "Archived Phase 0 audit and Phase 1 AI core delivery. Audits, migration plans and delivered capabilities retain their original status."
+        },
+        {
+          "zh": "AI 查询绑定当前用户、个人账本及明确账户集合，不支持筛选的工具拒绝扩大查询；提供模型配置、资源预算、上下文和并发限制。",
+          "en": "AI queries bind to the current user, ledger and explicit accounts; tools reject unsupported filters instead of broadening scope. Model configuration, budgets, context and concurrency limits are available."
+        },
+        {
+          "zh": "会话历史由用户主动开启，支持分页搜索、重命名、归档删除、反馈复制、重试停止和依据查看；保存期限及清理策略明确，历史金额不充当当前事实。",
+          "en": "Opt-in conversation history supports paging, search, rename, archive/delete, feedback, copy, retry, stop and evidence, with retention rules; historical amounts are not reused as current facts."
+        },
+        {
+          "zh": "持久交易草稿支持逐条验证、批量解析预览、编辑、删除和确认；三级分类完整路径与规则优先级匹配，冲突留待人工处理，不静默新增目录或过账。",
+          "en": "Persistent transaction drafts support row validation, batch parsing previews, editing, deletion and confirmation, with full category paths and rule priorities; conflicts need review and never silently create directories or post entries."
+        },
+        {
+          "zh": "完善中英界面、流式待核验状态、手机布局、基础脱敏与请求/工具/草稿关联审计；授权变更阻止后续模型调用。",
+          "en": "Improved bilingual UI, provisional streaming states, mobile layout, basic redaction and linked request/tool/draft auditing; consent changes block subsequent model calls."
+        }
+      ]
+    },
+    {
+      "id": "ai-first-stage",
+      "version": null,
+      "productVersion": "2.2.0",
+      "date": "2026-10-12",
+      "kind": "new",
+      "title": {
+        "zh": "AI 首批接入与目录维护",
+        "en": "Initial AI integration and directory maintenance"
+      },
+      "changes": [
+        {
+          "zh": "依据阶段 AI 和目录交付记录归档首批 AI 接入、目录扩充及批量删除说明，保留当时的授权和验证边界。",
+          "en": "Archived initial AI integration, directory expansion and batch deletion records, retaining their original authorization and validation limits."
+        },
+        {
+          "zh": "账户管理升级：账户档案、银行卡信息、排序、停用归档、受保护删除、关联活动及收支统计，增加账户健康检查；复用既有余额核算。",
+          "en": "Account management upgrade: profiles, bank-card details, ordering, deactivation, archiving, protected deletion, linked activity and statistics, plus health checks using existing balance accounting."
+        },
+        {
+          "zh": "个人信息中心：资料、头像、注册与修改密码、会话撤销、语言及偏好；新用户只初始化分类规则，不创建虚假账户或资金。",
+          "en": "Personal profiles: details, avatars, registration, password changes, session revocation, language and preferences. New users receive category/rule defaults without fictitious accounts or funds."
+        },
+        {
+          "zh": "目录扩充与操作：新增商户及标签基础目录，改善目录搜索与分页，增加目录和交易批量删除，引用保护与用户隔离继续生效。",
+          "en": "Directory work expanded merchant/tag defaults, improved search and pagination, and added directory/transaction bulk deletion with reference protection and user isolation."
+        },
+        {
+          "zh": "三级分类与详情：层级展开、创建排序、停用恢复及受保护删除；完整路径选择，父级笔数去重、退款净额、优惠分摊、趋势与预算执行，统计按币种隔离。",
+          "en": "Three-level categories: expansion, creation, ordering, status and protected deletion, full-path selection, deduplicated parent counts, refund net amounts, allocated discounts, trends and budgets, isolated by currency."
+        },
+        {
+          "zh": "DeepSeek 首批接入：流式对话、只读财务工具、隐私授权、自然语言草稿、Token/费用统计及审计；密钥留在服务端，确认前不产生交易。",
+          "en": "Initial DeepSeek integration: streamed chat, read-only financial tools, privacy consent, natural-language drafts, token/cost tracking and audit. Keys stay server-side and drafts do not post before confirmation."
+        },
+        {
+          "zh": "本地运行修复：补齐 AI 页面接口、数据库及快速进入检查，修复项目检查发现的问题；保留已有账本与桌面启动方式。",
+          "en": "Local runtime fixes restored missing AI endpoints and database/quick-start checks, addressing reviewed issues while retaining the ledger and desktop entry points."
+        }
+      ]
+    },
+    {
+      "id": "maintenance-baseline",
+      "version": null,
+      "productVersion": "2.1.0",
+      "date": "2026-10-11",
+      "kind": "new",
+      "title": {
+        "zh": "维护与验收文档归档",
+        "en": "Maintenance and validation archive"
+      },
+      "changes": [
+        {
+          "zh": "归档长期维护、核算、备份恢复与本机验收资料；本机验收不等同于生产切换。",
+          "en": "Archived maintenance, accounting, backup, recovery and local validation documents. Local validation does not imply a production rollout."
+        },
+        {
+          "zh": "F 投资与资产：投资资产、交易、持仓、成本收益、估值与撤销；存款及实物档案、价格记录和到期事项，按业务规则避免本金与收益重复统计。",
+          "en": "F investments and assets: asset records, trades, holdings, costs, returns, valuations and reversals; deposits, physical assets, prices and maturity tracking avoid double-counting principal and returns."
+        },
+        {
+          "zh": "多币种估值使用已登记、截至所选日期的直接汇率；保留来源与日期，缺失汇率或价格明确显示覆盖不足，不虚构折算金额。",
+          "en": "Currency valuations use recorded direct rates effective by the selected date, retaining sources and dates and marking incomplete coverage when rates or prices are missing."
+        },
+        {
+          "zh": "优惠与权益：原价、运费、优惠明细、平台补贴与实付关系；券及非现金权益档案、有效期、使用/返还记录、临期提示。",
+          "en": "Promotions and benefits: list prices, shipping, discounts, subsidies and paid totals, plus voucher and non-cash benefit records, expiry, usage, returns and expiry reminders."
+        },
+        {
+          "zh": "返现及优惠分析：待返现、到账、撤销、追回与历史，关联原消费，区分价格调整退款与独立奖励；按月、平台、商户和类型分析，积分不伪装现金。",
+          "en": "Cashback and promotion analysis: pending receipts, settlement, reversal, recovery and history linked to original expenses, distinguishing price-adjustment refunds from rewards with monthly/platform/merchant/type analysis; points are not represented as cash."
+        },
+        {
+          "zh": "G1—G3 资金状态：冻结、在途、确认及部分释放/结算；预付款、押金的消费退款核销与更正；货币启停排序及历史引用保护。",
+          "en": "G1–G3 fund states: frozen and in-transit funds, confirmation, partial release and settlement; prepayment/deposit consumption, refunds, write-offs and corrections; currency status, ordering and historical references."
+        },
+        {
+          "zh": "G4—G5 工资与缴费首版：工资构成、所属期、分次关联到账，社保与公积金缴费、工资扣款关联和余额来源；后续薪酬中心升级另列。",
+          "en": "G4–G5 initial payroll and contributions: pay components, earning periods, installment receipt links, social insurance and housing contributions, deduction links and balance sources; later payroll-center upgrades are listed separately."
+        },
+        {
+          "zh": "G6 付款授权：实际扣款账户、授权人/消费人、有效期、状态与月限额；账本外第三方付款仅记录事实，不伪造资金分录。",
+          "en": "G6 payment authorizations: payer accounts, authorized users and spenders, validity, status and monthly limits. External third-party payments record facts without inventing ledger entries."
+        },
+        {
+          "zh": "G7 生活成本：商品、品牌、规格、商户、标价与到手价、单位及固定篮子，展示同比环比、异常样本和覆盖缺口；独立价格样本不产生消费。",
+          "en": "G7 living costs: products, brands, specifications, merchants, list/paid prices, units and fixed baskets, with year/month comparisons, outliers and coverage gaps; price samples create no expenses."
+        },
+        {
+          "zh": "G8 历史上的今日：按北京时间日期、年份、分类和币种回看历史交易、主要分类与最大消费，并可跳转原记录。",
+          "en": "G8 on this day: revisit historical transactions, categories and largest expenses by Shanghai date, year, category and currency, with links to original records."
+        },
+        {
+          "zh": "G9 代买代付：本人费用与应收拆分、分次归还、转赠/核销/退货、交付记录、家庭分摊、待购及取消，复用既有借贷和交易核算。",
+          "en": "G9 advances and proxy purchases: personal-expense/receivable splits, repayments, gifting, write-off, returns, delivery history, household allocations and pending/cancelled purchases reuse existing accounting."
+        },
+        {
+          "zh": "全站 UI/UX 与长期维护：页面信息层级、统一布局、手机适配、隐私模式、核算及操作手册、备份恢复、排障和更新回滚说明；本机验证与正式上线状态分别记录。",
+          "en": "UI/UX and maintenance: clearer information hierarchy, shared layouts, mobile support, privacy mode, accounting/user manuals, backup, recovery, troubleshooting and rollback documentation, distinguishing local validation from production rollout."
+        }
+      ]
+    },
+    {
+      "id": "backend-foundation",
+      "version": null,
+      "productVersion": "2.0.0",
+      "date": "2026-10-08",
+      "kind": "new",
+      "title": {
+        "zh": "真实后端与基础保障阶段",
+        "en": "Backend and foundation stage"
+      },
+      "changes": [
+        {
+          "zh": "按阶段 A 至 G 文档追溯真实后端、备份恢复、报表、导入与外部事实能力；各批次完成及未完成状态保留，不将审计或计划视为已上线功能。",
+          "en": "Stages A through G document the backend, backup and recovery, reports, imports and external facts. Original completion limits remain; audits and plans are not treated as shipped features."
+        },
+        {
+          "zh": "真实后端：接入认证、个人账本隔离、账户及交易接口、精确金额核算与并发幂等保护，前端切换真实 API。",
+          "en": "Backend foundation connected authentication, isolated personal ledgers, account and transaction APIs, exact financial calculations, version and idempotency safeguards, and real frontend API integration."
+        },
+        {
+          "zh": "A1：完整备份、校验与隔离恢复流程，包含业务表、附件和账户余额核对；恢复演练不覆盖正式账本。",
+          "en": "A1: full backup, verification and isolated recovery, checking business tables, attachments and account balances without overwriting the live ledger."
+        },
+        {
+          "zh": "A2：跨刷新提交结果查询、使用原请求编号确认重试、同事务操作审计，以及交易详情的分页操作历史与隐私隐藏。",
+          "en": "A2: recover submissions after refresh, query outcomes and retry with the original operation key, with transactional audit and paginated privacy-aware transaction history."
+        },
+        {
+          "zh": "A3.1—A3.2：修复导入状态、手续费统计开关与历史期末摘要；分类编辑排序及交易恢复增加版本保护，分类删除提供引用预览并保护历史关联。",
+          "en": "A3.1–A3.2: fixed import status, fee statistics and historical closing summaries; added version protection for category edits, ordering and transaction restoration, plus reference previews and protected category deletion."
+        },
+        {
+          "zh": "A3.3：导入重新检查预览、过账前整批校验、失败恢复、逐行结果和处理历史；区分确定重复与疑似重复，保留人工处理与来源身份信息。",
+          "en": "A3.3: import rechecks, whole-batch validation before posting, failure recovery, row results and processing history, distinguishing definite and suspected duplicates with manual review and source identity."
+        },
+        {
+          "zh": "A3.4：修复父子预算互斥、历史预算兼容、预算编辑状态及信用卡账单时间边界，不静默删除旧额度或修改历史交易。",
+          "en": "A3.4: corrected overlapping parent/child budgets, legacy budget compatibility, editing state and credit-card date boundaries without silently deleting old allocations or changing historical transactions."
+        },
+        {
+          "zh": "A3.5—A3.9：建立隔离性能基线，优化长周期报表、交易搜索、操作成功反馈及首页/目录聚合；修复大批量导入、失败恢复与并发检查中发现的问题，不承诺未经验证的规模性能。",
+          "en": "A3.5–A3.9: established an isolated performance baseline, improved long-period reports, search, success feedback and dashboard/directory aggregation, and fixed batch import and recovery issues without claiming unverified scale performance."
+        },
+        {
+          "zh": "B1—B2 周期交易：收入、支出、转账及多种重复周期，独立时区、月底策略、启停与结束；待确认实例提供快照、影响预览、跳过、重试、确认过账及历史，默认不自动记账。",
+          "en": "B1–B2 recurring transactions: income, expenses, transfers, repeat schedules, time zones, month-end policies and lifecycle states, with snapshots, impact previews, skipping, retries and confirmed posting; automatic posting is not enabled by default."
+        },
+        {
+          "zh": "B3—B5 订阅与自动分类：服务商、续费、到期与价格历史；按商户、备注、金额、账户等条件生成建议，支持优先级、预览冲突、人工确认和执行日志。",
+          "en": "B3–B5 subscriptions and classification: providers, renewals, expiry and price history; merchant, note, amount and account rules support priorities, conflict previews, human approval and execution logs."
+        },
+        {
+          "zh": "B6—B7 财务日历与提醒：月/周/列表视图整合周期、订阅及信用卡实际剩余应还，首页显示待确认、逾期、失败与临期事项。",
+          "en": "B6–B7 calendar and reminders: month, week and list views combine recurring items, subscriptions and actual outstanding card amounts, with pending, overdue, failed and upcoming dashboard reminders."
+        },
+        {
+          "zh": "C1 保存视图：待整理交易入口、筛选与排序收藏、显示字段选择，以及 Windows 一键启动停止；浏览器收藏按用户隔离，不宣称跨设备同步。",
+          "en": "C1 saved views: transaction review, saved filters and ordering, selectable columns and Windows startup/stop tools. Browser favorites are user-isolated and do not imply cross-device sync."
+        },
+        {
+          "zh": "C2 批量整理：跨页选择、手机卡片多选、分类/商户/标签/项目/备注批量修改，先预览再按版本整批提交；问题支持处理、忽略、延后、重开及历史。",
+          "en": "C2 batch review: selection across pages and mobile cards, bulk category, merchant, tag, project and note changes with version-bound previews and atomic confirmation; review issues support resolution, ignoring, deferral, reopening and history."
+        },
+        {
+          "zh": "D1—D2 年度预算：年度计划、十二个月分配、分类额度、复制和差异确认；增加结转预览、调整历史、预警、模板及历史建议。",
+          "en": "D1–D2 annual budgets: yearly plans, twelve-month allocations, category limits, copying and difference confirmation, plus carryover previews, adjustment history, alerts, templates and historical suggestions."
+        },
+        {
+          "zh": "D3—D4 目标与指标：分币种储蓄目标、资金预留/释放/目标间转移、进度历史，必要支出分类、应急储备与储蓄率分析。",
+          "en": "D3–D4 goals and indicators: currency-specific saving goals, allocation, release and transfers between goals, history, essential-expense classification, emergency reserve and savings-rate analysis."
+        },
+        {
+          "zh": "D5 现金流：手动计划、周期与订阅、信用卡账单统一生成预测、每日余额、事件及资金缺口，提供期间、账户、币种和情景筛选；预测不计入实际余额。",
+          "en": "D5 cash flow: combine manual plans, recurring items, subscriptions and card statements into forecasts, daily balances, events and gaps with period, account, currency and scenario filters; forecasts never change actual balances."
+        },
+        {
+          "zh": "E1—E3 分析：月报年报、期间比较、分类差额、商户排行、收入来源、收支结构、固定/变动/未知属性、健康概览和资产负债归因；历史期初缺失时明确推算及未解释差额。",
+          "en": "E1–E3 analysis: monthly and annual reviews, period comparisons, category differences, merchant rankings, income sources, fixed/variable/unknown structure, health overview and net-worth attribution, labeling estimates and unexplained differences."
+        },
+        {
+          "zh": "E4—E5 债务计划：信用卡消费及既有债务的分期计划、精确期表、多种本金/费用模式、实际核对、历史与结清预览；不替代银行账单或合同。",
+          "en": "E4–E5 debt planning: installment plans for card spending and existing debts, exact schedules, principal and fee modes, reconciliation, history and settlement previews; plans do not replace bank statements or contracts."
+        },
+        {
+          "zh": "E6—E7 情景与压力：复用现金流预测比较情景，提供债务压力、计划与实际核对及指标说明；原报告列出的部分实现和未完成事项继续保留。",
+          "en": "E6–E7 scenarios and pressure: reuse cash-flow forecasts for scenario comparison, debt-pressure analysis, planned/actual reconciliation and metric explanations, retaining documented partial and incomplete scope."
+        }
+      ]
+    },
+    {
+      "id": "initial-beta",
+      "version": null,
+      "productVersion": "1.0.0",
+      "date": "2026-10-07",
+      "kind": "new",
+      "title": {
+        "zh": "首个测试版：前端基础与日常记账",
+        "en": "First beta: frontend and daily bookkeeping"
+      },
+      "changes": [
+        {
+          "zh": "前端阶段文档记录基础记账、账户、退款、信用卡、预算、目录、导入与对账；早期模拟接口及待联调限制以原报告为准。",
+          "en": "Frontend stage records cover bookkeeping, accounts, refunds, credit cards, budgets, directories, imports and reconciliation. Original mock API and integration limitations remain applicable."
+        },
+        {
+          "zh": "基础记账与账户：首页摘要、收支趋势、最近交易、账户余额、收入/支出/转账、交易详情、筛选、分页、编辑、软删除与恢复。",
+          "en": "Core frontend: dashboard summaries, trends, recent transactions, account balances, income, expenses, transfers, details, filters, pagination, editing, soft deletion and restoration."
+        },
+        {
+          "zh": "第二阶段：退款额度与分类核对、信用卡账单及还款、消费分类拆分、预算编辑与并发提示、分币种收支统计及分类下钻。",
+          "en": "Stage two: refund limits and categories, credit-card statements and repayment, expense splits, budget editing with conflict feedback, currency-specific statistics and category drill-down."
+        },
+        {
+          "zh": "第三阶段：借入借出、归还与偿还、报销提交与到账、项目分析、商户推荐分类、标签关联和模板预填；模板须经确认才记账。",
+          "en": "Stage three: borrowing, lending, settlement, reimbursement receipts, project analysis, merchant category suggestions, tags and template prefilling, with confirmation before posting."
+        },
+        {
+          "zh": "第四阶段：导入映射、重复及异常预览、人工确认，对账、附件、导出、账户趋势、高级统计与生产 PWA；离线缓存不包含 API 财务响应。",
+          "en": "Stage four: import mapping, duplicate and invalid-row previews, confirmation, reconciliation, attachments, exports, account trends, advanced statistics and production PWA without caching financial API responses."
+        },
+        {
+          "zh": "最终阶段补齐认证会话、错误反馈、加载与空状态、手机导航、中英文、深浅主题与隐藏金额；当时模拟接口及真实后端待联调限制保留。",
+          "en": "Final frontend work added sessions, error feedback, loading and empty states, mobile navigation, bilingual themes and privacy mode. Original mock API and pending backend integration limits are retained."
+        }
+      ]
+    },
+    {
+      "id": "database-baseline",
+      "version": null,
+      "productVersion": "0.0.0",
+      "date": "2026-10-07",
+      "kind": "new",
+      "title": {
+        "zh": "数据库设计基线",
+        "en": "Database design baseline"
+      },
+      "changes": [
+        {
+          "zh": "整理原始数据库表结构与验证说明；这是追溯基线，不代表应用正式发布。",
+          "en": "Original database schema and validation documentation; an archival baseline, not a production release."
+        },
+        {
+          "zh": "统一账户、财务事件与资金分录模型，记录收入、支出、转账、退款、期初余额、多币种与精确金额；保留原始表结构、索引及验证文档。",
+          "en": "Documented a shared model for accounts, financial events and entries, covering income, expenses, transfers, refunds, opening balances, currencies and exact amounts, with schema, indexes and validation records."
+        }
+      ]
+    }
+  ],
+  "product": {
+    "name": "Personal Finance",
+    "channel": "beta",
+    "version": "6.30.1",
+    "releaseNumber": "2026.11.17.2"
+  }
+}

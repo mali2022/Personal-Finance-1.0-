@@ -1,0 +1,76 @@
+{
+  "from": "2026-10-01",
+  "to": "2026-11-01",
+  "currency": "CNY",
+  "isPartial": true,
+  "generatedAt": "2026-10-19T10:00:00Z",
+  "summary": {
+    "recordedSeconds": 7200,
+    "elapsedSeconds": 86400,
+    "unrecordedSeconds": 79200,
+    "coveragePercent": 8.33,
+    "valuedSeconds": 7200,
+    "valuationCoveragePercent": 100,
+    "referenceCost": 180,
+    "observedDiscretionarySeconds": 3600,
+    "linkedIncome": 0,
+    "linkedExpense": 120,
+    "combinedResourceCost": 300,
+    "actualWorkHourlyRate": 0,
+    "workAndCommuteSeconds": 3600,
+    "commuteReferenceCost": 0,
+    "missingFxTransactions": 0
+  },
+  "categories": [
+    {
+      "category": "Learning",
+      "seconds": 3600,
+      "percentOfRecorded": 50,
+      "denominatorSeconds": 7200
+    },
+    {
+      "category": "Work",
+      "seconds": 3600,
+      "percentOfRecorded": 50,
+      "denominatorSeconds": 7200
+    }
+  ],
+  "trend": [{ "date": "2026-10-18", "seconds": 7200 }],
+  "activities": [
+    {
+      "id": "11111111-1111-1111-1111-111111111111",
+      "version": "1",
+      "title": "Read a book",
+      "category": "Learning",
+      "note": "Chapter one",
+      "state": "Completed",
+      "seconds": 3600,
+      "referenceCost": "60.00",
+      "segments": [
+        {
+          "start": "2026-10-18T09:00:00+08:00",
+          "end": "2026-10-18T10:00:00+08:00"
+        }
+      ]
+    }
+  ],
+  "budgets": [
+    {
+      "id": "22222222-2222-2222-2222-222222222222",
+      "version": "1",
+      "period": "Month",
+      "startDate": "2026-10-01",
+      "category": "Learning",
+      "minutes": 30,
+      "usedMinutes": 60,
+      "progressPercent": 200,
+      "overMinutes": 30
+    }
+  ],
+  "projects": [],
+  "financialLinks": [],
+  "financialTransactions": [],
+  "definitions": {
+    "coverage": "Recorded / elapsed; unrecorded time is unknown."
+  }
+}

@@ -1,0 +1,11 @@
+namespace PersonalFinance.Api.Contracts;
+public sealed record InvestmentAssetInput(string Name, string Type, string Code, string Market, string Currency, string AccountId, string Unit = "份", string State = "Active", string Note = "");
+public sealed record InvestmentTradeInput(string AssetId, string Type, DateOnly Date, DateOnly SettlementDate, string Quantity = "0", string Price = "0", string Amount = "0", string Commission = "0", string Tax = "0", string OtherFee = "0", string? TransactionId = null, string? CategoryId = null, string Note = "");
+public sealed record InvestmentValuationInput(string AssetId, DateOnly Date, string Price, string Source, string? Reason = null);
+public sealed record InvestmentCorrectionInput(string Reason);
+public sealed record InvestmentImportInput(InvestmentValuationInput[] Items);
+public sealed record PeriodicReturnInput(string[] Amounts, double PeriodsPerYear);
+public sealed record InvestmentReturnComparisonInput(string[] AssetIds, string Start, string End, string Currency);
+public sealed record InvestmentBoundaryValueInput(string AccountId, DateOnly Date, string Value, string Source, bool IncludesCashAndHoldings);
+public sealed record InvestmentBoundaryReturnInput(string[] AccountIds, string Start, string End, string Currency);
+public sealed record InvestmentProjectAssignmentInput(string? ProjectId, DateOnly EffectiveFrom, string Reason, bool ClassifyWholeAsset);

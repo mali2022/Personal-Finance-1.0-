@@ -1,0 +1,24 @@
+.spending-lab {
+  overflow-wrap: anywhere;
+}
+.spending-lab .ant-space-item,
+.spending-lab .ant-card {
+  min-width: 0;
+  max-width: 100%;
+}
+.spending-lab .ant-btn {
+  max-width: 100%;
+  white-space: normal;
+  height: auto;
+  min-height: 32px;
+}
+.spending-lab label {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+}
+.spending-lab .ant-select {
+  max-width: 100%;
+}

@@ -1,0 +1,25 @@
+.copilot-page-context {
+  overflow-wrap: anywhere;
+}
+.global-copilot-drawer .ant-drawer-body {
+  padding: 20px;
+}
+.app-shell .topbar .header-utilities > .global-copilot-button.ant-btn {
+  flex-shrink: 0;
+  width: auto;
+  padding-inline: 8px;
+  margin-inline-end: 8px;
+}
+@media (max-width: 900px) {
+  .global-copilot-label {
+    display: none;
+  }
+  .app-shell .topbar .header-utilities > .global-copilot-button.ant-btn {
+    width: 32px;
+    padding: 0;
+    margin-inline-end: 0;
+  }
+  .global-copilot-drawer .ant-drawer-body {
+    padding: 12px;
+  }
+}

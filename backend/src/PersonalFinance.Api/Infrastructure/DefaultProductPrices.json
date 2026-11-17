@@ -1,0 +1,732 @@
+{
+  "sourceId": "huilong-20261103",
+  "title": "【价格动态】山西榆次汇隆市场2026年11月3日价格动态",
+  "sourceUrl": "https://mp.weixin.qq.com/s/Hp-trSn7K-nTiOqd1EfjmA",
+  "market": "山西榆次汇隆市场",
+  "date": "2026-11-03",
+  "currency": "CNY",
+  "priceKind": "Listed",
+  "description": "原文市场销售平均价，作为参考标价保存；不是个人实际到手价，不产生支出。价格依产地和规格而异。",
+  "items": [
+    {
+      "product": "白萝卜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.05,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "菠菜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.75,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "菜花",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 2.55,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "葱头",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "大白菜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 0.8,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "大葱",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.75,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "豆角",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 5.25,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "豆芽",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.15,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "胡萝卜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.65,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "黄瓜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 2.25,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "茴子白",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "尖椒",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.65,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "韭菜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 3.6,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "苦瓜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 4.75,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "辣椒",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 3.15,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "莲藕",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 4.25,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "南瓜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.35,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "蒜苗",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 3.4,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "茄子",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.8,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "芹菜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.25,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "青椒",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 2.25,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "生菜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.15,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "生姜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 4.5,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "蒜薹",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 4.85,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "土豆",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.1,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "莴笋",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.85,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "西红柿",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 2.95,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "西葫芦",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.6,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "西兰花",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 2.4,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "洋白菜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.15,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "洋葱",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 1.4,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "小葱",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 2.65,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "丝瓜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 6.35,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "茼蒿",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 2.4,
+      "productCategory": "蔬菜"
+    },
+    {
+      "product": "苹果",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 6,
+      "productCategory": "水果"
+    },
+    {
+      "product": "哈密瓜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 4.75,
+      "productCategory": "水果"
+    },
+    {
+      "product": "西瓜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 2,
+      "productCategory": "水果"
+    },
+    {
+      "product": "麒麟西瓜",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 5,
+      "productCategory": "水果"
+    },
+    {
+      "product": "火龙果（白）",
+      "specification": "个",
+      "unit": "个",
+      "quantity": 1,
+      "amount": 5,
+      "productCategory": "水果"
+    },
+    {
+      "product": "火龙果（红）",
+      "specification": "个",
+      "unit": "个",
+      "quantity": 1,
+      "amount": 5,
+      "productCategory": "水果"
+    },
+    {
+      "product": "百香果",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 5,
+      "productCategory": "水果"
+    },
+    {
+      "product": "酥梨",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 3.5,
+      "productCategory": "水果"
+    },
+    {
+      "product": "榴莲",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 37.5,
+      "productCategory": "水果"
+    },
+    {
+      "product": "凤梨",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 5.75,
+      "productCategory": "水果"
+    },
+    {
+      "product": "芒果",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 12,
+      "productCategory": "水果"
+    },
+    {
+      "product": "圣女果",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 8.5,
+      "productCategory": "水果"
+    },
+    {
+      "product": "香蕉",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 4,
+      "productCategory": "水果"
+    },
+    {
+      "product": "巨峰葡萄",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 4.25,
+      "productCategory": "水果"
+    },
+    {
+      "product": "橙子",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 5.5,
+      "productCategory": "水果"
+    },
+    {
+      "product": "鸡蛋",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 4.5,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "猪肋排",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 13,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "猪肉",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 7,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "猪里脊",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 10,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "肋条肉",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 8.5,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "排骨",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 9.5,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "猪头肉",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 25,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "猪耳朵",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 27,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "肥肠",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 27,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "火腿（双汇380g）",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 10,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "牛腱子肉",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 36,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "牛腩",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 36,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "羊肉",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 35,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "鲈鱼",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 16,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "草鱼",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 9,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "桂鱼",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 40,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "白鲢",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 6,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "鲫鱼",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 8,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "多宝鱼",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 29,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "黄鱼",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 45,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "胖头鱼",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 12,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "鲤鱼",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 7,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "白条鸡",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 12,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "清江鱼",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 12,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "活虾",
+      "specification": "斤",
+      "unit": "斤",
+      "quantity": 1,
+      "amount": 36,
+      "productCategory": "肉蛋水产"
+    },
+    {
+      "product": "五得利",
+      "specification": "25kg",
+      "unit": "kg",
+      "quantity": 25,
+      "amount": 82,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "光牌",
+      "specification": "25kg",
+      "unit": "kg",
+      "quantity": 25,
+      "amount": 87,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "生力面粉",
+      "specification": "25kg",
+      "unit": "kg",
+      "quantity": 25,
+      "amount": 82,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "尊龙宴大米",
+      "specification": "25kg",
+      "unit": "kg",
+      "quantity": 25,
+      "amount": 155,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "尊龙宴大米",
+      "specification": "10kg",
+      "unit": "kg",
+      "quantity": 10,
+      "amount": 68,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "五常稻花香（二号）",
+      "specification": "10kg",
+      "unit": "kg",
+      "quantity": 10,
+      "amount": 90,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "五常稻花香（长粒香）",
+      "specification": "10kg",
+      "unit": "kg",
+      "quantity": 10,
+      "amount": 70,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "母亲河",
+      "specification": "10kg",
+      "unit": "kg",
+      "quantity": 10,
+      "amount": 70,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "嘎嘎香大米",
+      "specification": "10kg",
+      "unit": "kg",
+      "quantity": 10,
+      "amount": 88,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "金龙鱼大豆油",
+      "specification": "5L",
+      "unit": "L",
+      "quantity": 5,
+      "amount": 50,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "金龙鱼调和油",
+      "specification": "5L",
+      "unit": "L",
+      "quantity": 5,
+      "amount": 68,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "金龙鱼花生油（一级）",
+      "specification": "5L",
+      "unit": "L",
+      "quantity": 5,
+      "amount": 128,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "鲁花大豆油",
+      "specification": "5L",
+      "unit": "L",
+      "quantity": 5,
+      "amount": 85,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "鲁花调和油",
+      "specification": "5L",
+      "unit": "L",
+      "quantity": 5,
+      "amount": 80,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "鲁花花生油",
+      "specification": "5L",
+      "unit": "L",
+      "quantity": 5,
+      "amount": 145,
+      "productCategory": "粮油"
+    },
+    {
+      "product": "鲁花菜籽油",
+      "specification": "5L",
+      "unit": "L",
+      "quantity": 5,
+      "amount": 85,
+      "productCategory": "粮油"
+    }
+  ]
+}

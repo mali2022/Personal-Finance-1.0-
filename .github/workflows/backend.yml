@@ -1,0 +1,61 @@
+name: Backend checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+concurrency:
+  group: backend-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+      - run: dotnet restore backend/tests/PersonalFinance.Tests --configfile backend/NuGet.Config
+      - name: Start disposable SQL Server
+        shell: bash
+        run: |
+          set -euo pipefail
+          password="CI-$(openssl rand -hex 24)!"
+          echo "::add-mask::$password"
+          database="PersonalFinanceWeb_RestoreCheck_$(openssl rand -hex 16)"
+          echo "PF_DELETION_TEST_DATABASE=$database" >> "$GITHUB_ENV"
+          echo "PF_TEST_SQL_CONNECTION_STRING=Server=localhost,1433;Database=$database;User Id=sa;Password=$password;Encrypt=True;TrustServerCertificate=True" >> "$GITHUB_ENV"
+          echo "ConnectionStrings__Finance=Server=localhost,1433;Database=$database;User Id=sa;Password=$password;Encrypt=True;TrustServerCertificate=True" >> "$GITHUB_ENV"
+          echo "Auth__SigningKey=$(openssl rand -hex 48)" >> "$GITHUB_ENV"
+          docker run -d --name pf-test-sql -e ACCEPT_EULA=Y -e MSSQL_PID=Developer -e "MSSQL_SA_PASSWORD=$password" -p 127.0.0.1:1433:1433 mcr.microsoft.com/mssql/server:2025-latest
+          ready=0
+          for attempt in $(seq 1 60); do
+            if docker exec -e "SQLCMDPASSWORD=$password" pf-test-sql /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -C -b -l 2 -Q 'SELECT 1' >/dev/null 2>&1; then ready=1; break; fi
+            sleep 2
+          done
+          [ "$ready" = 1 ] || { docker logs --tail 40 pf-test-sql; exit 1; }
+      - name: Initialize isolated schema
+        env:
+          ASPNETCORE_ENVIRONMENT: Development
+          Ai__Enabled: 'false'
+        run: dotnet run --project backend/src/PersonalFinance.Api --configuration Release --no-launch-profile -- --initialize-db
+      - name: Run unit and real SQL regressions (model API is mocked)
+        env:
+          PF_AI_LIVE_ENABLED: 'false'
+        run: dotnet test backend/tests/PersonalFinance.Tests --no-restore --configuration Release --filter 'FullyQualifiedName!~AiLiveTests' --logger 'trx;LogFileName=backend-ci.trx' --results-directory backend/TestResults
+      - name: Reject silently skipped SQL coverage
+        shell: python
+        run: |
+          import xml.etree.ElementTree as ET
+          root = ET.parse('backend/TestResults/backend-ci.trx').getroot()
+          results = root.findall('.//{*}UnitTestResult')
+          assert results and all(r.attrib['outcome'] == 'Passed' for r in results), 'A test failed or was skipped'
+          for name in ('DeletionSqlTests', 'AiSqlTests', 'AiPhase1HttpTests', 'ProfileSessionSqlTests', 'StabilityHttpTests', 'FuelTests', 'KeywordSearchSqlTests'):
+              assert any(name in r.attrib['testName'] for r in results), f'Missing SQL coverage: {name}'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: backend-test-results
+          path: backend/TestResults
+      - name: Remove disposable SQL container
+        if: always()
+        run: docker rm -f pf-test-sql || true

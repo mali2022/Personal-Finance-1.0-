@@ -1,0 +1,808 @@
+/*
+ * Home — personal finance control centre.
+ * Only additive Apple surfaces on top of design/apple.css: all colours come
+ * from the --pf-* tokens so light and dark stay in sync. No heavy glass, no
+ * large gradients; one quiet radial highlight remains in the shared pf-hero.
+ */
+
+.home-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.home-bento {
+  width: 100%;
+}
+
+.home-module {
+  display: flex;
+  min-width: 0;
+}
+
+.home-module > .pf-card,
+.home-module > .pf-hero {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.home-module > .pf-card > .pf-card-body {
+  flex: 1 1 auto;
+}
+
+.home-page .pf-card-head {
+  flex-wrap: wrap;
+}
+
+.home-page .pf-card-action {
+  max-width: 100%;
+}
+
+/* ---------------------------------------------------------------- welcome */
+.home-welcome {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-bottom: 2px;
+}
+
+.home-welcome-main {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+.home-welcome-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--pf-label-3);
+  font-size: var(--pf-text-sm);
+}
+
+.home-welcome-date {
+  font-variant-numeric: tabular-nums;
+}
+
+.home-page .home-welcome-title {
+  margin: 2px 0 0;
+  font-size: clamp(30px, 3vw, 40px);
+  letter-spacing: -1.1px;
+  line-height: 1.12;
+}
+
+.home-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 10px 0 0;
+  max-width: 78ch;
+  color: var(--pf-label-2);
+  font-size: var(--pf-text-base);
+  line-height: 1.6;
+}
+
+.home-status-dot {
+  flex: 0 0 7px;
+  width: 7px;
+  height: 7px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: var(--pf-positive);
+  box-shadow: 0 0 0 3px var(--pf-positive-soft);
+}
+
+.home-status.is-muted .home-status-dot {
+  background: var(--pf-label-3);
+  box-shadow: 0 0 0 3px var(--pf-fill);
+}
+
+.home-status-count {
+  color: var(--pf-negative);
+  font-variant-numeric: tabular-nums;
+}
+
+.home-status-count.is-clear {
+  color: var(--pf-positive);
+}
+
+.home-welcome-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------------- net worth */
+.home-hero {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.home-hero-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.home-hero-heading .anticon {
+  color: var(--pf-tint);
+}
+
+.home-hero .pf-hero-value {
+  align-items: center;
+  gap: 14px;
+}
+
+.home-hero-link {
+  display: inline-flex;
+  min-width: 0;
+  border-radius: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-hero-link:hover .pf-hero-number {
+  color: var(--pf-tint);
+}
+
+.home-hero-link:focus-visible {
+  outline: none;
+  box-shadow: var(--pf-shadow-focus);
+}
+
+.home-hero-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 11px;
+  border-radius: var(--pf-radius-sm);
+  background: var(--pf-warning-soft);
+  color: var(--pf-warning);
+  font-size: var(--pf-text-sm);
+  line-height: 1.5;
+}
+
+.home-hero-warning .anticon {
+  margin-top: 2px;
+}
+
+.home-chart-hidden {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 190px;
+  padding: 16px;
+  border-radius: var(--pf-radius-md);
+  background: var(--pf-fill);
+  color: var(--pf-label-2);
+  font-size: var(--pf-text-sm);
+  text-align: center;
+}
+
+.home-chart-hidden .anticon {
+  color: var(--pf-label-3);
+  font-size: 22px;
+}
+
+.home-chart-hidden strong {
+  color: var(--pf-label);
+  font-size: var(--pf-text-base);
+  font-weight: 600;
+}
+
+.home-chart-hidden span {
+  max-width: 34ch;
+  color: var(--pf-label-3);
+  line-height: 1.5;
+}
+
+.home-hero-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: var(--pf-label-3);
+  font-size: var(--pf-text-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------------------- overview */
+.home-month {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.home-page .overview-date-picker {
+  width: 168px;
+  max-width: 100%;
+}
+
+.home-page .overview-date-picker .mobile-date-trigger > span:not(.anticon) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-page .overview-date-picker .adaptive-date-wrapper {
+  width: 100%;
+}
+
+.home-page .overview-month-label {
+  color: var(--pf-label-3);
+  font-size: var(--pf-text-sm);
+  white-space: nowrap;
+}
+
+.home-page .home-month > .adaptive-date-wrapper {
+  width: auto;
+  flex: 0 0 auto;
+}
+
+.home-metrics {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.home-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--pf-radius-md);
+  background: var(--pf-surface-2);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    background-color var(--pf-dur-fast) var(--pf-ease),
+    border-color var(--pf-dur-fast) var(--pf-ease),
+    box-shadow var(--pf-dur-fast) var(--pf-ease);
+}
+
+.home-metric:hover {
+  border-color: var(--pf-separator);
+  background: var(--pf-surface);
+  box-shadow: var(--pf-shadow-1);
+}
+
+.home-metric:focus-visible {
+  outline: none;
+  box-shadow: var(--pf-shadow-focus);
+  border-color: transparent;
+}
+
+.home-metric-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--pf-label-2);
+  font-size: var(--pf-text-sm);
+  font-weight: 550;
+  line-height: 1.4;
+}
+
+.home-metric-label .anticon {
+  color: var(--pf-label-3);
+  font-size: 13px;
+}
+
+.home-metric-arrow {
+  margin-left: auto;
+  color: var(--pf-tint) !important;
+  opacity: 0;
+  transition: opacity var(--pf-dur-fast) var(--pf-ease);
+}
+
+.home-metric:hover .home-metric-arrow,
+.home-metric:focus-visible .home-metric-arrow {
+  opacity: 1;
+}
+
+.home-metric-value {
+  display: block;
+  min-height: 30px;
+  color: var(--pf-label);
+  font-family: var(--pf-font-numeric);
+  font-size: clamp(19px, 1.55vw, 25px);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.home-metric-value .money {
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: inherit;
+}
+
+.home-metric-loading {
+  display: inline-block;
+  width: 62%;
+  height: 20px;
+  border-radius: var(--pf-radius-xs);
+  background: linear-gradient(
+    100deg,
+    var(--pf-fill) 20%,
+    var(--pf-fill-2) 40%,
+    var(--pf-fill) 60%
+  );
+  background-size: 220% 100%;
+  animation: pf-shimmer 1.4s var(--pf-ease) infinite;
+}
+
+.home-metric-caption {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-height: 18px;
+  color: var(--pf-label-3);
+  font-size: var(--pf-text-xs);
+  line-height: 1.45;
+}
+
+.home-metric-caption .pf-delta {
+  min-height: 18px;
+  padding: 0 7px;
+  font-size: var(--pf-text-2xs);
+}
+
+.home-inline-error {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--pf-negative);
+}
+
+.home-inline-error .ant-btn {
+  padding-inline: 4px;
+}
+
+/* ---------------------------------------------------------- quick actions */
+.home-page .pf-quick-grid.home-quick-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home-quick-grid .pf-quick {
+  min-width: 0;
+}
+
+/* ------------------------------------------------------------- pending */
+.home-clear-pill {
+  align-self: flex-start;
+}
+
+.home-pending .pf-card-body {
+  justify-content: space-between;
+}
+
+.home-pending .pf-state {
+  min-height: 108px;
+}
+
+.home-pending-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.home-pending-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.home-pending-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--pf-radius-md);
+  background: var(--pf-surface-2);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    background-color var(--pf-dur-fast) var(--pf-ease),
+    border-color var(--pf-dur-fast) var(--pf-ease),
+    box-shadow var(--pf-dur-fast) var(--pf-ease);
+}
+
+.home-pending-stat:hover {
+  border-color: var(--pf-separator);
+  background: var(--pf-surface);
+  box-shadow: var(--pf-shadow-1);
+}
+
+.home-pending-stat:focus-visible {
+  outline: none;
+  box-shadow: var(--pf-shadow-focus);
+  border-color: transparent;
+}
+
+.home-pending-stat span {
+  overflow: hidden;
+  color: var(--pf-label-2);
+  font-size: var(--pf-text-xs);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-pending-stat strong {
+  color: var(--pf-label);
+  font-family: var(--pf-font-numeric);
+  font-size: var(--pf-text-xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.7px;
+  line-height: 1.2;
+}
+
+.home-pending-stat strong.is-warn {
+  color: var(--pf-negative);
+}
+
+.home-pending-stat strong.is-clear {
+  color: var(--pf-positive);
+}
+
+.home-recon {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.home-recon-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.home-recon-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--pf-label);
+  font-size: var(--pf-text-base);
+  font-weight: 550;
+}
+
+.home-recon-title .anticon {
+  color: var(--pf-tint);
+}
+
+.home-recon-values {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.home-recon-value {
+  color: var(--pf-label);
+  font-family: var(--pf-font-numeric);
+  font-size: var(--pf-text-2xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+}
+
+.home-recon-sub {
+  color: var(--pf-label-3);
+  font-size: var(--pf-text-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.home-coverage-bar {
+  height: 6px;
+  border-radius: var(--pf-radius-pill);
+  background: var(--pf-fill);
+  overflow: hidden;
+}
+
+.home-coverage-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--pf-tint);
+  transition: width var(--pf-dur) var(--pf-ease);
+}
+
+.home-recon-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------------ AI insights */
+.home-ai .pf-card-body {
+  gap: 12px;
+}
+
+.home-ai-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.home-ai-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-height: 28px;
+  padding: 3px 10px;
+  border-radius: var(--pf-radius-pill);
+  background: var(--pf-fill);
+  color: var(--pf-label-2);
+  font-size: var(--pf-text-xs);
+  line-height: 1.5;
+}
+
+.home-ai-chip b {
+  color: var(--pf-label-3);
+  font-weight: 550;
+}
+
+.home-ai-chip .anticon {
+  color: var(--pf-label-3);
+}
+
+.home-ai-status {
+  min-height: 28px;
+  gap: 6px;
+}
+
+.home-ai-status b {
+  color: inherit;
+  font-weight: 650;
+  opacity: 0.78;
+}
+
+/* Let the reused legacy Ant card blend into the Apple surface. */
+.home-ai-inner .ant-card {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.home-ai-inner .ant-card-head {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 28px;
+  height: 28px;
+  padding: 0;
+  border-bottom: 0;
+}
+
+.home-ai-inner .ant-card-head-wrapper {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.home-ai-inner .ant-card-head-title {
+  display: none;
+}
+
+.home-ai-inner .ant-card-extra {
+  padding: 0;
+}
+
+.home-ai-inner .ant-card-body {
+  padding: 0;
+}
+
+.home-ai-inner .ant-alert {
+  border-radius: var(--pf-radius-md);
+}
+
+.home-ai-inner p {
+  margin: 0;
+}
+
+.home-ai-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------- recent entries */
+.home-recent .pf-card-body--flush {
+  padding: 0;
+}
+
+.home-recent-list {
+  margin: 0;
+}
+
+.home-recent-row {
+  min-height: 64px;
+}
+
+.home-recent-row:focus-visible {
+  outline: none;
+  background: var(--pf-tint-softer);
+  box-shadow: inset 0 0 0 2px var(--pf-tint);
+}
+
+.home-recent-row .pf-row-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.home-review-dot {
+  flex: 0 0 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pf-warning);
+}
+
+.home-recent-row .pf-row-meta {
+  font-variant-numeric: tabular-nums;
+}
+
+.home-recent-row .pf-row-amount .money {
+  font-size: var(--pf-text-base);
+  font-weight: 600;
+}
+
+.home-recent-loading {
+  padding: 12px 22px 18px;
+}
+
+.home-recent-empty {
+  padding: 0 22px;
+}
+
+.home-recent-foot {
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ----------------------------------------------------------- responsive */
+@media (max-width: 1180px) {
+  .home-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* The half-width bipane layouts only work on wide screens; below the bento
+     breakpoint these cards take the full row instead of leaving a blank half. */
+  .home-pending,
+  .home-ai,
+  .home-recent {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 1100px) {
+  .home-page .pf-quick-grid.home-quick-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .home-welcome {
+    align-items: flex-start;
+  }
+
+  .home-welcome-main {
+    flex: 1 1 100%;
+  }
+
+  .home-page .home-welcome-title {
+    font-size: clamp(27px, 8vw, 34px);
+    letter-spacing: -0.8px;
+  }
+
+  .home-welcome-actions {
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .home-welcome-actions .ant-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-inline: 10px;
+  }
+
+  .home-page .home-welcome-all {
+    display: none;
+  }
+
+  .home-page .pf-quick-grid.home-quick-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-quick-grid .pf-quick {
+    min-height: 56px;
+  }
+
+  .home-quick-grid .pf-quick-text small {
+    display: none;
+  }
+
+  .home-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-metric {
+    padding: 11px 12px;
+  }
+
+  .home-metric-value {
+    font-size: 20px;
+  }
+
+  .home-recent-loading,
+  .home-recent-empty {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-page .pf-quick-grid.home-quick-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .home-page .overview-date-picker {
+    width: 160px;
+  }
+
+  .home-status {
+    font-size: var(--pf-text-sm);
+  }
+
+  .home-pending-stat {
+    padding: 8px 9px;
+  }
+
+  .home-pending-stat strong {
+    font-size: var(--pf-text-lg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-metric,
+  .home-pending-stat,
+  .home-coverage-bar span,
+  .home-metric-arrow {
+    transition: none !important;
+  }
+
+  .home-metric-loading {
+    animation: none;
+  }
+}

@@ -1,0 +1,23 @@
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { App } from 'antd';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { MemoryRouter } from 'react-router-dom';
+import { expect, it, vi } from 'vitest';
+import { TransactionIntegrityPanel } from '../features/transactions/TransactionIntegrityPanel';
+import { workspaceApi } from '../features/transactions/workspaceApi';
+import { smartApi } from '../features/reconciliation/api';
+import type { TransactionDetailDto } from '../types';
+it('loads review data only when expanded', async()=>{
+ const issues=vi.spyOn(workspaceApi,'issues').mockResolvedValue({rules:[],threshold:''});
+ const matches=vi.spyOn(workspaceApi,'matches').mockResolvedValue([]);
+ const smart=vi.spyOn(smartApi,'transactionLinks').mockResolvedValue({items:[],total:0});
+ const cache=new QueryClient({defaultOptions:{queries:{retry:false}}});
+ const transaction={id:'lazy',version:'1',entries:[],currency:'CNY',status:'Confirmed'} as unknown as TransactionDetailDto;
+ const view=render(<QueryClientProvider client={cache}><MemoryRouter><App><TransactionIntegrityPanel transaction={transaction} onClose={()=>{}}/></App></MemoryRouter></QueryClientProvider>);
+ expect(issues).not.toHaveBeenCalled();expect(matches).not.toHaveBeenCalled();
+ expect(smart).not.toHaveBeenCalled();
+ fireEvent.click(screen.getByText('异常复核与逐笔对账'));
+ await waitFor(()=>{expect(issues).toHaveBeenCalledTimes(1);expect(matches).toHaveBeenCalledTimes(1)});
+ await waitFor(()=>expect(smart).toHaveBeenCalledTimes(1));
+ view.unmount();cache.clear();vi.restoreAllMocks();
+});

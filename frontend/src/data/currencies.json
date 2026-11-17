@@ -1,0 +1,194 @@
+[
+  {
+    "code": "CNY",
+    "name": "人民币",
+    "internationalName": "Chinese Yuan",
+    "symbol": "¥"
+  },
+  {
+    "code": "USD",
+    "name": "美元",
+    "internationalName": "US Dollar",
+    "symbol": "$"
+  },
+  {
+    "code": "HKD",
+    "name": "港元",
+    "internationalName": "Hong Kong Dollar",
+    "symbol": "HK$"
+  },
+  {
+    "code": "EUR",
+    "name": "欧元",
+    "internationalName": "Euro",
+    "symbol": "€"
+  },
+  {
+    "code": "GBP",
+    "name": "英镑",
+    "internationalName": "Pound Sterling",
+    "symbol": "£"
+  },
+  {
+    "code": "JPY",
+    "name": "日元",
+    "internationalName": "Japanese Yen",
+    "symbol": "JP¥"
+  },
+  {
+    "code": "AUD",
+    "name": "澳元",
+    "internationalName": "Australian Dollar",
+    "symbol": "A$"
+  },
+  {
+    "code": "CAD",
+    "name": "加元",
+    "internationalName": "Canadian Dollar",
+    "symbol": "C$"
+  },
+  {
+    "code": "CHF",
+    "name": "瑞士法郎",
+    "internationalName": "Swiss Franc",
+    "symbol": "CHF"
+  },
+  {
+    "code": "SGD",
+    "name": "新加坡元",
+    "internationalName": "Singapore Dollar",
+    "symbol": "S$"
+  },
+  {
+    "code": "NZD",
+    "name": "新西兰元",
+    "internationalName": "New Zealand Dollar",
+    "symbol": "NZ$"
+  },
+  {
+    "code": "KRW",
+    "name": "韩元",
+    "internationalName": "South Korean Won",
+    "symbol": "₩"
+  },
+  {
+    "code": "TWD",
+    "name": "新台币",
+    "internationalName": "New Taiwan Dollar",
+    "symbol": "NT$"
+  },
+  {
+    "code": "MOP",
+    "name": "澳门元",
+    "internationalName": "Macanese Pataca",
+    "symbol": "MOP$"
+  },
+  {
+    "code": "THB",
+    "name": "泰铢",
+    "internationalName": "Thai Baht",
+    "symbol": "฿"
+  },
+  {
+    "code": "MYR",
+    "name": "马来西亚林吉特",
+    "internationalName": "Malaysian Ringgit",
+    "symbol": "RM"
+  },
+  {
+    "code": "IDR",
+    "name": "印尼盾",
+    "internationalName": "Indonesian Rupiah",
+    "symbol": "Rp"
+  },
+  {
+    "code": "PHP",
+    "name": "菲律宾比索",
+    "internationalName": "Philippine Peso",
+    "symbol": "₱"
+  },
+  {
+    "code": "VND",
+    "name": "越南盾",
+    "internationalName": "Vietnamese Dong",
+    "symbol": "₫"
+  },
+  {
+    "code": "INR",
+    "name": "印度卢比",
+    "internationalName": "Indian Rupee",
+    "symbol": "₹"
+  },
+  {
+    "code": "AED",
+    "name": "阿联酋迪拉姆",
+    "internationalName": "UAE Dirham",
+    "symbol": "AED"
+  },
+  {
+    "code": "SAR",
+    "name": "沙特里亚尔",
+    "internationalName": "Saudi Riyal",
+    "symbol": "SAR"
+  },
+  {
+    "code": "TRY",
+    "name": "土耳其里拉",
+    "internationalName": "Turkish Lira",
+    "symbol": "₺"
+  },
+  {
+    "code": "ZAR",
+    "name": "南非兰特",
+    "internationalName": "South African Rand",
+    "symbol": "R"
+  },
+  {
+    "code": "BRL",
+    "name": "巴西雷亚尔",
+    "internationalName": "Brazilian Real",
+    "symbol": "R$"
+  },
+  {
+    "code": "MXN",
+    "name": "墨西哥比索",
+    "internationalName": "Mexican Peso",
+    "symbol": "MX$"
+  },
+  {
+    "code": "SEK",
+    "name": "瑞典克朗",
+    "internationalName": "Swedish Krona",
+    "symbol": "SEK"
+  },
+  {
+    "code": "NOK",
+    "name": "挪威克朗",
+    "internationalName": "Norwegian Krone",
+    "symbol": "NOK"
+  },
+  {
+    "code": "DKK",
+    "name": "丹麦克朗",
+    "internationalName": "Danish Krone",
+    "symbol": "DKK"
+  },
+  {
+    "code": "PLN",
+    "name": "波兰兹罗提",
+    "internationalName": "Polish Zloty",
+    "symbol": "zł"
+  },
+  {
+    "code": "CZK",
+    "name": "捷克克朗",
+    "internationalName": "Czech Koruna",
+    "symbol": "Kč"
+  },
+  {
+    "code": "HUF",
+    "name": "匈牙利福林",
+    "internationalName": "Hungarian Forint",
+    "symbol": "Ft"
+  }
+]

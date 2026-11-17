@@ -1,0 +1,103 @@
+/* 设计系统 v2 · 外壳层
+   只覆写几何与排版，不动导航结构与信息层级；比 v1 规则多一级属性选择器，
+   因此不依赖样式表先后顺序。 */
+
+[data-ds='v2'] .topbar {
+  height: var(--ds-topbar-h);
+  padding: 0 var(--ds-gutter);
+  border-bottom: var(--ds-hairline);
+  background: var(--pf-material);
+  backdrop-filter: var(--pf-blur);
+  -webkit-backdrop-filter: var(--pf-blur);
+}
+
+[data-ds='v2'] .header-breadcrumb {
+  font-size: var(--ds-t-2);
+}
+
+[data-ds='v2'] .global-search {
+  height: var(--ds-control-h);
+  border-radius: var(--ds-r-pill);
+}
+
+[data-ds='v2'] .header-actions {
+  gap: var(--ds-s-2);
+}
+
+[data-ds='v2'] .content {
+  padding: var(--ds-s-8) var(--ds-gutter) var(--ds-s-8);
+  max-width: var(--ds-content-max);
+}
+
+[data-ds='v2'] .content > .page-title,
+[data-ds='v2'] .page-title {
+  margin-bottom: var(--ds-s-5);
+}
+
+[data-ds='v2'] .page-heading {
+  gap: var(--ds-s-4);
+  margin-bottom: var(--ds-s-6);
+}
+
+[data-ds='v2'] .page-heading p {
+  font-size: var(--ds-t-3);
+  line-height: var(--ds-lh-body);
+  color: var(--ds-c-text-2);
+  margin-top: var(--ds-s-1);
+}
+
+[data-ds='v2'] .shell-rail {
+  gap: var(--ds-s-1);
+  padding: var(--ds-s-2) 0 var(--ds-s-2);
+}
+
+[data-ds='v2'] .rail-group {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ds-r-2);
+  font-size: 19px;
+}
+
+[data-ds='v2'] .rail-brand .brand-symbol {
+  border-radius: var(--ds-r-2);
+  box-shadow: var(--ds-e-1);
+}
+
+[data-ds='v2'] .shell-panel {
+  border-right: var(--ds-hairline);
+}
+
+[data-ds='v2'] .panel-eyebrow {
+  font-size: var(--ds-t-1);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ds-c-text-3);
+}
+
+[data-ds='v2'] .panel-title {
+  font-size: var(--ds-t-4);
+  font-weight: var(--ds-w-semibold);
+  letter-spacing: -0.01em;
+}
+
+[data-ds='v2'] .panel-section-label {
+  font-size: var(--ds-t-1);
+  letter-spacing: 0.03em;
+  color: var(--ds-c-text-3);
+}
+
+[data-ds='v2'] .panel-link {
+  height: 34px;
+  padding: 0 var(--ds-s-2);
+  border-radius: var(--ds-r-1);
+  font-size: var(--ds-t-3);
+  transition:
+    background-color var(--ds-dur-1) var(--ds-ease),
+    color var(--ds-dur-1) var(--ds-ease);
+}
+
+[data-ds='v2'] .panel-link[aria-current='page'] {
+  background: var(--ds-c-tint-soft);
+  color: var(--ds-c-tint);
+  font-weight: var(--ds-w-semibold);
+}

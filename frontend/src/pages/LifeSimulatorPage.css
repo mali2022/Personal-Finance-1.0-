@@ -1,0 +1,53 @@
+.life-simulator {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.life-simulator .ant-card {
+  min-width: 0;
+}
+.life-field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.life-toolbar {
+  margin: 12px 0;
+}
+.life-event {
+  margin: 12px 0;
+}
+.life-simulator .ant-input-number {
+  max-width: 100%;
+}
+.life-simulator .ant-tag {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 480px) {
+  .life-simulator .ant-card-body {
+    padding: 12px;
+  }
+  .life-simulator .ant-space {
+    max-width: 100%;
+  }
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .life-report,
+  .life-report * {
+    visibility: visible;
+  }
+  .life-report {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  }
+  .life-report button,
+  .life-report .ant-switch {
+    display: none;
+  }
+}

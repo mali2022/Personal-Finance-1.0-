@@ -1,0 +1,3605 @@
+{
+  "version": "personal-tags-600-v1",
+  "items": [
+    {
+      "code": "001",
+      "name": "日常消费",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "002",
+      "name": "必要消费",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "003",
+      "name": "非必需品",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "004",
+      "name": "临时消费",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "005",
+      "name": "计划消费",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "006",
+      "name": "冲动消费",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "007",
+      "name": "重复购买",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "008",
+      "name": "一次消费",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "009",
+      "name": "集中采购",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "010",
+      "name": "日常补货",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "011",
+      "name": "工作日",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "012",
+      "name": "休息日",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "013",
+      "name": "周末消费",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "014",
+      "name": "节假消费",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "015",
+      "name": "夜间消费",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "016",
+      "name": "临时应急",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "017",
+      "name": "长期使用",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "018",
+      "name": "周期消费",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "019",
+      "name": "囤货采购",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "020",
+      "name": "消费升级",
+      "group": "日常消费与生活习惯",
+      "groupOrder": 1
+    },
+    {
+      "code": "021",
+      "name": "自己做饭",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "022",
+      "name": "外出就餐",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "023",
+      "name": "外卖配送",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "024",
+      "name": "食堂就餐",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "025",
+      "name": "早餐消费",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "026",
+      "name": "午餐消费",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "027",
+      "name": "晚餐消费",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "028",
+      "name": "加餐宵夜",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "029",
+      "name": "咖啡饮品",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "030",
+      "name": "休闲零食",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "031",
+      "name": "工作餐",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "032",
+      "name": "家庭聚餐",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "033",
+      "name": "朋友聚餐",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "034",
+      "name": "商务宴请",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "035",
+      "name": "节日聚餐",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "036",
+      "name": "生日聚餐",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "037",
+      "name": "食材采购",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "038",
+      "name": "食品囤货",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "039",
+      "name": "临期食品",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "040",
+      "name": "食品浪费",
+      "group": "餐饮与食品",
+      "groupOrder": 2
+    },
+    {
+      "code": "041",
+      "name": "线上购物",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "042",
+      "name": "线下购物",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "043",
+      "name": "超市采购",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "044",
+      "name": "便利商店",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "045",
+      "name": "社区团购",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "046",
+      "name": "商场购物",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "047",
+      "name": "百货采购",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "048",
+      "name": "二手交易",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "049",
+      "name": "闲置转卖",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "050",
+      "name": "私人交易",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "051",
+      "name": "品牌直营",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "052",
+      "name": "官方旗舰",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "053",
+      "name": "第三方店",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "054",
+      "name": "直播购物",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "055",
+      "name": "拼团购物",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "056",
+      "name": "预售商品",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "057",
+      "name": "尾款支付",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "058",
+      "name": "跨境购物",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "059",
+      "name": "海外代购",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "060",
+      "name": "门店自提",
+      "group": "购物渠道与活动",
+      "groupOrder": 3
+    },
+    {
+      "code": "061",
+      "name": "优惠券",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "062",
+      "name": "平台红包",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "063",
+      "name": "支付立减",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "064",
+      "name": "银行满减",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "065",
+      "name": "信用优惠",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "066",
+      "name": "积分抵扣",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "067",
+      "name": "平台补贴",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "068",
+      "name": "支付返现",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "069",
+      "name": "免邮优惠",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "070",
+      "name": "折扣促销",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "071",
+      "name": "首单优惠",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "072",
+      "name": "新客优惠",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "073",
+      "name": "会员优惠",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "074",
+      "name": "限时优惠",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "075",
+      "name": "满减活动",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "076",
+      "name": "第二件惠",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "077",
+      "name": "买赠活动",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "078",
+      "name": "赠送额度",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "079",
+      "name": "价格保护",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "080",
+      "name": "优惠追回",
+      "group": "优惠、红包与促销",
+      "groupOrder": 4
+    },
+    {
+      "code": "081",
+      "name": "日常居家",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "082",
+      "name": "房屋装修",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "083",
+      "name": "装修材料",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "084",
+      "name": "装修人工",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "085",
+      "name": "家具采购",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "086",
+      "name": "家电采购",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "087",
+      "name": "厨房用品",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "088",
+      "name": "床品采购",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "089",
+      "name": "日用百货",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "090",
+      "name": "家居收纳",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "091",
+      "name": "家居维修",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "092",
+      "name": "设备维修",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "093",
+      "name": "家电保养",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "094",
+      "name": "家政保洁",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "095",
+      "name": "家居清洁",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "096",
+      "name": "租房生活",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "097",
+      "name": "自有住房",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "098",
+      "name": "房屋交付",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "099",
+      "name": "搬家费用",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "100",
+      "name": "家庭共用",
+      "group": "住房与居家",
+      "groupOrder": 5
+    },
+    {
+      "code": "101",
+      "name": "上下班",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "102",
+      "name": "日常通勤",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "103",
+      "name": "公共交通",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "104",
+      "name": "地铁公交",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "105",
+      "name": "网约出行",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "106",
+      "name": "骑行出行",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "107",
+      "name": "自驾出行",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "108",
+      "name": "长途出行",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "109",
+      "name": "城际交通",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "110",
+      "name": "机场车站",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "111",
+      "name": "出差办公",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "112",
+      "name": "国内旅行",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "113",
+      "name": "境外旅行",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "114",
+      "name": "周末出游",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "115",
+      "name": "自驾出游",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "116",
+      "name": "亲友接送",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "117",
+      "name": "车辆保养",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "118",
+      "name": "车辆维修",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "119",
+      "name": "临时停车",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "120",
+      "name": "高速通行",
+      "group": "交通、出行与旅行",
+      "groupOrder": 6
+    },
+    {
+      "code": "121",
+      "name": "影音娱乐",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "122",
+      "name": "音乐娱乐",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "123",
+      "name": "电影观影",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "124",
+      "name": "演出演唱",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "125",
+      "name": "展览参观",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "126",
+      "name": "休闲活动",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "127",
+      "name": "文化体验",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "128",
+      "name": "兴趣爱好",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "129",
+      "name": "会员服务",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "130",
+      "name": "数字会员",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "131",
+      "name": "软件订阅",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "132",
+      "name": "自动续费",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "133",
+      "name": "游戏消费",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "134",
+      "name": "数字商品",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "135",
+      "name": "应用内购",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "136",
+      "name": "云端服务",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "137",
+      "name": "学习培训",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "138",
+      "name": "课程购买",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "139",
+      "name": "图书采购",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "140",
+      "name": "技能提升",
+      "group": "娱乐、数字与学习",
+      "groupOrder": 7
+    },
+    {
+      "code": "141",
+      "name": "父母相关",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "142",
+      "name": "子女相关",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "143",
+      "name": "兄弟姐妹",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "144",
+      "name": "家庭支出",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "145",
+      "name": "家庭资助",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "146",
+      "name": "亲友赠礼",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "147",
+      "name": "红包往来",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "148",
+      "name": "礼金往来",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "149",
+      "name": "节庆礼品",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "150",
+      "name": "公益捐赠",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "151",
+      "name": "日常健康",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "152",
+      "name": "医疗就诊",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "153",
+      "name": "药品采购",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "154",
+      "name": "健康体检",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "155",
+      "name": "运动健身",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "156",
+      "name": "健康管理",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "157",
+      "name": "美容护理",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "158",
+      "name": "个人护理",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "159",
+      "name": "宠物相关",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "160",
+      "name": "保险保障",
+      "group": "家庭、人情与健康",
+      "groupOrder": 8
+    },
+    {
+      "code": "161",
+      "name": "工资收入",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "162",
+      "name": "绩效奖金",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "163",
+      "name": "工作补贴",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "164",
+      "name": "兼职收入",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "165",
+      "name": "临时收入",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "166",
+      "name": "投资收益",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "167",
+      "name": "利息收入",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "168",
+      "name": "分红收益",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "169",
+      "name": "财产出租",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "170",
+      "name": "闲置出售",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "171",
+      "name": "账户互转",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "172",
+      "name": "信用还款",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "173",
+      "name": "借款到账",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "174",
+      "name": "借款归还",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "175",
+      "name": "报销垫付",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "176",
+      "name": "报销到账",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "177",
+      "name": "押金支付",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "178",
+      "name": "押金退回",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "179",
+      "name": "资金冻结",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "180",
+      "name": "资金解冻",
+      "group": "工作、收入与财务",
+      "groupOrder": 9
+    },
+    {
+      "code": "181",
+      "name": "已完成",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "182",
+      "name": "待确认",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "183",
+      "name": "待收款",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "184",
+      "name": "待付款",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "185",
+      "name": "部分退款",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "186",
+      "name": "全额退款",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "187",
+      "name": "售后维权",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "188",
+      "name": "账单调整",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "189",
+      "name": "异常交易",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "190",
+      "name": "人工核对",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "191",
+      "name": "亲情卡付",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "192",
+      "name": "第三方付",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "193",
+      "name": "代买代付",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "194",
+      "name": "家庭分摊",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "195",
+      "name": "实物交付",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "196",
+      "name": "优惠退回",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "197",
+      "name": "分期付款",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "198",
+      "name": "提前还款",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "199",
+      "name": "历史补录",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "200",
+      "name": "数据待核",
+      "group": "交易状态与特殊业务",
+      "groupOrder": 10
+    },
+    {
+      "code": "201",
+      "name": "刚性需求",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "202",
+      "name": "改善生活",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "203",
+      "name": "提升效率",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "204",
+      "name": "节省时间",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "205",
+      "name": "方便快捷",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "206",
+      "name": "尝鲜体验",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "207",
+      "name": "情绪消费",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "208",
+      "name": "奖励自己",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "209",
+      "name": "跟风购买",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "210",
+      "name": "替代购买",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "211",
+      "name": "决策失误",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "212",
+      "name": "购买后悔",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "213",
+      "name": "物有所值",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "214",
+      "name": "性价比高",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "215",
+      "name": "性价比低",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "216",
+      "name": "超出预期",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "217",
+      "name": "不符预期",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "218",
+      "name": "理性消费",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "219",
+      "name": "谨慎消费",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "220",
+      "name": "延迟购买",
+      "group": "消费动机与购买决策",
+      "groupOrder": 11
+    },
+    {
+      "code": "221",
+      "name": "全新商品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "222",
+      "name": "二手商品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "223",
+      "name": "官方正品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "224",
+      "name": "品牌商品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "225",
+      "name": "无牌商品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "226",
+      "name": "定制商品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "227",
+      "name": "限量商品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "228",
+      "name": "进口商品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "229",
+      "name": "国产商品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "230",
+      "name": "替换配件",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "231",
+      "name": "易耗用品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "232",
+      "name": "耐用商品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "233",
+      "name": "一次用品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "234",
+      "name": "可重复用",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "235",
+      "name": "长期持有",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "236",
+      "name": "可转售品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "237",
+      "name": "保值商品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "238",
+      "name": "贬值商品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "239",
+      "name": "可维修品",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "240",
+      "name": "不可退货",
+      "group": "商品属性与购买特点",
+      "groupOrder": 12
+    },
+    {
+      "code": "241",
+      "name": "提前购买",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "242",
+      "name": "延后购买",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "243",
+      "name": "当日购买",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "244",
+      "name": "月初采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "245",
+      "name": "月中采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "246",
+      "name": "年初采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "247",
+      "name": "年末采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "248",
+      "name": "临时加购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "249",
+      "name": "补充采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "250",
+      "name": "替换旧物",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "251",
+      "name": "季节采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "252",
+      "name": "换季采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "253",
+      "name": "年度采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "254",
+      "name": "月末采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "255",
+      "name": "节前采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "256",
+      "name": "节后采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "257",
+      "name": "活动囤货",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "258",
+      "name": "长期计划",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "259",
+      "name": "分批采购",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "260",
+      "name": "提前囤货",
+      "group": "时间与购买计划",
+      "groupOrder": 13
+    },
+    {
+      "code": "261",
+      "name": "次日送达",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "262",
+      "name": "当日送达",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "263",
+      "name": "延迟发货",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "264",
+      "name": "延迟送达",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "265",
+      "name": "物流异常",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "266",
+      "name": "包装完好",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "267",
+      "name": "包装破损",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "268",
+      "name": "送货上门",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "269",
+      "name": "预约配送",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "270",
+      "name": "无接触送",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "271",
+      "name": "商家赠品",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "272",
+      "name": "缺货补发",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "273",
+      "name": "少件补发",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "274",
+      "name": "商品错发",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "275",
+      "name": "商品破损",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "276",
+      "name": "质量问题",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "277",
+      "name": "尺码不符",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "278",
+      "name": "规格不符",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "279",
+      "name": "服务满意",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "280",
+      "name": "服务不满",
+      "group": "购物服务与履约体验",
+      "groupOrder": 14
+    },
+    {
+      "code": "281",
+      "name": "七天无由",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "282",
+      "name": "退货退款",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "283",
+      "name": "换货处理",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "284",
+      "name": "维修申请",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "285",
+      "name": "售后处理中",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "286",
+      "name": "售后完成",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "287",
+      "name": "售后失败",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "288",
+      "name": "商家拒退",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "289",
+      "name": "退货运费",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "290",
+      "name": "运费险赔",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "291",
+      "name": "保修期内",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "292",
+      "name": "保修期外",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "293",
+      "name": "免费维修",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "294",
+      "name": "付费维修",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "295",
+      "name": "延长保修",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "296",
+      "name": "质量赔付",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "297",
+      "name": "物流赔付",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "298",
+      "name": "平台赔付",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "299",
+      "name": "保险理赔",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "300",
+      "name": "售后补偿",
+      "group": "售后、维修与保障",
+      "groupOrder": 15
+    },
+    {
+      "code": "301",
+      "name": "本人消费",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "302",
+      "name": "父亲消费",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "303",
+      "name": "母亲消费",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "304",
+      "name": "姐妹消费",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "305",
+      "name": "兄弟消费",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "306",
+      "name": "配偶消费",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "307",
+      "name": "子女消费",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "308",
+      "name": "长辈消费",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "309",
+      "name": "亲友消费",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "310",
+      "name": "多人共用",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "311",
+      "name": "家庭代付",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "312",
+      "name": "亲友代付",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "313",
+      "name": "本人垫付",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "314",
+      "name": "他人垫付",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "315",
+      "name": "共同承担",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "316",
+      "name": "本人承担",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "317",
+      "name": "他人承担",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "318",
+      "name": "部分赠与",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "319",
+      "name": "免费赠送",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "320",
+      "name": "家庭共享",
+      "group": "家庭角色与消费归属",
+      "groupOrder": 16
+    },
+    {
+      "code": "321",
+      "name": "预算以内",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "322",
+      "name": "接近预算",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "323",
+      "name": "预算超支",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "324",
+      "name": "预算调整",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "325",
+      "name": "目标储蓄",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "326",
+      "name": "应急储备",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "327",
+      "name": "备用资金",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "328",
+      "name": "财务缓冲",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "329",
+      "name": "支出控制",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "330",
+      "name": "降低开销",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "331",
+      "name": "资金周转",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "332",
+      "name": "短期负债",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "333",
+      "name": "长期负债",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "334",
+      "name": "无息借款",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "335",
+      "name": "有息借款",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "336",
+      "name": "提前结清",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "337",
+      "name": "逾期费用",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "338",
+      "name": "利息减免",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "339",
+      "name": "债务调整",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "340",
+      "name": "财务异常",
+      "group": "财务规划与风险",
+      "groupOrder": 17
+    },
+    {
+      "code": "341",
+      "name": "办公用品",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "342",
+      "name": "工作设备",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "343",
+      "name": "工作需要",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "344",
+      "name": "公司报销",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "345",
+      "name": "公司垫付",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "346",
+      "name": "差旅住宿",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "347",
+      "name": "职场社交",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "348",
+      "name": "求职准备",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "349",
+      "name": "面试出行",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "350",
+      "name": "职业发展",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "351",
+      "name": "考试报名",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "352",
+      "name": "证书考试",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "353",
+      "name": "职业培训",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "354",
+      "name": "专业课程",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "355",
+      "name": "知识付费",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "356",
+      "name": "语言学习",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "357",
+      "name": "技能考证",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "358",
+      "name": "学习资料",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "359",
+      "name": "学习设备",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "360",
+      "name": "自我投资",
+      "group": "工作场景与学习发展",
+      "groupOrder": 18
+    },
+    {
+      "code": "361",
+      "name": "规律生活",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "362",
+      "name": "健康饮食",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "363",
+      "name": "控制饮食",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "364",
+      "name": "低糖饮食",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "365",
+      "name": "低脂饮食",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "366",
+      "name": "减少浪费",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "367",
+      "name": "环保消费",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "368",
+      "name": "极简生活",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "369",
+      "name": "断舍离",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "370",
+      "name": "节约生活",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "371",
+      "name": "居家休闲",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "372",
+      "name": "户外活动",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "373",
+      "name": "社交活动",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "374",
+      "name": "独处时光",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "375",
+      "name": "放松休息",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "376",
+      "name": "情绪调节",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "377",
+      "name": "兴趣培养",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "378",
+      "name": "品质生活",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "379",
+      "name": "健康习惯",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "380",
+      "name": "自我提升",
+      "group": "生活品质与个人习惯",
+      "groupOrder": 19
+    },
+    {
+      "code": "381",
+      "name": "历史账单",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "382",
+      "name": "纸质记录",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "383",
+      "name": "银行账单",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "384",
+      "name": "微信账单",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "385",
+      "name": "支付宝账",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "386",
+      "name": "现金记录",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "387",
+      "name": "手工补账",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "388",
+      "name": "批量导入",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "389",
+      "name": "数据修正",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "390",
+      "name": "来源不明",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "391",
+      "name": "需要复核",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "392",
+      "name": "分类待定",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "393",
+      "name": "金额待核",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "394",
+      "name": "日期待核",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "395",
+      "name": "账户待核",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "396",
+      "name": "商户待核",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "397",
+      "name": "备注待补",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "398",
+      "name": "凭证缺失",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "399",
+      "name": "已经核实",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "400",
+      "name": "历史存疑",
+      "group": "历史记录与数据整理",
+      "groupOrder": 20
+    },
+    {
+      "code": "401",
+      "name": "压力释放",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "402",
+      "name": "心情愉悦",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "403",
+      "name": "焦虑购物",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "404",
+      "name": "心血来潮",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "405",
+      "name": "自我安慰",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "406",
+      "name": "仪式感",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "407",
+      "name": "社交压力",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "408",
+      "name": "面子消费",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "409",
+      "name": "安全需求",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "410",
+      "name": "情感寄托",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "411",
+      "name": "心情低落",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "412",
+      "name": "疲劳补偿",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "413",
+      "name": "庆祝成就",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "414",
+      "name": "满足愿望",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "415",
+      "name": "怀旧情怀",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "416",
+      "name": "收藏爱好",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "417",
+      "name": "社交需求",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "418",
+      "name": "好奇驱动",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "419",
+      "name": "追求品质",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "420",
+      "name": "生活奖励",
+      "group": "情绪与心理动机",
+      "groupOrder": 21
+    },
+    {
+      "code": "421",
+      "name": "多方比价",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "422",
+      "name": "货比三家",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "423",
+      "name": "研究测评",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "424",
+      "name": "熟人推荐",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "425",
+      "name": "广告种草",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "426",
+      "name": "博主推荐",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "427",
+      "name": "口碑选择",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "428",
+      "name": "盲目下单",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "429",
+      "name": "购物清单",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "430",
+      "name": "无计划买",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "431",
+      "name": "低频高价",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "432",
+      "name": "高频低价",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "433",
+      "name": "价格敏感",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "434",
+      "name": "品牌忠诚",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "435",
+      "name": "实用主义",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "436",
+      "name": "外观优先",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "437",
+      "name": "功能优先",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "438",
+      "name": "质量优先",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "439",
+      "name": "体验优先",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "440",
+      "name": "综合权衡",
+      "group": "购物决策与消费体验",
+      "groupOrder": 22
+    },
+    {
+      "code": "441",
+      "name": "春节采购",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "442",
+      "name": "元宵佳节",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "443",
+      "name": "清明祭扫",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "444",
+      "name": "端午佳节",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "445",
+      "name": "七夕节日",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "446",
+      "name": "中秋佳节",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "447",
+      "name": "国庆假期",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "448",
+      "name": "元旦跨年",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "449",
+      "name": "双十一",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "450",
+      "name": "双十二",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "451",
+      "name": "开学季",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "452",
+      "name": "毕业季",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "453",
+      "name": "入职纪念",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "454",
+      "name": "离职纪念",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "455",
+      "name": "搬家纪念",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "456",
+      "name": "结婚纪念",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "457",
+      "name": "恋爱纪念",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "458",
+      "name": "生日礼物",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "459",
+      "name": "成人礼物",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "460",
+      "name": "特别纪念",
+      "group": "特殊节日与纪念场景",
+      "groupOrder": 23
+    },
+    {
+      "code": "461",
+      "name": "独自旅行",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "462",
+      "name": "双人旅行",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "463",
+      "name": "家庭旅行",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "464",
+      "name": "好友旅行",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "465",
+      "name": "跟团旅行",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "466",
+      "name": "自由行程",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "467",
+      "name": "临时出游",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "468",
+      "name": "深度旅行",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "469",
+      "name": "短途旅行",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "470",
+      "name": "长线旅行",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "471",
+      "name": "美食旅行",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "472",
+      "name": "文化旅游",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "473",
+      "name": "城市漫游",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "474",
+      "name": "乡村旅游",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "475",
+      "name": "自然风光",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "476",
+      "name": "景点打卡",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "477",
+      "name": "旅行购物",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "478",
+      "name": "旅途应急",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "479",
+      "name": "行程变更",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "480",
+      "name": "旅行取消",
+      "group": "出行旅游细分",
+      "groupOrder": 24
+    },
+    {
+      "code": "481",
+      "name": "手机换新",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "482",
+      "name": "电脑升级",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "483",
+      "name": "数码配件",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "484",
+      "name": "智能家居",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "485",
+      "name": "存储扩容",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "486",
+      "name": "设备更新",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "487",
+      "name": "软件买断",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "488",
+      "name": "软件升级",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "489",
+      "name": "云盘扩容",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "490",
+      "name": "网络加速",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "491",
+      "name": "域名续费",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "492",
+      "name": "服务器费",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "493",
+      "name": "API调用",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "494",
+      "name": "AI工具",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "495",
+      "name": "数据备份",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "496",
+      "name": "账号充值",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "497",
+      "name": "内容付费",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "498",
+      "name": "虚拟道具",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "499",
+      "name": "数字藏品",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "500",
+      "name": "开发项目",
+      "group": "电子产品与数字生活",
+      "groupOrder": 25
+    },
+    {
+      "code": "501",
+      "name": "牙齿护理",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "502",
+      "name": "视力保护",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "503",
+      "name": "睡眠改善",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "504",
+      "name": "体重管理",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "505",
+      "name": "运动恢复",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "506",
+      "name": "康复训练",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "507",
+      "name": "皮肤护理",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "508",
+      "name": "口腔检查",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "509",
+      "name": "心理咨询",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "510",
+      "name": "营养补充",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "511",
+      "name": "运动装备",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "512",
+      "name": "健身课程",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "513",
+      "name": "健身私教",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "514",
+      "name": "户外装备",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "515",
+      "name": "徒步登山",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "516",
+      "name": "游泳运动",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "517",
+      "name": "跑步运动",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "518",
+      "name": "骑行装备",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "519",
+      "name": "运动比赛",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "520",
+      "name": "健康投资",
+      "group": "健康、运动与自我管理",
+      "groupOrder": 26
+    },
+    {
+      "code": "521",
+      "name": "学术研究",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "522",
+      "name": "论文写作",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "523",
+      "name": "论文发表",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "524",
+      "name": "数据分析",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "525",
+      "name": "软件学习",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "526",
+      "name": "编程学习",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "527",
+      "name": "金融学习",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "528",
+      "name": "经济研究",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "529",
+      "name": "文献购买",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "530",
+      "name": "数据订阅",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "531",
+      "name": "专业讲座",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "532",
+      "name": "学术会议",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "533",
+      "name": "行业论坛",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "534",
+      "name": "在线讲座",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "535",
+      "name": "实践项目",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "536",
+      "name": "实验研究",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "537",
+      "name": "职业认证",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "538",
+      "name": "留学准备",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "539",
+      "name": "交换学习",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "540",
+      "name": "学历提升",
+      "group": "学习、考试与个人成长",
+      "groupOrder": 27
+    },
+    {
+      "code": "541",
+      "name": "探望父母",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "542",
+      "name": "孝敬长辈",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "543",
+      "name": "家庭团聚",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "544",
+      "name": "亲属探访",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "545",
+      "name": "家庭庆祝",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "546",
+      "name": "家庭照护",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "547",
+      "name": "亲友慰问",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "548",
+      "name": "儿童陪伴",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "549",
+      "name": "长辈照护",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "550",
+      "name": "宠物照护",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "551",
+      "name": "朋友庆生",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "552",
+      "name": "同事聚会",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "553",
+      "name": "同学聚会",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "554",
+      "name": "师生往来",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "555",
+      "name": "邻里往来",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "556",
+      "name": "婚礼筹备",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "557",
+      "name": "婚宴礼金",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "558",
+      "name": "新生儿礼",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "559",
+      "name": "探病慰问",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "560",
+      "name": "乔迁礼物",
+      "group": "家庭与人际关系",
+      "groupOrder": 28
+    },
+    {
+      "code": "561",
+      "name": "资产维护",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "562",
+      "name": "资产升级",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "563",
+      "name": "资产更新",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "564",
+      "name": "资产处置",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "565",
+      "name": "资产置换",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "566",
+      "name": "长期投资",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "567",
+      "name": "短期投资",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "568",
+      "name": "定期投入",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "569",
+      "name": "风险分散",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "570",
+      "name": "资金配置",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "571",
+      "name": "自用资产",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "572",
+      "name": "出租资产",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "573",
+      "name": "闲置资产",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "574",
+      "name": "共享资产",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "575",
+      "name": "资产检查",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "576",
+      "name": "定期维护",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "577",
+      "name": "使用损耗",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "578",
+      "name": "更换耗材",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "579",
+      "name": "使用折旧",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "580",
+      "name": "使用期满",
+      "group": "资产使用与持有体验",
+      "groupOrder": 29
+    },
+    {
+      "code": "581",
+      "name": "经常使用",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "582",
+      "name": "偶尔使用",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "583",
+      "name": "从未使用",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "584",
+      "name": "闲置浪费",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "585",
+      "name": "实际耐用",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "586",
+      "name": "提前损坏",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "587",
+      "name": "使用满意",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "588",
+      "name": "使用不满",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "589",
+      "name": "达成目标",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "590",
+      "name": "未达预期",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "591",
+      "name": "超出预算",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "592",
+      "name": "符合预算",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "593",
+      "name": "价格合理",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "594",
+      "name": "价格偏高",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "595",
+      "name": "意外惊喜",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "596",
+      "name": "重购意愿",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "597",
+      "name": "不再购买",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "598",
+      "name": "值得推荐",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "599",
+      "name": "不予推荐",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    },
+    {
+      "code": "600",
+      "name": "长期受益",
+      "group": "消费结果与长期评价",
+      "groupOrder": 30
+    }
+  ]
+}

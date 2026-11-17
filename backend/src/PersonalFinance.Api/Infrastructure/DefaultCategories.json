@@ -1,0 +1,2799 @@
+[
+    {
+        "name":  "餐饮食品",
+        "kind":  "Expense",
+        "sortOrder":  0,
+        "children":  [
+                         {
+                             "name":  "日常早餐",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "日常午餐",
+                             "sortOrder":  1
+                         },
+                         {
+                             "name":  "日常晚餐",
+                             "sortOrder":  2
+                         },
+                         {
+                             "name":  "加餐宵夜",
+                             "sortOrder":  3
+                         },
+                         {
+                             "name":  "外卖餐食",
+                             "sortOrder":  4
+                         },
+                         {
+                             "name":  "聚餐宴请",
+                             "sortOrder":  5
+                         },
+                         {
+                             "name":  "夜市街摊",
+                             "sortOrder":  6
+                         },
+                         {
+                             "name":  "咖啡茶饮",
+                             "sortOrder":  7
+                         },
+                         {
+                             "name":  "烘焙甜品",
+                             "sortOrder":  28
+                         },
+                         {
+                             "name":  "其他餐饮",
+                             "sortOrder":  29
+                         }
+                     ]
+    },
+    {
+        "name":  "劳动收入",
+        "kind":  "Income",
+        "sortOrder":  0,
+        "children":  [
+                         {
+                             "name":  "工资薪酬",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "奖金激励",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "津贴补贴",
+                             "sortOrder":  131
+                         },
+                         {
+                             "name":  "加班值班",
+                             "sortOrder":  132
+                         },
+                         {
+                             "name":  "劳务报酬",
+                             "sortOrder":  133
+                         },
+                         {
+                             "name":  "稿酬版税",
+                             "sortOrder":  134
+                         },
+                         {
+                             "name":  "顾问咨询",
+                             "sortOrder":  135
+                         },
+                         {
+                             "name":  "讲课培训",
+                             "sortOrder":  136
+                         },
+                         {
+                             "name":  "演出通告",
+                             "sortOrder":  137
+                         },
+                         {
+                             "name":  "离职补偿",
+                             "sortOrder":  138
+                         },
+                         {
+                             "name":  "平台劳务结算",
+                             "sortOrder":  139
+                         },
+                         {
+                             "name":  "小费服务费",
+                             "sortOrder":  140
+                         },
+                         {
+                             "name":  "其他劳动",
+                             "sortOrder":  141
+                         }
+                     ]
+    },
+    {
+        "name":  "经营收入",
+        "kind":  "Income",
+        "sortOrder":  1,
+        "children":  [
+                         {
+                             "name":  "服务收入",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "商品销售",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "技术服务",
+                             "sortOrder":  142
+                         },
+                         {
+                             "name":  "设计创作",
+                             "sortOrder":  143
+                         },
+                         {
+                             "name":  "内容变现",
+                             "sortOrder":  144
+                         },
+                         {
+                             "name":  "电商经营",
+                             "sortOrder":  145
+                         },
+                         {
+                             "name":  "线下零售",
+                             "sortOrder":  146
+                         },
+                         {
+                             "name":  "代理分销",
+                             "sortOrder":  147
+                         },
+                         {
+                             "name":  "佣金收入",
+                             "sortOrder":  148
+                         },
+                         {
+                             "name":  "租赁经营",
+                             "sortOrder":  149
+                         },
+                         {
+                             "name":  "经营补贴",
+                             "sortOrder":  150
+                         },
+                         {
+                             "name":  "其他经营",
+                             "sortOrder":  151
+                         }
+                     ]
+    },
+    {
+        "name":  "生鲜食材",
+        "kind":  "Expense",
+        "sortOrder":  1,
+        "children":  [
+                         {
+                             "name":  "蔬菜菌菇",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "水果鲜果",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "鲜肉禽类",
+                             "sortOrder":  72
+                         },
+                         {
+                             "name":  "海鲜水产",
+                             "sortOrder":  73
+                         },
+                         {
+                             "name":  "蛋类乳品",
+                             "sortOrder":  74
+                         },
+                         {
+                             "name":  "豆制品类",
+                             "sortOrder":  75
+                         },
+                         {
+                             "name":  "熟食卤味",
+                             "sortOrder":  76
+                         },
+                         {
+                             "name":  "即食凉菜",
+                             "sortOrder":  77
+                         },
+                         {
+                             "name":  "冷冻食品",
+                             "sortOrder":  78
+                         },
+                         {
+                             "name":  "主食面点",
+                             "sortOrder":  79
+                         },
+                         {
+                             "name":  "生鲜综合采购",
+                             "sortOrder":  80
+                         },
+                         {
+                             "name":  "其他生鲜",
+                             "sortOrder":  81
+                         }
+                     ]
+    },
+    {
+        "name":  "粮油调味",
+        "kind":  "Expense",
+        "sortOrder":  2,
+        "children":  [
+                         {
+                             "name":  "米面主粮",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "食用油脂",
+                             "sortOrder":  82
+                         },
+                         {
+                             "name":  "杂粮豆谷",
+                             "sortOrder":  83
+                         },
+                         {
+                             "name":  "基础调味",
+                             "sortOrder":  84
+                         },
+                         {
+                             "name":  "复合调味",
+                             "sortOrder":  85
+                         },
+                         {
+                             "name":  "汤料底料",
+                             "sortOrder":  86
+                         },
+                         {
+                             "name":  "酱菜腌菜",
+                             "sortOrder":  87
+                         },
+                         {
+                             "name":  "干货菌菇",
+                             "sortOrder":  88
+                         },
+                         {
+                             "name":  "烘焙原料",
+                             "sortOrder":  89
+                         },
+                         {
+                             "name":  "粮油综合采购",
+                             "sortOrder":  90
+                         },
+                         {
+                             "name":  "其他粮油",
+                             "sortOrder":  91
+                         }
+                     ]
+    },
+    {
+        "name":  "零食饮料",
+        "kind":  "Expense",
+        "sortOrder":  3,
+        "children":  [
+                         {
+                             "name":  "膨化食品",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "饼干威化",
+                             "sortOrder":  92
+                         },
+                         {
+                             "name":  "坚果炒货",
+                             "sortOrder":  93
+                         },
+                         {
+                             "name":  "果干蜜饯",
+                             "sortOrder":  94
+                         },
+                         {
+                             "name":  "糖果巧克力",
+                             "sortOrder":  95
+                         },
+                         {
+                             "name":  "肉类零食",
+                             "sortOrder":  96
+                         },
+                         {
+                             "name":  "海味零食",
+                             "sortOrder":  97
+                         },
+                         {
+                             "name":  "烘焙糕点",
+                             "sortOrder":  98
+                         },
+                         {
+                             "name":  "方便食品",
+                             "sortOrder":  99
+                         },
+                         {
+                             "name":  "即食食品",
+                             "sortOrder":  100
+                         },
+                         {
+                             "name":  "冰品冷饮",
+                             "sortOrder":  101
+                         },
+                         {
+                             "name":  "饮料饮用水",
+                             "sortOrder":  102
+                         },
+                         {
+                             "name":  "冲调饮品",
+                             "sortOrder":  103
+                         },
+                         {
+                             "name":  "乳品甜品",
+                             "sortOrder":  104
+                         },
+                         {
+                             "name":  "代餐轻食",
+                             "sortOrder":  105
+                         },
+                         {
+                             "name":  "零食礼盒",
+                             "sortOrder":  106
+                         },
+                         {
+                             "name":  "零食综合采购",
+                             "sortOrder":  107
+                         },
+                         {
+                             "name":  "其他零食",
+                             "sortOrder":  108
+                         }
+                     ]
+    },
+    {
+        "name":  "烟酒茶饮",
+        "kind":  "Expense",
+        "sortOrder":  4,
+        "children":  [
+                         {
+                             "name":  "烟草制品",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "烟具耗材",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "白酒",
+                             "sortOrder":  109
+                         },
+                         {
+                             "name":  "啤酒",
+                             "sortOrder":  110
+                         },
+                         {
+                             "name":  "葡萄酒",
+                             "sortOrder":  111
+                         },
+                         {
+                             "name":  "黄酒米酒",
+                             "sortOrder":  112
+                         },
+                         {
+                             "name":  "洋酒烈酒",
+                             "sortOrder":  113
+                         },
+                         {
+                             "name":  "预调酒饮",
+                             "sortOrder":  114
+                         },
+                         {
+                             "name":  "茶叶茶包",
+                             "sortOrder":  115
+                         },
+                         {
+                             "name":  "酒水茶饮综合采购",
+                             "sortOrder":  116
+                         },
+                         {
+                             "name":  "其他烟酒茶",
+                             "sortOrder":  117
+                         }
+                     ]
+    },
+    {
+        "name":  "住房居住",
+        "kind":  "Expense",
+        "sortOrder":  5,
+        "children":  [
+                         {
+                             "name":  "房屋租赁",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "物业管理费",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "电费",
+                             "sortOrder":  118
+                         },
+                         {
+                             "name":  "水费",
+                             "sortOrder":  119
+                         },
+                         {
+                             "name":  "燃气费",
+                             "sortOrder":  120
+                         },
+                         {
+                             "name":  "供暖费",
+                             "sortOrder":  121
+                         },
+                         {
+                             "name":  "居家饮用水",
+                             "sortOrder":  122
+                         },
+                         {
+                             "name":  "垃圾处理费",
+                             "sortOrder":  123
+                         },
+                         {
+                             "name":  "住房公共维修费用",
+                             "sortOrder":  124
+                         },
+                         {
+                             "name":  "其他居住费用",
+                             "sortOrder":  125
+                         }
+                     ]
+    },
+    {
+        "name":  "居家日用",
+        "kind":  "Expense",
+        "sortOrder":  6,
+        "children":  [
+                         {
+                             "name":  "纸品湿巾",
+                             "sortOrder":  126
+                         },
+                         {
+                             "name":  "收纳用品",
+                             "sortOrder":  127
+                         },
+                         {
+                             "name":  "日用百货",
+                             "sortOrder":  128
+                         },
+                         {
+                             "name":  "一次性用品",
+                             "sortOrder":  129
+                         },
+                         {
+                             "name":  "防潮除味",
+                             "sortOrder":  130
+                         },
+                         {
+                             "name":  "五金配件",
+                             "sortOrder":  402
+                         },
+                         {
+                             "name":  "日常餐具",
+                             "sortOrder":  403
+                         },
+                         {
+                             "name":  "炊具锅具",
+                             "sortOrder":  404
+                         },
+                         {
+                             "name":  "刀具砧板",
+                             "sortOrder":  405
+                         },
+                         {
+                             "name":  "厨房工具",
+                             "sortOrder":  406
+                         },
+                         {
+                             "name":  "水具杯具",
+                             "sortOrder":  407
+                         },
+                         {
+                             "name":  "酒具茶具",
+                             "sortOrder":  408
+                         },
+                         {
+                             "name":  "餐厨收纳",
+                             "sortOrder":  409
+                         },
+                         {
+                             "name":  "家居清洁用品",
+                             "sortOrder":  410
+                         },
+                         {
+                             "name":  "厨卫清洁用品",
+                             "sortOrder":  411
+                         },
+                         {
+                             "name":  "地面清洁用品",
+                             "sortOrder":  412
+                         },
+                         {
+                             "name":  "衣物洗护用品",
+                             "sortOrder":  413
+                         },
+                         {
+                             "name":  "家居家纺",
+                             "sortOrder":  414
+                         },
+                         {
+                             "name":  "清洁工具",
+                             "sortOrder":  415
+                         },
+                         {
+                             "name":  "鞋包护理用品",
+                             "sortOrder":  416
+                         },
+                         {
+                             "name":  "洗护工具",
+                             "sortOrder":  417
+                         },
+                         {
+                             "name":  "缝补修护用品",
+                             "sortOrder":  418
+                         },
+                         {
+                             "name":  "消毒防护",
+                             "sortOrder":  419
+                         },
+                         {
+                             "name":  "园艺绿植",
+                             "sortOrder":  420
+                         },
+                         {
+                             "name":  "节庆用品",
+                             "sortOrder":  421
+                         },
+                         {
+                             "name":  "其他餐厨",
+                             "sortOrder":  422
+                         },
+                         {
+                             "name":  "其他日用",
+                             "sortOrder":  423
+                         }
+                     ]
+    },
+    {
+        "name":  "家具软装",
+        "kind":  "Expense",
+        "sortOrder":  7,
+        "children":  [
+                         {
+                             "name":  "客厅家具",
+                             "sortOrder":  424
+                         },
+                         {
+                             "name":  "卧室家具",
+                             "sortOrder":  425
+                         },
+                         {
+                             "name":  "餐厅家具",
+                             "sortOrder":  426
+                         },
+                         {
+                             "name":  "浴室家具",
+                             "sortOrder":  427
+                         },
+                         {
+                             "name":  "书房家具",
+                             "sortOrder":  428
+                         },
+                         {
+                             "name":  "户外家具",
+                             "sortOrder":  429
+                         },
+                         {
+                             "name":  "灯具照明",
+                             "sortOrder":  430
+                         },
+                         {
+                             "name":  "窗帘布艺",
+                             "sortOrder":  431
+                         },
+                         {
+                             "name":  "地毯地垫",
+                             "sortOrder":  432
+                         },
+                         {
+                             "name":  "装饰摆件",
+                             "sortOrder":  433
+                         },
+                         {
+                             "name":  "墙饰挂画",
+                             "sortOrder":  434
+                         },
+                         {
+                             "name":  "其他家具软装",
+                             "sortOrder":  435
+                         }
+                     ]
+    },
+    {
+        "name":  "居家电器",
+        "kind":  "Expense",
+        "sortOrder":  8,
+        "children":  [
+                         {
+                             "name":  "大型家电",
+                             "sortOrder":  436
+                         },
+                         {
+                             "name":  "厨房电器",
+                             "sortOrder":  437
+                         },
+                         {
+                             "name":  "清洁电器",
+                             "sortOrder":  438
+                         },
+                         {
+                             "name":  "环境电器",
+                             "sortOrder":  439
+                         },
+                         {
+                             "name":  "卫浴电器",
+                             "sortOrder":  440
+                         },
+                         {
+                             "name":  "个护电器",
+                             "sortOrder":  441
+                         },
+                         {
+                             "name":  "生活电器",
+                             "sortOrder":  442
+                         },
+                         {
+                             "name":  "影音电器",
+                             "sortOrder":  443
+                         },
+                         {
+                             "name":  "电器配件",
+                             "sortOrder":  444
+                         },
+                         {
+                             "name":  "电器维修",
+                             "sortOrder":  445
+                         },
+                         {
+                             "name":  "其他家电",
+                             "sortOrder":  446
+                         }
+                     ]
+    },
+    {
+        "name":  "生活服务",
+        "kind":  "Expense",
+        "sortOrder":  9,
+        "children":  [
+                         {
+                             "name":  "快递物流",
+                             "sortOrder":  447
+                         },
+                         {
+                             "name":  "家政保洁",
+                             "sortOrder":  448
+                         },
+                         {
+                             "name":  "搬家服务",
+                             "sortOrder":  449
+                         },
+                         {
+                             "name":  "跑腿代办",
+                             "sortOrder":  450
+                         },
+                         {
+                             "name":  "开锁换锁",
+                             "sortOrder":  451
+                         },
+                         {
+                             "name":  "家居维修",
+                             "sortOrder":  452
+                         },
+                         {
+                             "name":  "安装服务",
+                             "sortOrder":  453
+                         },
+                         {
+                             "name":  "衣物洗护服务",
+                             "sortOrder":  454
+                         },
+                         {
+                             "name":  "摄影打印服务",
+                             "sortOrder":  455
+                         },
+                         {
+                             "name":  "其他生活服务",
+                             "sortOrder":  456
+                         }
+                     ]
+    },
+    {
+        "name":  "服饰鞋包",
+        "kind":  "Expense",
+        "sortOrder":  10,
+        "children":  [
+                         {
+                             "name":  "上衣外套",
+                             "sortOrder":  457
+                         },
+                         {
+                             "name":  "裤装裙装",
+                             "sortOrder":  458
+                         },
+                         {
+                             "name":  "内衣袜类",
+                             "sortOrder":  459
+                         },
+                         {
+                             "name":  "家居睡衣",
+                             "sortOrder":  460
+                         },
+                         {
+                             "name":  "运动服饰",
+                             "sortOrder":  461
+                         },
+                         {
+                             "name":  "服饰套装",
+                             "sortOrder":  462
+                         },
+                         {
+                             "name":  "鞋靴鞋履",
+                             "sortOrder":  463
+                         },
+                         {
+                             "name":  "包袋皮具",
+                             "sortOrder":  464
+                         },
+                         {
+                             "name":  "旅行箱包",
+                             "sortOrder":  465
+                         },
+                         {
+                             "name":  "围巾帽饰",
+                             "sortOrder":  466
+                         },
+                         {
+                             "name":  "腰带手套",
+                             "sortOrder":  467
+                         },
+                         {
+                             "name":  "服饰配件",
+                             "sortOrder":  468
+                         },
+                         {
+                             "name":  "定制服饰",
+                             "sortOrder":  469
+                         },
+                         {
+                             "name":  "服饰干洗护理",
+                             "sortOrder":  470
+                         },
+                         {
+                             "name":  "其他服饰鞋包",
+                             "sortOrder":  471
+                         }
+                     ]
+    },
+    {
+        "name":  "珠宝配饰",
+        "kind":  "Expense",
+        "sortOrder":  11,
+        "children":  [
+                         {
+                             "name":  "时尚饰品",
+                             "sortOrder":  472
+                         },
+                         {
+                             "name":  "黄金饰品",
+                             "sortOrder":  473
+                         },
+                         {
+                             "name":  "白银饰品",
+                             "sortOrder":  474
+                         },
+                         {
+                             "name":  "钻石饰品",
+                             "sortOrder":  475
+                         },
+                         {
+                             "name":  "玉石翡翠",
+                             "sortOrder":  476
+                         },
+                         {
+                             "name":  "手表腕表",
+                             "sortOrder":  477
+                         },
+                         {
+                             "name":  "眼镜镜片",
+                             "sortOrder":  478
+                         },
+                         {
+                             "name":  "发饰头饰",
+                             "sortOrder":  479
+                         },
+                         {
+                             "name":  "珠宝维修保养",
+                             "sortOrder":  480
+                         },
+                         {
+                             "name":  "其他珠宝配饰",
+                             "sortOrder":  481
+                         }
+                     ]
+    },
+    {
+        "name":  "个护美妆",
+        "kind":  "Expense",
+        "sortOrder":  12,
+        "children":  [
+                         {
+                             "name":  "护肤用品",
+                             "sortOrder":  484
+                         },
+                         {
+                             "name":  "彩妆用品",
+                             "sortOrder":  485
+                         },
+                         {
+                             "name":  "卸妆清洁",
+                             "sortOrder":  486
+                         },
+                         {
+                             "name":  "防晒用品",
+                             "sortOrder":  487
+                         },
+                         {
+                             "name":  "香水用品",
+                             "sortOrder":  488
+                         },
+                         {
+                             "name":  "身体护理",
+                             "sortOrder":  489
+                         },
+                         {
+                             "name":  "口腔用品",
+                             "sortOrder":  490
+                         },
+                         {
+                             "name":  "头发用品",
+                             "sortOrder":  491
+                         },
+                         {
+                             "name":  "男士护理",
+                             "sortOrder":  492
+                         },
+                         {
+                             "name":  "女士护理",
+                             "sortOrder":  493
+                         },
+                         {
+                             "name":  "个护工具耗材",
+                             "sortOrder":  494
+                         },
+                         {
+                             "name":  "其他个护美妆",
+                             "sortOrder":  495
+                         }
+                     ]
+    },
+    {
+        "name":  "美容美发",
+        "kind":  "Expense",
+        "sortOrder":  13,
+        "children":  [
+                         {
+                             "name":  "理发剪发",
+                             "sortOrder":  496
+                         },
+                         {
+                             "name":  "染发烫发",
+                             "sortOrder":  497
+                         },
+                         {
+                             "name":  "头发护理",
+                             "sortOrder":  498
+                         },
+                         {
+                             "name":  "美甲美睫",
+                             "sortOrder":  499
+                         },
+                         {
+                             "name":  "美容护理",
+                             "sortOrder":  500
+                         },
+                         {
+                             "name":  "皮肤管理",
+                             "sortOrder":  501
+                         },
+                         {
+                             "name":  "形体管理",
+                             "sortOrder":  502
+                         },
+                         {
+                             "name":  "脱毛护理",
+                             "sortOrder":  503
+                         },
+                         {
+                             "name":  "形象管理",
+                             "sortOrder":  504
+                         },
+                         {
+                             "name":  "其他美容服务",
+                             "sortOrder":  505
+                         }
+                     ]
+    },
+    {
+        "name":  "医疗就诊",
+        "kind":  "Expense",
+        "sortOrder":  14,
+        "children":  [
+                         {
+                             "name":  "挂号问诊",
+                             "sortOrder":  506
+                         },
+                         {
+                             "name":  "门诊治疗",
+                             "sortOrder":  507
+                         },
+                         {
+                             "name":  "急诊治疗",
+                             "sortOrder":  508
+                         },
+                         {
+                             "name":  "住院治疗",
+                             "sortOrder":  509
+                         },
+                         {
+                             "name":  "体检筛查",
+                             "sortOrder":  510
+                         },
+                         {
+                             "name":  "检查检验",
+                             "sortOrder":  511
+                         },
+                         {
+                             "name":  "影像诊断",
+                             "sortOrder":  512
+                         },
+                         {
+                             "name":  "手术治疗",
+                             "sortOrder":  513
+                         },
+                         {
+                             "name":  "口腔门诊",
+                             "sortOrder":  514
+                         },
+                         {
+                             "name":  "康复治疗",
+                             "sortOrder":  515
+                         },
+                         {
+                             "name":  "医疗美容",
+                             "sortOrder":  516
+                         },
+                         {
+                             "name":  "其他医疗",
+                             "sortOrder":  517
+                         }
+                     ]
+    },
+    {
+        "name":  "药品保健",
+        "kind":  "Expense",
+        "sortOrder":  15,
+        "children":  [
+                         {
+                             "name":  "处方药品",
+                             "sortOrder":  518
+                         },
+                         {
+                             "name":  "非处方药品",
+                             "sortOrder":  519
+                         },
+                         {
+                             "name":  "中药药品",
+                             "sortOrder":  520
+                         },
+                         {
+                             "name":  "保健食品",
+                             "sortOrder":  521
+                         },
+                         {
+                             "name":  "医疗耗材",
+                             "sortOrder":  522
+                         },
+                         {
+                             "name":  "医疗器械",
+                             "sortOrder":  523
+                         },
+                         {
+                             "name":  "护理用品",
+                             "sortOrder":  524
+                         },
+                         {
+                             "name":  "慢病管理",
+                             "sortOrder":  525
+                         },
+                         {
+                             "name":  "其他药品保健",
+                             "sortOrder":  526
+                         }
+                     ]
+    },
+    {
+        "name":  "运动健身",
+        "kind":  "Expense",
+        "sortOrder":  16,
+        "children":  [
+                         {
+                             "name":  "运动装备",
+                             "sortOrder":  527
+                         },
+                         {
+                             "name":  "户外装备",
+                             "sortOrder":  528
+                         },
+                         {
+                             "name":  "健身装备",
+                             "sortOrder":  529
+                         },
+                         {
+                             "name":  "运动配件",
+                             "sortOrder":  530
+                         },
+                         {
+                             "name":  "运动场馆",
+                             "sortOrder":  531
+                         },
+                         {
+                             "name":  "私教课程",
+                             "sortOrder":  532
+                         },
+                         {
+                             "name":  "体育赛事",
+                             "sortOrder":  533
+                         },
+                         {
+                             "name":  "其他运动健身",
+                             "sortOrder":  534
+                         }
+                     ]
+    },
+    {
+        "name":  "保险保障",
+        "kind":  "Expense",
+        "sortOrder":  17,
+        "children":  [
+                         {
+                             "name":  "医疗保险",
+                             "sortOrder":  535
+                         },
+                         {
+                             "name":  "重疾保险",
+                             "sortOrder":  536
+                         },
+                         {
+                             "name":  "意外保险",
+                             "sortOrder":  537
+                         },
+                         {
+                             "name":  "寿险保障",
+                             "sortOrder":  538
+                         },
+                         {
+                             "name":  "养老保险",
+                             "sortOrder":  539
+                         },
+                         {
+                             "name":  "车险保费",
+                             "sortOrder":  540
+                         },
+                         {
+                             "name":  "旅行保险",
+                             "sortOrder":  541
+                         },
+                         {
+                             "name":  "信用保险",
+                             "sortOrder":  542
+                         },
+                         {
+                             "name":  "财产保险",
+                             "sortOrder":  543
+                         },
+                         {
+                             "name":  "其他保险",
+                             "sortOrder":  544
+                         }
+                     ]
+    },
+    {
+        "name":  "交通出行",
+        "kind":  "Expense",
+        "sortOrder":  18,
+        "children":  [
+                         {
+                             "name":  "公交出行",
+                             "sortOrder":  547
+                         },
+                         {
+                             "name":  "地铁轻轨",
+                             "sortOrder":  548
+                         },
+                         {
+                             "name":  "铁路出行",
+                             "sortOrder":  549
+                         },
+                         {
+                             "name":  "航空出行",
+                             "sortOrder":  550
+                         },
+                         {
+                             "name":  "轮渡船运",
+                             "sortOrder":  551
+                         },
+                         {
+                             "name":  "长途客运",
+                             "sortOrder":  552
+                         },
+                         {
+                             "name":  "共享单车",
+                             "sortOrder":  553
+                         },
+                         {
+                             "name":  "共享汽车",
+                             "sortOrder":  554
+                         },
+                         {
+                             "name":  "网约出行",
+                             "sortOrder":  555
+                         },
+                         {
+                             "name":  "出租出行",
+                             "sortOrder":  556
+                         },
+                         {
+                             "name":  "代驾服务",
+                             "sortOrder":  557
+                         },
+                         {
+                             "name":  "拼车顺风",
+                             "sortOrder":  558
+                         },
+                         {
+                             "name":  "包车服务",
+                             "sortOrder":  559
+                         },
+                         {
+                             "name":  "其他交通",
+                             "sortOrder":  560
+                         }
+                     ]
+    },
+    {
+        "name":  "车辆使用",
+        "kind":  "Expense",
+        "sortOrder":  19,
+        "children":  [
+                         {
+                             "name":  "加油支出",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "充电费用",
+                             "sortOrder":  1
+                         },
+                         {
+                             "name":  "停车费用",
+                             "sortOrder":  2
+                         },
+                         {
+                             "name":  "过路费用",
+                             "sortOrder":  3
+                         },
+                         {
+                             "name":  "洗车美容",
+                             "sortOrder":  4
+                         },
+                         {
+                             "name":  "车辆维修保养",
+                             "sortOrder":  566
+                         },
+                         {
+                             "name":  "车辆配件",
+                             "sortOrder":  567
+                         },
+                         {
+                             "name":  "道路救援",
+                             "sortOrder":  568
+                         },
+                         {
+                             "name":  "车辆年检",
+                             "sortOrder":  569
+                         },
+                         {
+                             "name":  "车辆使用其他",
+                             "sortOrder":  570
+                         }
+                     ]
+    },
+    {
+        "name":  "通讯网络",
+        "kind":  "Expense",
+        "sortOrder":  20,
+        "children":  [
+                         {
+                             "name":  "手机话费",
+                             "sortOrder":  571
+                         },
+                         {
+                             "name":  "流量套餐",
+                             "sortOrder":  572
+                         },
+                         {
+                             "name":  "国际漫游",
+                             "sortOrder":  573
+                         },
+                         {
+                             "name":  "固定电话",
+                             "sortOrder":  574
+                         },
+                         {
+                             "name":  "宽带网络",
+                             "sortOrder":  575
+                         },
+                         {
+                             "name":  "网络服务",
+                             "sortOrder":  576
+                         },
+                         {
+                             "name":  "WiFi套餐",
+                             "sortOrder":  577
+                         },
+                         {
+                             "name":  "其他通讯网络",
+                             "sortOrder":  578
+                         }
+                     ]
+    },
+    {
+        "name":  "软件服订",
+        "kind":  "Expense",
+        "sortOrder":  21,
+        "children":  [
+                         {
+                             "name":  "办公软件",
+                             "sortOrder":  579
+                         },
+                         {
+                             "name":  "设计软件",
+                             "sortOrder":  580
+                         },
+                         {
+                             "name":  "开发工具",
+                             "sortOrder":  581
+                         },
+                         {
+                             "name":  "AI服务",
+                             "sortOrder":  582
+                         },
+                         {
+                             "name":  "云盘存储",
+                             "sortOrder":  583
+                         },
+                         {
+                             "name":  "邮箱服务",
+                             "sortOrder":  584
+                         },
+                         {
+                             "name":  "安全服务",
+                             "sortOrder":  585
+                         },
+                         {
+                             "name":  "域名主机",
+                             "sortOrder":  586
+                         },
+                         {
+                             "name":  "财务软件",
+                             "sortOrder":  587
+                         },
+                         {
+                             "name":  "专业软件",
+                             "sortOrder":  588
+                         },
+                         {
+                             "name":  "视频订阅",
+                             "sortOrder":  589
+                         },
+                         {
+                             "name":  "音乐订阅",
+                             "sortOrder":  590
+                         },
+                         {
+                             "name":  "阅读订阅",
+                             "sortOrder":  591
+                         },
+                         {
+                             "name":  "知识会员",
+                             "sortOrder":  592
+                         },
+                         {
+                             "name":  "游戏会员",
+                             "sortOrder":  593
+                         },
+                         {
+                             "name":  "社交会员",
+                             "sortOrder":  594
+                         },
+                         {
+                             "name":  "生活会员",
+                             "sortOrder":  595
+                         },
+                         {
+                             "name":  "应用购买",
+                             "sortOrder":  596
+                         },
+                         {
+                             "name":  "应用内购",
+                             "sortOrder":  597
+                         },
+                         {
+                             "name":  "虚拟内容",
+                             "sortOrder":  598
+                         },
+                         {
+                             "name":  "游戏购买",
+                             "sortOrder":  599
+                         },
+                         {
+                             "name":  "游戏内购",
+                             "sortOrder":  600
+                         },
+                         {
+                             "name":  "游戏充值",
+                             "sortOrder":  601
+                         },
+                         {
+                             "name":  "游戏点卡",
+                             "sortOrder":  602
+                         },
+                         {
+                             "name":  "直播打赏",
+                             "sortOrder":  603
+                         },
+                         {
+                             "name":  "下载服务",
+                             "sortOrder":  604
+                         },
+                         {
+                             "name":  "其他数字服务",
+                             "sortOrder":  605
+                         }
+                     ]
+    },
+    {
+        "name":  "数码设备",
+        "kind":  "Expense",
+        "sortOrder":  22,
+        "children":  [
+                         {
+                             "name":  "手机设备",
+                             "sortOrder":  606
+                         },
+                         {
+                             "name":  "平板设备",
+                             "sortOrder":  607
+                         },
+                         {
+                             "name":  "电脑设备",
+                             "sortOrder":  608
+                         },
+                         {
+                             "name":  "相机设备",
+                             "sortOrder":  609
+                         },
+                         {
+                             "name":  "主机设备",
+                             "sortOrder":  610
+                         },
+                         {
+                             "name":  "影音设备",
+                             "sortOrder":  611
+                         },
+                         {
+                             "name":  "显示设备",
+                             "sortOrder":  612
+                         },
+                         {
+                             "name":  "存储设备",
+                             "sortOrder":  613
+                         },
+                         {
+                             "name":  "网络设备",
+                             "sortOrder":  614
+                         },
+                         {
+                             "name":  "移动配件（含手机、平板配件）",
+                             "sortOrder":  615
+                         },
+                         {
+                             "name":  "外设配件",
+                             "sortOrder":  616
+                         },
+                         {
+                             "name":  "设备维修",
+                             "sortOrder":  617
+                         },
+                         {
+                             "name":  "设备耗材",
+                             "sortOrder":  618
+                         },
+                         {
+                             "name":  "其他数码",
+                             "sortOrder":  619
+                         }
+                     ]
+    },
+    {
+        "name":  "教育培训",
+        "kind":  "Expense",
+        "sortOrder":  23,
+        "children":  [
+                         {
+                             "name":  "学费支出",
+                             "sortOrder":  620
+                         },
+                         {
+                             "name":  "教育住宿",
+                             "sortOrder":  621
+                         },
+                         {
+                             "name":  "教材资料",
+                             "sortOrder":  622
+                         },
+                         {
+                             "name":  "校园服务",
+                             "sortOrder":  623
+                         },
+                         {
+                             "name":  "论文答辩",
+                             "sortOrder":  624
+                         },
+                         {
+                             "name":  "线下培训",
+                             "sortOrder":  625
+                         },
+                         {
+                             "name":  "在线课程",
+                             "sortOrder":  626
+                         },
+                         {
+                             "name":  "报名考试",
+                             "sortOrder":  627
+                         },
+                         {
+                             "name":  "资格认证",
+                             "sortOrder":  628
+                         },
+                         {
+                             "name":  "证书办理",
+                             "sortOrder":  629
+                         },
+                         {
+                             "name":  "题库资料",
+                             "sortOrder":  630
+                         },
+                         {
+                             "name":  "学术科研",
+                             "sortOrder":  631
+                         },
+                         {
+                             "name":  "语言学习",
+                             "sortOrder":  632
+                         },
+                         {
+                             "name":  "其他教育培训",
+                             "sortOrder":  633
+                         }
+                     ]
+    },
+    {
+        "name":  "办公文具",
+        "kind":  "Expense",
+        "sortOrder":  24,
+        "children":  [
+                         {
+                             "name":  "办公设备",
+                             "sortOrder":  634
+                         },
+                         {
+                             "name":  "办公用纸",
+                             "sortOrder":  635
+                         },
+                         {
+                             "name":  "办公耗材",
+                             "sortOrder":  636
+                         },
+                         {
+                             "name":  "办公收纳",
+                             "sortOrder":  637
+                         },
+                         {
+                             "name":  "笔类用品",
+                             "sortOrder":  638
+                         },
+                         {
+                             "name":  "学习用品",
+                             "sortOrder":  639
+                         },
+                         {
+                             "name":  "本册纸签",
+                             "sortOrder":  640
+                         },
+                         {
+                             "name":  "打印复印",
+                             "sortOrder":  641
+                         },
+                         {
+                             "name":  "其他办公文具",
+                             "sortOrder":  642
+                         }
+                     ]
+    },
+    {
+        "name":  "兴趣文娱",
+        "kind":  "Expense",
+        "sortOrder":  25,
+        "children":  [
+                         {
+                             "name":  "电影票务",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "演唱会票",
+                             "sortOrder":  1
+                         },
+                         {
+                             "name":  "话剧演出",
+                             "sortOrder":  2
+                         },
+                         {
+                             "name":  "展览会展",
+                             "sortOrder":  3
+                         },
+                         {
+                             "name":  "博物馆票",
+                             "sortOrder":  4
+                         },
+                         {
+                             "name":  "文化活动",
+                             "sortOrder":  5
+                         },
+                         {
+                             "name":  "景区门票",
+                             "sortOrder":  6
+                         },
+                         {
+                             "name":  "文创周边",
+                             "sortOrder":  8
+                         },
+                         {
+                             "name":  "模型手办",
+                             "sortOrder":  9
+                         },
+                         {
+                             "name":  "纸质图书",
+                             "sortOrder":  10
+                         },
+                         {
+                             "name":  "DIY工具",
+                             "sortOrder":  11
+                         },
+                         {
+                             "name":  "DIY材料",
+                             "sortOrder":  12
+                         },
+                         {
+                             "name":  "乐器乐具",
+                             "sortOrder":  655
+                         },
+                         {
+                             "name":  "艺术收藏",
+                             "sortOrder":  656
+                         },
+                         {
+                             "name":  "币卡收藏",
+                             "sortOrder":  657
+                         },
+                         {
+                             "name":  "古玩文玩",
+                             "sortOrder":  658
+                         },
+                         {
+                             "name":  "邮票钱币",
+                             "sortOrder":  659
+                         },
+                         {
+                             "name":  "众筹商品",
+                             "sortOrder":  660
+                         },
+                         {
+                             "name":  "其他兴趣文娱",
+                             "sortOrder":  661
+                         }
+                     ]
+    },
+    {
+        "name":  "休闲娱乐",
+        "kind":  "Expense",
+        "sortOrder":  26,
+        "children":  [
+                         {
+                             "name":  "网吧网咖",
+                             "sortOrder":  387
+                         },
+                         {
+                             "name":  "足疗按摩",
+                             "sortOrder":  388
+                         },
+                         {
+                             "name":  "洗浴汗蒸",
+                             "sortOrder":  389
+                         },
+                         {
+                             "name":  "KTV唱歌",
+                             "sortOrder":  390
+                         },
+                         {
+                             "name":  "电玩游戏",
+                             "sortOrder":  391
+                         },
+                         {
+                             "name":  "棋牌麻将",
+                             "sortOrder":  392
+                         },
+                         {
+                             "name":  "DIY手工",
+                             "sortOrder":  393
+                         },
+                         {
+                             "name":  "台球桌游",
+                             "sortOrder":  394
+                         },
+                         {
+                             "name":  "密室沉浸",
+                             "sortOrder":  395
+                         },
+                         {
+                             "name":  "剧本杀",
+                             "sortOrder":  396
+                         },
+                         {
+                             "name":  "酒吧夜店",
+                             "sortOrder":  397
+                         },
+                         {
+                             "name":  "彩票购买",
+                             "sortOrder":  398
+                         },
+                         {
+                             "name":  "社群活动",
+                             "sortOrder":  399
+                         },
+                         {
+                             "name":  "其他休闲",
+                             "sortOrder":  400
+                         }
+                     ]
+    },
+    {
+        "name":  "旅游度假",
+        "kind":  "Expense",
+        "sortOrder":  27,
+        "children":  [
+                         {
+                             "name":  "旅行交通",
+                             "sortOrder":  376
+                         },
+                         {
+                             "name":  "旅行住宿",
+                             "sortOrder":  377
+                         },
+                         {
+                             "name":  "旅行餐饮",
+                             "sortOrder":  378
+                         },
+                         {
+                             "name":  "旅行门票",
+                             "sortOrder":  379
+                         },
+                         {
+                             "name":  "旅行娱乐",
+                             "sortOrder":  380
+                         },
+                         {
+                             "name":  "旅行购物",
+                             "sortOrder":  381
+                         },
+                         {
+                             "name":  "旅拍摄影",
+                             "sortOrder":  382
+                         },
+                         {
+                             "name":  "导游服务",
+                             "sortOrder":  383
+                         },
+                         {
+                             "name":  "行李服务",
+                             "sortOrder":  384
+                         },
+                         {
+                             "name":  "旅行签证杂费",
+                             "sortOrder":  385
+                         },
+                         {
+                             "name":  "其他旅行",
+                             "sortOrder":  386
+                         }
+                     ]
+    },
+    {
+        "name":  "宠物生活",
+        "kind":  "Expense",
+        "sortOrder":  28,
+        "children":  [
+                         {
+                             "name":  "宠物食品",
+                             "sortOrder":  363
+                         },
+                         {
+                             "name":  "宠物零食",
+                             "sortOrder":  364
+                         },
+                         {
+                             "name":  "宠物用品",
+                             "sortOrder":  365
+                         },
+                         {
+                             "name":  "宠物玩具",
+                             "sortOrder":  366
+                         },
+                         {
+                             "name":  "宠物清洁",
+                             "sortOrder":  367
+                         },
+                         {
+                             "name":  "宠物美容",
+                             "sortOrder":  368
+                         },
+                         {
+                             "name":  "宠物医疗",
+                             "sortOrder":  369
+                         },
+                         {
+                             "name":  "宠物疫苗",
+                             "sortOrder":  370
+                         },
+                         {
+                             "name":  "宠物寄养",
+                             "sortOrder":  371
+                         },
+                         {
+                             "name":  "宠物保险",
+                             "sortOrder":  372
+                         },
+                         {
+                             "name":  "宠物训练",
+                             "sortOrder":  373
+                         },
+                         {
+                             "name":  "宠物殡葬",
+                             "sortOrder":  374
+                         },
+                         {
+                             "name":  "其他宠物",
+                             "sortOrder":  375
+                         }
+                     ]
+    },
+    {
+        "name":  "育儿支出",
+        "kind":  "Expense",
+        "sortOrder":  29,
+        "children":  [
+                         {
+                             "name":  "奶粉辅食",
+                             "sortOrder":  345
+                         },
+                         {
+                             "name":  "尿裤湿巾",
+                             "sortOrder":  346
+                         },
+                         {
+                             "name":  "婴童用品",
+                             "sortOrder":  347
+                         },
+                         {
+                             "name":  "婴童出行",
+                             "sortOrder":  348
+                         },
+                         {
+                             "name":  "婴童医疗",
+                             "sortOrder":  349
+                         },
+                         {
+                             "name":  "婴童玩具",
+                             "sortOrder":  350
+                         },
+                         {
+                             "name":  "托育照护",
+                             "sortOrder":  351
+                         },
+                         {
+                             "name":  "早教启蒙",
+                             "sortOrder":  352
+                         },
+                         {
+                             "name":  "学校学费",
+                             "sortOrder":  353
+                         },
+                         {
+                             "name":  "兴趣课程",
+                             "sortOrder":  354
+                         },
+                         {
+                             "name":  "学科辅导",
+                             "sortOrder":  355
+                         },
+                         {
+                             "name":  "艺术培训",
+                             "sortOrder":  356
+                         },
+                         {
+                             "name":  "教辅资料",
+                             "sortOrder":  357
+                         },
+                         {
+                             "name":  "校服校具",
+                             "sortOrder":  358
+                         },
+                         {
+                             "name":  "幼托费用",
+                             "sortOrder":  359
+                         },
+                         {
+                             "name":  "校园活动",
+                             "sortOrder":  360
+                         },
+                         {
+                             "name":  "育儿生活费用",
+                             "sortOrder":  361
+                         },
+                         {
+                             "name":  "其他育儿",
+                             "sortOrder":  362
+                         }
+                     ]
+    },
+    {
+        "name":  "恋爱支出",
+        "kind":  "Expense",
+        "sortOrder":  30,
+        "children":  [
+                         {
+                             "name":  "日常约会",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "恋爱餐饮",
+                             "sortOrder":  1
+                         },
+                         {
+                             "name":  "恋爱礼赠",
+                             "sortOrder":  2
+                         },
+                         {
+                             "name":  "节日礼物",
+                             "sortOrder":  3
+                         },
+                         {
+                             "name":  "纪念日支出",
+                             "sortOrder":  4
+                         },
+                         {
+                             "name":  "生日支出",
+                             "sortOrder":  5
+                         },
+                         {
+                             "name":  "恋爱红包",
+                             "sortOrder":  6
+                         },
+                         {
+                             "name":  "恋爱转账赠与",
+                             "sortOrder":  7
+                         },
+                         {
+                             "name":  "恋爱娱乐",
+                             "sortOrder":  332
+                         },
+                         {
+                             "name":  "恋爱旅行",
+                             "sortOrder":  333
+                         },
+                         {
+                             "name":  "恋爱住宿",
+                             "sortOrder":  334
+                         },
+                         {
+                             "name":  "恋爱交通",
+                             "sortOrder":  335
+                         },
+                         {
+                             "name":  "恋爱购物",
+                             "sortOrder":  336
+                         },
+                         {
+                             "name":  "恋爱生活",
+                             "sortOrder":  337
+                         },
+                         {
+                             "name":  "恋爱医疗",
+                             "sortOrder":  338
+                         },
+                         {
+                             "name":  "恋爱通信",
+                             "sortOrder":  339
+                         },
+                         {
+                             "name":  "恋爱仪式",
+                             "sortOrder":  340
+                         },
+                         {
+                             "name":  "恋爱摄影",
+                             "sortOrder":  341
+                         },
+                         {
+                             "name":  "恋爱探望",
+                             "sortOrder":  342
+                         },
+                         {
+                             "name":  "恋爱补偿",
+                             "sortOrder":  343
+                         },
+                         {
+                             "name":  "其他恋爱",
+                             "sortOrder":  344
+                         }
+                     ]
+    },
+    {
+        "name":  "往来赠与",
+        "kind":  "Expense",
+        "sortOrder":  31,
+        "children":  [
+                         {
+                             "name":  "社交红包",
+                             "sortOrder":  301
+                         },
+                         {
+                             "name":  "社交现金赠与",
+                             "sortOrder":  302
+                         },
+                         {
+                             "name":  "婚庆礼金",
+                             "sortOrder":  304
+                         },
+                         {
+                             "name":  "丧葬慰问",
+                             "sortOrder":  313
+                         },
+                         {
+                             "name":  "满月周岁",
+                             "sortOrder":  317
+                         },
+                         {
+                             "name":  "节日红包",
+                             "sortOrder":  318
+                         },
+                         {
+                             "name":  "长辈赠与",
+                             "sortOrder":  319
+                         },
+                         {
+                             "name":  "同辈赠与",
+                             "sortOrder":  320
+                         },
+                         {
+                             "name":  "乔迁随礼",
+                             "sortOrder":  321
+                         },
+                         {
+                             "name":  "探病问候",
+                             "sortOrder":  322
+                         },
+                         {
+                             "name":  "升学升职",
+                             "sortOrder":  323
+                         },
+                         {
+                             "name":  "邻里往来",
+                             "sortOrder":  324
+                         },
+                         {
+                             "name":  "同事往来",
+                             "sortOrder":  325
+                         },
+                         {
+                             "name":  "其他往来赠与",
+                             "sortOrder":  326
+                         }
+                     ]
+    },
+    {
+        "name":  "礼品馈赠",
+        "kind":  "Expense",
+        "sortOrder":  32,
+        "children":  [
+                         {
+                             "name":  "社交礼品",
+                             "sortOrder":  300
+                         },
+                         {
+                             "name":  "虚拟礼品",
+                             "sortOrder":  305
+                         },
+                         {
+                             "name":  "生日礼物",
+                             "sortOrder":  306
+                         },
+                         {
+                             "name":  "节庆礼品",
+                             "sortOrder":  307
+                         },
+                         {
+                             "name":  "伴手礼品",
+                             "sortOrder":  308
+                         },
+                         {
+                             "name":  "探访礼品",
+                             "sortOrder":  309
+                         },
+                         {
+                             "name":  "礼盒礼篮",
+                             "sortOrder":  310
+                         },
+                         {
+                             "name":  "赠送礼券礼卡",
+                             "sortOrder":  311
+                         },
+                         {
+                             "name":  "其他礼品",
+                             "sortOrder":  312
+                         }
+                     ]
+    },
+    {
+        "name":  "金融费用",
+        "kind":  "Expense",
+        "sortOrder":  33,
+        "children":  [
+                         {
+                             "name":  "转账手续费",
+                             "sortOrder":  287
+                         },
+                         {
+                             "name":  "账户管理费",
+                             "sortOrder":  288
+                         },
+                         {
+                             "name":  "充值服务费",
+                             "sortOrder":  289
+                         },
+                         {
+                             "name":  "账户年费",
+                             "sortOrder":  290
+                         },
+                         {
+                             "name":  "短信服务费",
+                             "sortOrder":  291
+                         },
+                         {
+                             "name":  "提现费用",
+                             "sortOrder":  292
+                         },
+                         {
+                             "name":  "汇款费用",
+                             "sortOrder":  293
+                         },
+                         {
+                             "name":  "外汇手续费",
+                             "sortOrder":  294
+                         },
+                         {
+                             "name":  "支付通道费",
+                             "sortOrder":  295
+                         },
+                         {
+                             "name":  "基金申购费",
+                             "sortOrder":  296
+                         },
+                         {
+                             "name":  "基金赎回费",
+                             "sortOrder":  297
+                         },
+                         {
+                             "name":  "股票交易费用",
+                             "sortOrder":  298
+                         },
+                         {
+                             "name":  "其他金融费用",
+                             "sortOrder":  299
+                         }
+                     ]
+    },
+    {
+        "name":  "信贷利息",
+        "kind":  "Expense",
+        "sortOrder":  34,
+        "children":  [
+                         {
+                             "name":  "房贷利息",
+                             "sortOrder":  279
+                         },
+                         {
+                             "name":  "车贷利息",
+                             "sortOrder":  280
+                         },
+                         {
+                             "name":  "信用卡利息",
+                             "sortOrder":  281
+                         },
+                         {
+                             "name":  "消费贷利息",
+                             "sortOrder":  282
+                         },
+                         {
+                             "name":  "分期利息手续费",
+                             "sortOrder":  283
+                         },
+                         {
+                             "name":  "个人借款利息",
+                             "sortOrder":  284
+                         },
+                         {
+                             "name":  "罚息违约金",
+                             "sortOrder":  285
+                         },
+                         {
+                             "name":  "其他信贷利息",
+                             "sortOrder":  286
+                         }
+                     ]
+    },
+    {
+        "name":  "税费罚款",
+        "kind":  "Expense",
+        "sortOrder":  35,
+        "children":  [
+                         {
+                             "name":  "个人所得税",
+                             "sortOrder":  271
+                         },
+                         {
+                             "name":  "房产相关税费",
+                             "sortOrder":  272
+                         },
+                         {
+                             "name":  "车辆购置税",
+                             "sortOrder":  273
+                         },
+                         {
+                             "name":  "车辆使用税费",
+                             "sortOrder":  274
+                         },
+                         {
+                             "name":  "其他个人税费",
+                             "sortOrder":  275
+                         },
+                         {
+                             "name":  "交通违章罚款",
+                             "sortOrder":  276
+                         },
+                         {
+                             "name":  "行政罚款",
+                             "sortOrder":  277
+                         },
+                         {
+                             "name":  "其他税费罚款",
+                             "sortOrder":  278
+                         }
+                     ]
+    },
+    {
+        "name":  "行政法律",
+        "kind":  "Expense",
+        "sortOrder":  36,
+        "children":  [
+                         {
+                             "name":  "证件办理",
+                             "sortOrder":  258
+                         },
+                         {
+                             "name":  "公证认证",
+                             "sortOrder":  259
+                         },
+                         {
+                             "name":  "签证服务",
+                             "sortOrder":  260
+                         },
+                         {
+                             "name":  "户籍政务",
+                             "sortOrder":  261
+                         },
+                         {
+                             "name":  "律师咨询",
+                             "sortOrder":  262
+                         },
+                         {
+                             "name":  "法律代理",
+                             "sortOrder":  263
+                         },
+                         {
+                             "name":  "诉讼仲裁",
+                             "sortOrder":  264
+                         },
+                         {
+                             "name":  "合同审查",
+                             "sortOrder":  265
+                         },
+                         {
+                             "name":  "证据公证",
+                             "sortOrder":  266
+                         },
+                         {
+                             "name":  "法律文书",
+                             "sortOrder":  267
+                         },
+                         {
+                             "name":  "政府行政服务",
+                             "sortOrder":  268
+                         },
+                         {
+                             "name":  "行政规费",
+                             "sortOrder":  269
+                         },
+                         {
+                             "name":  "其他行政法律",
+                             "sortOrder":  270
+                         }
+                     ]
+    },
+    {
+        "name":  "房屋装修",
+        "kind":  "Expense",
+        "sortOrder":  37,
+        "children":  [
+                         {
+                             "name":  "硬装施工",
+                             "sortOrder":  248
+                         },
+                         {
+                             "name":  "软装搭配",
+                             "sortOrder":  249
+                         },
+                         {
+                             "name":  "水电改造",
+                             "sortOrder":  250
+                         },
+                         {
+                             "name":  "墙面地面",
+                             "sortOrder":  251
+                         },
+                         {
+                             "name":  "厨卫装修",
+                             "sortOrder":  252
+                         },
+                         {
+                             "name":  "门窗更换",
+                             "sortOrder":  253
+                         },
+                         {
+                             "name":  "装修辅材",
+                             "sortOrder":  254
+                         },
+                         {
+                             "name":  "设计费用",
+                             "sortOrder":  255
+                         },
+                         {
+                             "name":  "装修监理",
+                             "sortOrder":  256
+                         },
+                         {
+                             "name":  "其他装修",
+                             "sortOrder":  257
+                         }
+                     ]
+    },
+    {
+        "name":  "公益宗教",
+        "kind":  "Expense",
+        "sortOrder":  38,
+        "children":  [
+                         {
+                             "name":  "公益捐款",
+                             "sortOrder":  231
+                         },
+                         {
+                             "name":  "物资捐赠",
+                             "sortOrder":  232
+                         },
+                         {
+                             "name":  "众筹救助",
+                             "sortOrder":  233
+                         },
+                         {
+                             "name":  "学校捐助",
+                             "sortOrder":  234
+                         },
+                         {
+                             "name":  "医疗援助",
+                             "sortOrder":  235
+                         },
+                         {
+                             "name":  "社区公益",
+                             "sortOrder":  236
+                         },
+                         {
+                             "name":  "环保公益",
+                             "sortOrder":  237
+                         },
+                         {
+                             "name":  "动保捐赠",
+                             "sortOrder":  238
+                         },
+                         {
+                             "name":  "扶贫助农",
+                             "sortOrder":  239
+                         },
+                         {
+                             "name":  "其他公益",
+                             "sortOrder":  240
+                         },
+                         {
+                             "name":  "香火供奉",
+                             "sortOrder":  241
+                         },
+                         {
+                             "name":  "法会供养",
+                             "sortOrder":  242
+                         },
+                         {
+                             "name":  "寺观捐赠",
+                             "sortOrder":  243
+                         },
+                         {
+                             "name":  "宗教用品",
+                             "sortOrder":  244
+                         },
+                         {
+                             "name":  "祈福法事",
+                             "sortOrder":  245
+                         },
+                         {
+                             "name":  "还愿供奉",
+                             "sortOrder":  246
+                         },
+                         {
+                             "name":  "其他宗教",
+                             "sortOrder":  247
+                         }
+                     ]
+    },
+    {
+        "name":  "其他支出",
+        "kind":  "Expense",
+        "sortOrder":  39,
+        "children":  [
+                         {
+                             "name":  "待分类消费",
+                             "sortOrder":  227
+                         },
+                         {
+                             "name":  "无法识别消费",
+                             "sortOrder":  228
+                         },
+                         {
+                             "name":  "杂项消费",
+                             "sortOrder":  229
+                         },
+                         {
+                             "name":  "其他实际支出",
+                             "sortOrder":  230
+                         }
+                     ]
+    },
+    {
+        "name":  "投资收益",
+        "kind":  "Income",
+        "sortOrder":  59,
+        "children":  [
+                         {
+                             "name":  "存款利息",
+                             "sortOrder":  152
+                         },
+                         {
+                             "name":  "债券利息",
+                             "sortOrder":  153
+                         },
+                         {
+                             "name":  "基金分红",
+                             "sortOrder":  154
+                         },
+                         {
+                             "name":  "股票股息",
+                             "sortOrder":  155
+                         },
+                         {
+                             "name":  "理财收益",
+                             "sortOrder":  156
+                         },
+                         {
+                             "name":  "货币基金收益",
+                             "sortOrder":  157
+                         },
+                         {
+                             "name":  "已实现投资收益",
+                             "sortOrder":  158
+                         },
+                         {
+                             "name":  "已实现汇兑收益",
+                             "sortOrder":  159
+                         },
+                         {
+                             "name":  "其他投资收益",
+                             "sortOrder":  160
+                         }
+                     ]
+    },
+    {
+        "name":  "政策保障",
+        "kind":  "Income",
+        "sortOrder":  60,
+        "children":  [
+                         {
+                             "name":  "医保待遇",
+                             "sortOrder":  161
+                         },
+                         {
+                             "name":  "社保待遇",
+                             "sortOrder":  162
+                         },
+                         {
+                             "name":  "养老待遇",
+                             "sortOrder":  163
+                         },
+                         {
+                             "name":  "失业待遇",
+                             "sortOrder":  164
+                         },
+                         {
+                             "name":  "生育津贴",
+                             "sortOrder":  165
+                         },
+                         {
+                             "name":  "工伤待遇",
+                             "sortOrder":  166
+                         },
+                         {
+                             "name":  "人才补贴",
+                             "sortOrder":  167
+                         },
+                         {
+                             "name":  "就业补贴",
+                             "sortOrder":  168
+                         },
+                         {
+                             "name":  "育儿补贴",
+                             "sortOrder":  169
+                         },
+                         {
+                             "name":  "创业补贴",
+                             "sortOrder":  170
+                         },
+                         {
+                             "name":  "政策补贴",
+                             "sortOrder":  171
+                         },
+                         {
+                             "name":  "其他政策保障",
+                             "sortOrder":  172
+                         }
+                     ]
+    },
+    {
+        "name":  "保险赔付",
+        "kind":  "Income",
+        "sortOrder":  61,
+        "children":  [
+                         {
+                             "name":  "医疗保险赔偿",
+                             "sortOrder":  173
+                         },
+                         {
+                             "name":  "重疾保险赔偿",
+                             "sortOrder":  174
+                         },
+                         {
+                             "name":  "意外保险赔偿",
+                             "sortOrder":  175
+                         },
+                         {
+                             "name":  "寿险赔偿",
+                             "sortOrder":  176
+                         },
+                         {
+                             "name":  "财产保险赔偿",
+                             "sortOrder":  177
+                         },
+                         {
+                             "name":  "车险赔偿",
+                             "sortOrder":  178
+                         },
+                         {
+                             "name":  "旅行保险赔偿",
+                             "sortOrder":  179
+                         },
+                         {
+                             "name":  "责任保险赔偿",
+                             "sortOrder":  180
+                         },
+                         {
+                             "name":  "保单红利收益",
+                             "sortOrder":  181
+                         },
+                         {
+                             "name":  "其他保险赔偿",
+                             "sortOrder":  182
+                         }
+                     ]
+    },
+    {
+        "name":  "赠与资助",
+        "kind":  "Income",
+        "sortOrder":  62,
+        "children":  [
+                         {
+                             "name":  "父母资助",
+                             "sortOrder":  0
+                         },
+                         {
+                             "name":  "家庭补贴",
+                             "sortOrder":  1
+                         },
+                         {
+                             "name":  "配偶支持",
+                             "sortOrder":  2
+                         },
+                         {
+                             "name":  "子女返哺",
+                             "sortOrder":  3
+                         },
+                         {
+                             "name":  "亲属资助",
+                             "sortOrder":  4
+                         },
+                         {
+                             "name":  "亲友赠与",
+                             "sortOrder":  5
+                         },
+                         {
+                             "name":  "节庆红包",
+                             "sortOrder":  6
+                         },
+                         {
+                             "name":  "婚丧礼金",
+                             "sortOrder":  7
+                         },
+                         {
+                             "name":  "生日礼金",
+                             "sortOrder":  8
+                         },
+                         {
+                             "name":  "社交红包",
+                             "sortOrder":  9
+                         },
+                         {
+                             "name":  "社交转账",
+                             "sortOrder":  10
+                         },
+                         {
+                             "name":  "其他赠与资助",
+                             "sortOrder":  11
+                         }
+                     ]
+    },
+    {
+        "name":  "返现补贴",
+        "kind":  "Income",
+        "sortOrder":  64,
+        "children":  [
+                         {
+                             "name":  "银行返现",
+                             "sortOrder":  207
+                         },
+                         {
+                             "name":  "信用卡返现",
+                             "sortOrder":  208
+                         },
+                         {
+                             "name":  "商家返现",
+                             "sortOrder":  209
+                         },
+                         {
+                             "name":  "消费返利",
+                             "sortOrder":  210
+                         },
+                         {
+                             "name":  "积分兑现",
+                             "sortOrder":  211
+                         },
+                         {
+                             "name":  "活动奖励",
+                             "sortOrder":  212
+                         },
+                         {
+                             "name":  "邀请奖励",
+                             "sortOrder":  213
+                         },
+                         {
+                             "name":  "签到奖励",
+                             "sortOrder":  214
+                         },
+                         {
+                             "name":  "其他奖励",
+                             "sortOrder":  215
+                         }
+                     ]
+    },
+    {
+        "name":  "赔偿补偿",
+        "kind":  "Income",
+        "sortOrder":  65,
+        "children":  [
+                         {
+                             "name":  "商家赔偿",
+                             "sortOrder":  194
+                         },
+                         {
+                             "name":  "物流赔偿",
+                             "sortOrder":  195
+                         },
+                         {
+                             "name":  "平台赔偿",
+                             "sortOrder":  196
+                         },
+                         {
+                             "name":  "合同赔偿",
+                             "sortOrder":  197
+                         },
+                         {
+                             "name":  "违约赔偿",
+                             "sortOrder":  198
+                         },
+                         {
+                             "name":  "延误补偿",
+                             "sortOrder":  199
+                         },
+                         {
+                             "name":  "航班补偿",
+                             "sortOrder":  200
+                         },
+                         {
+                             "name":  "酒店补偿",
+                             "sortOrder":  201
+                         },
+                         {
+                             "name":  "服务补偿",
+                             "sortOrder":  202
+                         },
+                         {
+                             "name":  "事故补偿",
+                             "sortOrder":  203
+                         },
+                         {
+                             "name":  "法律赔偿",
+                             "sortOrder":  204
+                         },
+                         {
+                             "name":  "损坏赔偿",
+                             "sortOrder":  205
+                         },
+                         {
+                             "name":  "其他补偿",
+                             "sortOrder":  206
+                         }
+                     ]
+    },
+    {
+        "name":  "税费返还",
+        "kind":  "Income",
+        "sortOrder":  66,
+        "children":  [
+                         {
+                             "name":  "个人所得税退税",
+                             "sortOrder":  189
+                         },
+                         {
+                             "name":  "经营税费返还",
+                             "sortOrder":  190
+                         },
+                         {
+                             "name":  "增值税退税",
+                             "sortOrder":  191
+                         },
+                         {
+                             "name":  "车辆税费返还",
+                             "sortOrder":  192
+                         },
+                         {
+                             "name":  "其他税费返还",
+                             "sortOrder":  193
+                         }
+                     ]
+    },
+    {
+        "name":  "教育奖励",
+        "kind":  "Income",
+        "sortOrder":  67,
+        "children":  [
+                         {
+                             "name":  "奖学金",
+                             "sortOrder":  183
+                         },
+                         {
+                             "name":  "助学金",
+                             "sortOrder":  184
+                         },
+                         {
+                             "name":  "教育奖励",
+                             "sortOrder":  185
+                         },
+                         {
+                             "name":  "科研奖励",
+                             "sortOrder":  186
+                         },
+                         {
+                             "name":  "竞赛奖金",
+                             "sortOrder":  187
+                         },
+                         {
+                             "name":  "其他教育奖励",
+                             "sortOrder":  188
+                         }
+                     ]
+    },
+    {
+        "name":  "其他收入",
+        "kind":  "Income",
+        "sortOrder":  68,
+        "children":  [
+                         {
+                             "name":  "偶发所得",
+                             "sortOrder":  69
+                         },
+                         {
+                             "name":  "其他真实收入",
+                             "sortOrder":  70
+                         },
+                         {
+                             "name":  "待分类收入",
+                             "sortOrder":  71
+                         }
+                     ]
+    }
+]

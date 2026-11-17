@@ -1,0 +1,6 @@
+import { Checkbox,Input,Select,Space } from 'antd';
+import type { Order } from './api';
+export function TicketOriginFields({value,onChange,disabled}:{value?:Order['origin'];onChange?:(v:NonNullable<Order['origin']>)=>void;disabled?:boolean}) {
+ const origin=value??{kind:'Self',from:'',receivedOn:null,note:'',platformAllowed:false};const update=(patch:Partial<typeof origin>)=>onChange?.({...origin,...patch});
+ return <Space direction="vertical" style={{width:'100%'}}><Select aria-label="门票来源类型" style={{width:'100%'}} disabled={disabled} value={origin.kind} options={[{value:'Self',label:'本人付款 / 他人代付（关联实际记账）'},{value:'Gift',label:'免费获赠（零实付，不创建现金流水）'}]} onChange={kind=>update({kind})}/>{origin.kind==='Gift' && <><Input aria-label="获赠来源人" placeholder="赠票人 / 机构" disabled={disabled} value={origin.from} onChange={e=>update({from:e.target.value})}/><Input aria-label="获赠日期" type="date" disabled={disabled} value={origin.receivedOn??''} onChange={e=>update({receivedOn:e.target.value||null})}/><Input aria-label="获赠说明" placeholder="获赠说明" maxLength={1000} disabled={disabled} value={origin.note} onChange={e=>update({note:e.target.value})}/><Checkbox disabled={disabled} checked={origin.platformAllowed} onChange={e=>update({platformAllowed:e.target.checked})}>我已确认获赠符合票务平台规则</Checkbox></>}</Space>;
+}

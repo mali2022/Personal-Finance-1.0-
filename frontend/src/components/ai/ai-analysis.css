@@ -1,0 +1,24 @@
+.ai-analysis { width: 100%; max-width: 1040px; min-width: 0; margin-inline: auto; display: grid; gap: 16px; }
+.ai-analysis-header h3 { margin-block: 0 12px; }
+.ai-analysis-header p { margin-block: 10px 0; }
+.ai-metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 12px; }
+.ai-metric-value { display: block; text-align: right; font-size: clamp(20px, 2.2vw, 28px); font-variant-numeric: tabular-nums; margin-block: 12px 6px; overflow-wrap: anywhere; }
+.ai-findings { display: grid; gap: 12px; }
+.ai-finding { min-width: 0; margin-bottom: 10px; }
+.ai-finding .ant-card-head { flex-wrap: wrap; }
+.ai-finding .ant-card-head-title { white-space: normal; padding-block: 10px; }
+.ai-finding .ant-card-extra { margin-inline-start: 8px; white-space: normal; }
+.ai-markdown { line-height: 1.85; overflow-wrap: anywhere; min-width: 0; max-width: 100%; }
+.ai-markdown > :first-child { margin-top: 0; }
+.ai-markdown h1,.ai-markdown h2,.ai-markdown h3 { line-height: 1.4; margin-block: 1em .5em; font-size: 1.2em; }
+.ai-markdown h4,.ai-markdown h5,.ai-markdown h6 { font-size: 1.05em; }
+.ai-markdown ul,.ai-markdown ol { padding-inline-start: 1.5em; }
+.ai-markdown pre { max-width: 100%; padding: 12px; overflow: auto; border: 1px solid var(--ant-color-border, #d9d9d9); border-radius: 8px; }
+.ai-markdown blockquote { border-inline-start: 3px solid #6478db; margin-inline: 0; padding-inline: 14px; opacity: .85; }
+.ai-table-scroll { max-width: 100%; overflow-x: auto; margin-block: 12px; }
+.ai-markdown table { border-collapse: collapse; width: 100%; }
+.ai-markdown th,.ai-markdown td { padding: 8px 12px; border: 1px solid var(--ant-color-border, #b5bac6); text-align: right; }
+.ai-markdown th:first-child,.ai-markdown td:first-child { text-align: left; }
+.ai-markdown .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.ai-follow-ups .ant-btn { white-space: normal; height: auto; min-height: 34px; }
+@media (max-width: 600px) { .ai-analysis { gap: 12px; } .ai-finding .ant-card-head-wrapper { align-items: flex-start; flex-direction: column; padding-block: 8px; gap: 4px; } .ai-finding .ant-card-extra { margin: 0; } }

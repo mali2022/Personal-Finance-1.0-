@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+  msw: false
+  tesseract.js: false
+overrides:
+  katex: ^0.19.1

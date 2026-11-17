@@ -1,0 +1,68 @@
+{
+  "currentVersion": "2026.11.18.1",
+  "releases": [
+    {
+      "id": "official-1.0.0-20261118",
+      "version": "2026.11.18.1",
+      "productVersion": "1.0.0",
+      "date": "2026-11-18",
+      "kind": "new",
+      "title": {
+        "zh": "1.0 正式版发布：全部功能一览",
+        "en": "Official 1.0 release: every feature in one place"
+      },
+      "changes": [
+        {
+          "zh": "版本说明：产品版本 1.0.0 正式版（频道 stable），发布号 2026.11.18.1。本公告是正式版的唯一更新记录，完整列出当前版本已交付的全部功能。",
+          "en": "Version: the product is now the official 1.0.0 release (stable channel), published as 2026.11.18.1. This single entry lists every capability that ships with it."
+        },
+        {
+          "zh": "记账核心：收支记账（记一笔）、交易列表与多条件筛选、交易详情、周期交易自动生成、多账户与账户详情、账户间转账、支付工具与币种管理、预付款与垫付跟踪。",
+          "en": "Bookkeeping core: income and expense entry, a filterable transaction list, transaction detail, automatic recurring transactions, multiple accounts with detail pages, transfers between accounts, payment instruments and currencies, prepayments and advances."
+        },
+        {
+          "zh": "分类、预算与计划：三级分类与分类详情、月度预算与年度预算及超支提醒、储蓄目标、自动化规则、时间资产、人生模拟器与消费价值分析。",
+          "en": "Categories, budgets and planning: three-level categories with detail pages, monthly and annual budgets with overspending alerts, savings goals, automation rules, time assets, a life simulator and spending-value analysis."
+        },
+        {
+          "zh": "分析与报表：仪表盘、收支分析与财务报表、自定义报表、现金流、生活成本分析、财务指标、报告分析与按维度查看的报表页。",
+          "en": "Analysis and reporting: dashboard, income/expense and financial statements, custom reports, cash flow, living-cost analysis, financial indicators and multi-dimensional report pages."
+        },
+        {
+          "zh": "资产与投资：投资持仓与收益表现、定期存款、实物资产、资产配置、加油与油耗记录及油耗分析。",
+          "en": "Assets and investments: holdings with performance, term deposits, physical assets, asset allocation, plus fuel and consumption tracking with analysis."
+        },
+        {
+          "zh": "协作与业务：账本协作与家庭账本、报销单、借款与还款计划、工资中心、消费审批中心（审批规则与 AI 审批建议）。",
+          "en": "Collaboration and business: shared and family books, reimbursements, loans with repayment schedules, a payroll center and a spending-approval center with rules and AI suggestions."
+        },
+        {
+          "zh": "导入与对账：账单 CSV 导入与导入模板、自动对账、票据 OCR 识别，对账过程保留版本号与幂等校验。",
+          "en": "Import and reconciliation: statement CSV import with templates, automatic reconciliation and receipt OCR, with versioning and idempotent validation throughout."
+        },
+        {
+          "zh": "AI 能力：AI 智能中心包含全局 Copilot、自主财务 Agent、记账建议、风险提醒、AI 报告与记忆；模型与密钥在本地加密保存，可随时更换或关闭。",
+          "en": "AI: the AI center bundles a global Copilot, an autonomous finance Agent, bookkeeping suggestions, risk alerts, AI reports and memory; model keys are encrypted locally and can be changed or turned off at any time."
+        },
+        {
+          "zh": "体验与安全：中英双语、深浅色主题、PWA 离线与安装、邀请码注册与登录、管理员与系统设置，账户数据按用户隔离。",
+          "en": "Experience and safety: Chinese and English UI, light and dark themes, PWA offline and install, invitation-code sign-up and login, admin and system settings, with per-user data isolation."
+        },
+        {
+          "zh": "启动与更新：双击「打开PersonalFinance.bat」启动本地站点并访问 http://127.0.0.1:5085/；/updates 与 /settings/updates 查看公告，检查更新时不缓存 /release-info.json。",
+          "en": "Launch and updates: double-click 打开PersonalFinance.bat to start the local site at http://127.0.0.1:5085/; read announcements at /updates and /settings/updates, and /release-info.json is never cached when checking for updates."
+        },
+        {
+          "zh": "配套整理：测试期文档合并为《版本历史（1.0）》与《维护手册（1.0）》并归档原文；删除 37 份专项 Playwright 配置与 144 个一次性脚本，保留主配置与 .NET 单元测试；数据结构与接口保持兼容，升级不需要迁移。",
+          "en": "Housekeeping: beta-era documentation is consolidated into the 1.0 version history and maintenance handbook with the originals archived; 37 dedicated Playwright configs and 144 one-off scripts are removed while the main config and the .NET tests stay; the schema and interfaces remain compatible, so no migration is required."
+        }
+      ]
+    }
+  ],
+  "product": {
+    "name": "Personal Finance",
+    "channel": "stable",
+    "version": "1.0.0",
+    "releaseNumber": "2026.11.18.1"
+  }
+}

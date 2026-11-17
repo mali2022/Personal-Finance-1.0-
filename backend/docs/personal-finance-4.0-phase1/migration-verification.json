@@ -1,0 +1,10 @@
+{
+  "backupId": "20261013T122751Z_9308f91396ea42a8b46ed2cff53580e8",
+  "restoredDatabase": "PersonalFinanceWeb_RestoreCheck_8bf9959ad82248258ade14c2beb1a720",
+  "migrationRuns": 2,
+  "financialTablesUnchanged": true,
+  "accountBalancesUnchanged": true,
+  "attachmentsUnchanged": true,
+  "migrationCount": 46,
+  "checkedAt": "2026-10-13T12:29:27.1388729+00:00"
+}
