@@ -23,6 +23,13 @@ export default ts.config(
     files: ['**/*.{ts,tsx}'],
     languageOptions: { globals: globals.browser },
     plugins: { 'react-hooks': hooks },
-    rules: hooks.configs.recommended.rules,
+    rules: {
+      ...hooks.configs.recommended.rules,
+      // Rest-sibling omits (`({ key: _, ...rest })`) and `_`-prefixed unused args are intentional.
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_', ignoreRestSiblings: true, caughtErrorsIgnorePattern: '^_' },
+      ],
+    },
   },
 );

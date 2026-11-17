@@ -37,7 +37,7 @@ function accountTypeSlices(items: typeof accounts, total: bigint) {
   const grouped = new Map<string, bigint>();
   for (const account of items) {
     if (account.currency !== currency) continue;
-    let value = minor(account.balance);
+    const value = minor(account.balance);
     if (value <= 0n) continue;
     grouped.set(account.type, (grouped.get(account.type) || 0n) + value);
   }
