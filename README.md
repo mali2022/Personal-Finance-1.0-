@@ -1,4 +1,16 @@
-# 个人记账与个人财务管理数据库
+<img width="2560" height="1755" alt="9569a52f-78a6-4233-90a7-98ad494a16c3" src="https://github.com/user-attachments/assets/349e6107-8595-4ad4-9910-7393f684826c" />
+<img width="2560" height="4598" alt="29436548-26d2-41d1-8b7b-07ab4d889a56" src="https://github.com/user-attachments/assets/2757ec5c-a126-4fe1-b6e7-f25e2d00b802" />
+<img width="2560" height="1305" alt="2035b6d9-79b1-4a22-bbf9-7f3e8f305bac" src="https://github.com/user-attachments/assets/228a658b-a6f0-44a1-bf0d-27b25bf4103e" />
+<img width="2560" height="1305" alt="876eb549-834f-4a73-8767-f985336d4247" src="https://github.com/user-attachments/assets/4d5b0618-25d8-43e4-9916-fd6a4714515d" />
+<img width="2560" height="1305" alt="2445a5b5-d99f-449f-b175-c147129588b5" src="https://github.com/user-attachments/assets/55d472a3-025c-40f3-8020-c0e1f069005d" />
+<img width="2560" height="1305" alt="538dc9c8-68fd-4958-a793-7c483b3ae127" src="https://github.com/user-attachments/assets/69acc70a-bc5b-4a40-8a6b-85b6d3857132" />
+<img width="2560" height="1305" alt="cbc0f4e9-355c-44f0-b752-ce70365b1dc0" src="https://github.com/user-attachments/assets/87d06e86-2554-4488-a58d-9b9ed2e0795b" />
+<img width="2560" height="1305" alt="c0a4cbbb-8870-42e1-bbd8-83c40237d508" src="https://github.com/user-attachments/assets/ecf7103a-35b2-49cd-a915-f3ff964df31f" />
+<img width="2560" height="1305" alt="e091fb70-fdbe-41d8-a725-f14c0201c5ab" src="https://github.com/user-attachments/assets/e061a7d8-2881-47a6-9fbb-5776b3a5a8d1" />
+<img width="2560" height="1305" alt="39780472-6f2a-42af-82d2-d4b79e2abd82" src="https://github.com/user-attachments/assets/0ede395c-f8e2-4084-9e5f-858a5ac0bffe" />
+
+
+个人记账与个人财务管理数据库
 
 > 日常使用为本地账本（2026-11-14 起已与云服务器断开、完全本地化）：双击 `打开PersonalFinance.bat` 或 `启动PersonalFinance.bat`，在 http://127.0.0.1:5085/ 进入，数据只在本机 SQL Server 默认实例 `.` 的 `PersonalFinanceWeb` 库。云端启动/备份入口、部署产物与 `deploy/` 目录（含云端恢复脚本与连接信息模板）已于 2026-11-18 按用户决定全部删除，不再保留任何云端连接或恢复通道；历史云端说明已在 1.0 精简中并入 [版本历史（1.0）](<docs/版本历史-1.0.md>)（已停用，仅作记录）。
 >
